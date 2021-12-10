@@ -7,5 +7,7 @@ export const fonts = {
 export const size = {
   title:widthPercentageToDP(14),
   heading:widthPercentageToDP(10),
-  subTitle:widthPercentageToDP(5)
+  subTitle:widthPercentageToDP(5),
+  label:widthPercentageToDP(4),
+  text:widthPercentageToDP(3)
 }

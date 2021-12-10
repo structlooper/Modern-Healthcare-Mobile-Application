@@ -8,7 +8,7 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import Dots from "../../componenets/atoms/dots";
 import { IconButton } from "../../componenets/atoms/Buttons";
 
-const introScreenPage = () => {
+const introScreenPage = ({ navigation }) => {
   const [step,setStep] = useState(1);
   let icon=(step===3?'check':'chevron-right');
   let btnClr=(step===3?colors.lightGreen:colors.lightBlue);
@@ -27,7 +27,7 @@ const introScreenPage = () => {
         setStep(3)
         return;
       case 3:
-        setStep(3)
+        navigation.navigate('SignUpEmail')
         return;
       default:
         setStep(1)
@@ -95,7 +95,7 @@ const introScreenPage = () => {
       {statusBar(colors.lightBlue) }
       <LinearGradient start={{x: 0, y: 0}} end={{x: 0, y: 1}} colors={[colors.lightBlue, colors.blue,]} style={styles.linearGradient}>
         <TouchableOpacity style={{ alignItems:'flex-end',padding:'5%' }}
-        onPress={()=>console.log('skip')}
+        onPress={()=>navigation.navigate('SignUpEmail')}
         >
           <Text style={{ color:colors.light, fontSize:size.subTitle,fontFamily:fonts.family }}>
             Skip
