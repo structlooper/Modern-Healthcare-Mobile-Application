@@ -23,8 +23,8 @@ export const signUpReducer = (state = SignUpDetails,action) => {
   switch (action.type) {
     case actionTypes.set_signup_details_email:
       return {...state,email: action.payload}
-    // case actionTypes.set_signup_details_phone:
-    //   return {...state,phone: action.payload}
+    case actionTypes.set_signup_details_phone:
+      return {...state,phone: action.payload}
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import React, {  useState } from "react";
-import { Image, Modal, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { style } from "../../../componenets/organisms/style";
 import statusBar from "../../../componenets/molecules/statusBar";
 import { colors } from "../../../theme/colors";
