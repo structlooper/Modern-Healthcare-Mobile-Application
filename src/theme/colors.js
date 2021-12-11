@@ -1,4 +1,6 @@
 export const colors = {
+  bckRed :'#F5D6D6',
+  red :'#F87A7B',
   lightBlue :'#54F3FC',
   lightGreen :'#61ECB9',
   ltnGreen :'#58F1D5',
