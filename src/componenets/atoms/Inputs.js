@@ -4,7 +4,7 @@ import { colors } from "../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-export const ThemeTextInput = (email,setEmail,placeHolder,iconShow,autoFocus = false) => {
+export const ThemeTextInput = (state,setState,placeHolder,iconShow,autoFocus = false) => {
   return (
     <View style={{
       flexDirection:'row',
@@ -19,8 +19,44 @@ export const ThemeTextInput = (email,setEmail,placeHolder,iconShow,autoFocus = f
           flex:1,
           color:colors.dark
         }}
-        onChangeText={setEmail}
-        value={email}
+        onChangeText={setState}
+        value={state}
+        autoFocus={autoFocus}
+        placeholder={placeHolder}
+      />
+      {
+        iconShow?
+          <FontAwesome5
+            name={'check'}
+            size={30}
+            color={colors.lightGreen}
+            style={{  }}
+          />
+        :null
+      }
+
+    </View>
+  );
+};
+export const ThemeIconTextInput = (state,setState,placeHolder,iconShow,autoFocus = false) => {
+  return (
+    <View style={{
+      flexDirection:'row',
+      borderRadius:10,
+      backgroundColor:colors.lightGrey,
+      height:heightPercentageToDP(7),
+      marginVertical:heightPercentageToDP(1),
+      paddingHorizontal:widthPercentageToDP(3),
+      alignItems:'center',
+      elevation:5
+    }}>
+      <TextInput
+        style={{
+          flex:1,
+          color:colors.dark
+        }}
+        onChangeText={setState}
+        value={state}
         autoFocus={autoFocus}
         placeholder={placeHolder}
       />

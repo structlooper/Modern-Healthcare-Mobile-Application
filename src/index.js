@@ -11,6 +11,8 @@ export const Application = () => {
   const {introScreen} = useSelector(state => state.settingReducer);
   const [splash, setSplash] = React.useState(true);
   const [intro, setIntro] = React.useState(false);
+  const {token} = useSelector(state => state.authReducer );
+
   useEffect(() => {
     setTimeout(() => {
       setSplash(false)

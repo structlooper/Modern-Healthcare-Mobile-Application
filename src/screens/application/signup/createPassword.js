@@ -17,15 +17,19 @@ import {
   CheckStringOneSymbol,
   CheckStringOneUppercase,
 } from "../../../componenets/organisms/functions";
-import { SetSignUpDetailsEmail } from "../../../redux/actions";
+import { SetAuthUserDetails, SetAuthUserToken, SetSignUpDetailsEmail } from "../../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const CreatePassword = ({ navigation }) => {
+  const dispatch = useDispatch();
   const [screenModalVisibility,SetScreenModalVisibility] = useState(true);
   const [exitModal, setExitModal] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
+
+
   const createPasswordScreenModal = () => {
     // console.log()
     return (
@@ -108,8 +112,8 @@ const CreatePassword = ({ navigation }) => {
                   { color:colors.light,textTransform:'uppercase' },
                   'Continue',
                   ()=>{
-                    // dispatch(SetSignUpDetailsEmail(localEmail))
-                    navigation.navigate('SignUpEmailInfo')
+                    dispatch(SetAuthUserToken('token_of_user'))
+                    dispatch(SetAuthUserDetails(JSON.stringify({user_id:1,name:'user name'})))
                   }
                 )
                 :

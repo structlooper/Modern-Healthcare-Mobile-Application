@@ -18,3 +18,15 @@ export const SetSignUpDetailsPhone = value => dispatch => {
     payload: value,
   });
 };
+export const SetAuthUserToken = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_auth_user_token,
+    payload: value,
+  });
+};
+export const SetAuthUserDetails = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_auth_user_details,
+    payload: value,
+  });
+};
