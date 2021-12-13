@@ -23,6 +23,7 @@
     "react-native-gesture-handler": "^2.1.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-otp-verify": "^1.0.4",
+    "react-native-password-strength-meter": "^0.0.5",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-swipe-gestures": "^1.0.5",

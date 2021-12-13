@@ -86,7 +86,7 @@ const SignupPhone = ({ navigation }) => {
                     <Image source={{ uri:selectedCountryCode.iconUrl }} style={{ width:20,height:20,resizeMode:'contain' }} />
                   </View>
                   <View style={{ }}>
-                    <Text> {selectedCountryCode.title}</Text>
+                    <Text style={{ color:colors.grey,fontSize:size.text,fontFamily:fonts.family }}> {selectedCountryCode.title}</Text>
                   </View>
                 </TouchableOpacity>
 

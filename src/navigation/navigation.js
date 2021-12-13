@@ -7,6 +7,7 @@ import signupEmailInfo from "../screens/application/signup/signupEmailInfo";
 import signupEmailInfoConfirm from "../screens/application/signup/signupEmailInfoConfirm";
 import signupPhone from "../screens/application/signup/signupPhone";
 import verificationOtpPage from "../screens/application/signup/verificationOtpPage";
+import createPassword from "../screens/application/signup/createPassword";
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ function MyStack() {
       <Stack.Screen name="SignUpEmailInfoConfirm"  component={signupEmailInfoConfirm} />
       <Stack.Screen name="SignPhone"  component={signupPhone} />
       <Stack.Screen name="VerificationOtpPage"  component={verificationOtpPage} />
+      <Stack.Screen name="CreatePassword"  component={createPassword} />
 
     </Stack.Navigator>
   );

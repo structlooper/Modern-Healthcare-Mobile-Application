@@ -75,13 +75,18 @@ const VerificationOtpPage = ({ navigation }) => {
             <OTPInputView
               style={{width:widthPercentageToDP(70), height: heightPercentageToDP(8)}}
               pinCount={6}
-              code={otp} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
-              onCodeChanged = {code => { SetOtp({code})}}
+              //code={otp} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
+              // onCodeChanged = {code => {
+              // console.log(code)
+              //    SetOtp(otp+code)
+              // }}
               autoFocusOnLoad={true}
               codeInputFieldStyle={styles.underlineStyleBase}
               codeInputHighlightStyle={styles.underlineStyleHighLighted}
               onCodeFilled = {(code) => {
                 console.log(`Code is ${code}, you are good to go!`)
+                SetOtp(code)
+                navigation.navigate('CreatePassword')
               }}
             />
           </View>

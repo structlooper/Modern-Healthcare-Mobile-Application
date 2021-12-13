@@ -1,5 +1,6 @@
 export const colors = {
   bckRed :'#F5D6D6',
+  transRed :'rgba(0,0,0,0.1)',
   red :'#F87A7B',
   lightBlue :'#54F3FC',
   lightGreen :'#61ECB9',
