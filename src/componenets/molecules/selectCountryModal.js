@@ -5,18 +5,17 @@ import { fonts, size } from "../../theme/fonts";
 import { IconButton } from "../atoms/Buttons";
 import React from "react";
 
-export const countryListModal = (countryCode,setSelectedCountryCode,countryModal,setCountryModal) => {
+export const countryListModal = (countryCode,selectedCountryCode,setSelectedCountryCode,countryModal,setCountryModal) => {
   const countrySelectBtn = (data,i) => {
     return (
-      <TouchableOpacity style={{
+      <TouchableOpacity style={[{
         flexDirection:'row',
         justifyContent:'center',
-        backgroundColor:colors.ltnGreen,
         borderRadius:10,
         height:heightPercentageToDP(4),
         alignItems:'center',
         marginVertical:heightPercentageToDP(.5)
-      }} key={i} onPress={() => {
+      },data.title === selectedCountryCode.title ?{ backgroundColor:colors.ltnGreen} :{ backgroundColor:colors.lightGrey}]} key={i} onPress={() => {
         setSelectedCountryCode(data)
         setCountryModal(false)
       }}>
@@ -24,7 +23,7 @@ export const countryListModal = (countryCode,setSelectedCountryCode,countryModal
           <Image source={{ uri:data.iconUrl }} style={{ width:20,height:20,resizeMode:'contain' }} />
         </View>
         <View style={{ }}>
-          <Text style={{ color:colors.light,fontSize:size.label,fontFamily:fonts.family,fontWeight:'bold' }}> {data.title}</Text>
+          <Text style={[{ fontSize:size.label,fontFamily:fonts.family,fontWeight:'bold' },data.title === selectedCountryCode.title ?{ color:colors.light} :{ color:colors.dark}]}> {data.title}</Text>
         </View>
       </TouchableOpacity>
     )

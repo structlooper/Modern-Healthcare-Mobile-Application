@@ -112,10 +112,11 @@ const styles = StyleSheet.create({
     // height: 45,
     borderWidth: 0,
     borderBottomWidth: 1,
+    color:colors.dark
   },
 
   underlineStyleHighLighted: {
-    borderColor: "#03DAC6",
+    borderColor: colors.lightBlue,
   },
 });
 export default VerificationOtpPage;

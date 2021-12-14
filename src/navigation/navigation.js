@@ -9,6 +9,7 @@ import signupPhone from "../screens/application/signup/signupPhone";
 import verificationOtpPage from "../screens/application/signup/verificationOtpPage";
 import createPassword from "../screens/application/signup/createPassword";
 import loginScreen from "../screens/application/login/loginScreen";
+import ForgotPassword from "../screens/application/signup/forgotPassword";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ function MyStack() {
       <Stack.Screen name="VerificationOtpPage"  component={verificationOtpPage} />
       <Stack.Screen name="CreatePassword"  component={createPassword} />
       <Stack.Screen name="LoginScreen"  component={loginScreen} />
+      <Stack.Screen name="ForgotPassword"  component={ForgotPassword} />
 
     </Stack.Navigator>
   );

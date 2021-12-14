@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
             }
           </View>
         </View>
-        <TouchableOpacity style={{ alignItems:'flex-end' }}>
+        <TouchableOpacity style={{ alignItems:'flex-end' }} onPress={()=>navigation.navigate('ForgotPassword')}>
           <Text style={{ fontSize:size.text, fontFamily:fonts.family,color:colors.grey }}>Forgot password?</Text>
         </TouchableOpacity>
 
@@ -66,31 +66,12 @@ const LoginScreen = ({ navigation }) => {
 
           </View>
           <View style={{ marginTop:heightPercentageToDP(2),flexDirection:'row' }}>
-            <View style={{
-              width:30,height:60,
-              flex:.4,
-              borderRadius:10,
-              borderColor:colors.lightWhite,
-              elevation:10,
-              backgroundColor:colors.light,
-              padding:'3%',
-              marginHorizontal:widthPercentageToDP(5)
-            }}>
+            <TouchableOpacity style={style.ImageButton}>
               <Image source={require('../../../assets/images/googleIcon.png')} style={{ width:'100%',height:'100%', resizeMode:'contain' }} />
-            </View>
-            <View style={{
-              width:30,height:60,
-              flex:.4,
-              borderRadius:10,
-              borderColor:colors.lightWhite,
-              elevation:10,
-              backgroundColor:colors.light,
-              padding:'3%',
-              marginHorizontal:widthPercentageToDP(5)
-
-            }}>
+            </TouchableOpacity>
+            <TouchableOpacity style={style.ImageButton}>
               <Image source={require('../../../assets/images/facebookIcon.png')} style={{ width:'100%',height:'100%', resizeMode:'contain' }} />
-            </View>
+            </TouchableOpacity>
           </View>
 
         </ScrollView>
