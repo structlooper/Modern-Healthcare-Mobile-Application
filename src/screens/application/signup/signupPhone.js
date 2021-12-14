@@ -12,6 +12,7 @@ import { SetSignUpDetailsPhone } from "../../../redux/actions";
 import { countryListModal } from "../../../componenets/molecules/selectCountryModal";
 import { ExitModalConfirmation } from "../../../componenets/molecules/exitModalConfirmation";
 import { useDispatch } from "react-redux";
+import SignInNavigation from "../../../componenets/molecules/signInNavigation";
 
 
 
@@ -124,17 +125,8 @@ const SignupPhone = ({ navigation }) => {
             </View>
           </View>
       </View>
-      <View style={{ flex:.2 }}>
-        <TouchableOpacity style={{ flexDirection:'row',alignItems:'center',justifyContent:'center' }}
-                          onPress={()=>console.log('login')}
-        >
-          <Text style={{ color:colors.dark }}>Already have an account?</Text>
-          <View style={{ borderBottomColor:colors.dark,borderBottomWidth:.5 }}
-
-          >
-            <Text style={{ color:colors.dark, }}> Sign in</Text>
-          </View>
-        </TouchableOpacity>
+      <View style={{ flex:.2,justifyContent:'center' }}>
+        <SignInNavigation navigation={navigation} />
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(5) }}>
           {
             CheckPhone(localPhone)?

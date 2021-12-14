@@ -10,6 +10,7 @@ import { CheckEmail } from "../../../componenets/organisms/functions";
 import { useDispatch } from "react-redux";
 import {SetSignUpDetailsEmail} from "../../../redux/actions";
 import {style} from "../../../componenets/organisms/style";
+import SignInNavigation from "../../../componenets/molecules/signInNavigation";
 
 const SignupEmailPage = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const SignupEmailPage = ({ navigation }) => {
 
   return (
     <View style={style.mainContainer}>
-      {statusBar(colors.bckGreen) }
+      {statusBar(colors.light) }
       <View style={{ flex:.8,padding:'5%' }}>
         <View>
           {IconButton(
@@ -48,16 +49,7 @@ const SignupEmailPage = ({ navigation }) => {
 
       </View>
       <View style={{ flex:.2 }}>
-        <TouchableOpacity style={{ flexDirection:'row',alignItems:'center',justifyContent:'center' }}
-              onPress={()=>console.log('login')}
-        >
-          <Text style={{ color:colors.dark }}>Already have an account?</Text>
-          <View style={{ borderBottomColor:colors.dark,borderBottomWidth:.5 }}
-
-          >
-            <Text style={{ color:colors.dark, }}> Sign in</Text>
-          </View>
-        </TouchableOpacity>
+        <SignInNavigation navigation={navigation} />
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(5) }}>
           {
             CheckEmail(localEmail)?

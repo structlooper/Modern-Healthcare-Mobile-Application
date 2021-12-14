@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {  Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../theme/fonts";

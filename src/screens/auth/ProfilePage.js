@@ -8,8 +8,10 @@ import { size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inputs";
 import Gender from "../../componenets/molecules/gender";
+import { useSelector } from "react-redux";
 
 const ProfilePage = () => {
+  const {authUserDetails} = useSelector(state => state.authReducer);
   const [showButton,SetShowButton] = useState(false)
   const [name,SetName] = useState('')
   const [middleName,SetMiddleName] = useState('')
