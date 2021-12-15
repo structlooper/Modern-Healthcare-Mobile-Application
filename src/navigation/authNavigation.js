@@ -11,6 +11,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import ProfilePage from "../screens/auth/ProfilePage";
 import { useSelector } from "react-redux";
+import SelectProfileScreen from "../screens/auth/SelectProfileScreen";
+import HomePage from "../screens/auth/HomePage";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -26,10 +28,10 @@ const BottomStack = () => {
           bottom:0,
           right:0,
           left:0,
-          elevation:10,
+          elevation:15,
           height:heightPercentageToDP(8),
           borderTopRightRadius:20,
-          borderTopLeftRadius:20
+          borderTopLeftRadius:20,
         },
 
         indicatorStyle: { backgroundColor: 'black'},
@@ -37,7 +39,7 @@ const BottomStack = () => {
       }}>
       <Tab.Screen
         name="HomeTab"
-        component={Testing}
+        component={HomePage}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon:({color , focused}) => (
@@ -100,7 +102,7 @@ const BottomStack = () => {
     </Tab.Navigator>
   )
 }
-const HomeScreenStack = ({navigation}) => {
+const HomeScreenStack = () => {
   const {profile_skipped} = useSelector(state => state.authReducer );
   return (
     <Stack.Navigator
@@ -111,6 +113,7 @@ const HomeScreenStack = ({navigation}) => {
     >
       <Stack.Screen name="HomeTab"  component={BottomStack} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
+      <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />
 
 

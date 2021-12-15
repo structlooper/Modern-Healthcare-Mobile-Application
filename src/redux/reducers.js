@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes'
+import { set_selected_profile } from "./actionTypes";
 
 const InitialState = {
   introScreen: true,
@@ -11,7 +12,8 @@ const SignUpDetails = {
 const AuthUserState = {
   token: '',
   authUserDetails: '',
-  profile_skipped:false
+  profile_skipped:false,
+  selected_profile:null
 };
 
 
@@ -40,6 +42,10 @@ export const authReducer = (state = AuthUserState,action) => {
       return {...state,token: action.payload}
     case actionTypes.set_auth_user_details:
       return {...state,authUserDetails: action.payload}
+    case actionTypes.set_auth_profile_skipped:
+      return {...state,profile_skipped: action.payload}
+    case actionTypes.set_selected_profile:
+      return {...state,selected_profile: action.payload}
     default:
       return state;
   }

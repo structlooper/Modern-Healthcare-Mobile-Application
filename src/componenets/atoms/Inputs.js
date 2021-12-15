@@ -53,8 +53,9 @@ export const ThemeIconTextInput = (state,setState,placeHolder,iconShow,autoFocus
       <TextInput
         style={{
           flex:1,
-          color:colors.dark
+          // color:colors.dark
         }}
+        placeholderTextColor={colors.grey}
         onChangeText={setState}
         value={state}
         autoFocus={autoFocus}

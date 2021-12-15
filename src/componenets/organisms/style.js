@@ -8,6 +8,10 @@ export const style = StyleSheet.create({
     backgroundColor:colors.light,
     padding:'5%'
   },
+  linearGradientContainer:{
+    flex:1,
+    backgroundColor:colors.light,
+  },
   ImageButton:{
     width:30,height:60,
     flex:.4,
@@ -17,7 +21,15 @@ export const style = StyleSheet.create({
     backgroundColor:colors.light,
     padding:'3%',
     marginHorizontal:widthPercentageToDP(5)
-
-  }
+  },
+  linearGradient: {
+    flex: 1,
+    padding:'5%'
+  },
+  linearGradientHorizontal: {
+    flex: 1,
+    width:widthPercentageToDP(38),
+    borderRadius:20,alignItems:'center'
+  },
 
 });

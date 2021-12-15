@@ -1,4 +1,5 @@
 import * as actionTypes from "./actionTypes";
+import { set_auth_profile_skipped, set_selected_profile } from "./actionTypes";
 
 export const setIntroScreen = value => dispatch => {
   dispatch({
@@ -27,6 +28,19 @@ export const SetAuthUserToken = value => dispatch => {
 export const SetAuthUserDetails = value => dispatch => {
   dispatch({
     type: actionTypes.set_auth_user_details,
+    payload: value,
+  });
+};
+export const SetAuthProfileSkipped = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_auth_profile_skipped,
+    payload: value,
+  });
+};
+
+export const SetSelectedProfile = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_selected_profile,
     payload: value,
   });
 };

@@ -8,9 +8,11 @@ import { size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inputs";
 import Gender from "../../componenets/molecules/gender";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { SetAuthProfileSkipped } from "../../redux/actions";
 
-const ProfilePage = () => {
+const ProfilePage = ({ navigation }) => {
+  const dispatch = useDispatch();
   const {authUserDetails} = useSelector(state => state.authReducer);
   const [showButton,SetShowButton] = useState(false)
   const [name,SetName] = useState('')
@@ -128,7 +130,7 @@ const ProfilePage = () => {
       </View>
       <View style={{ justifyContent:'center',alignItems:'center',flex:.1 }}>
         {
-          showButton?
+          name !== '' && gender !== '' && dob !== '' && healthCardProvince !== '' && healthCard !== '' && healthCardVersion !== ''?
             GradientButton(
               {
                 width:widthPercentageToDP('80%'),
@@ -150,7 +152,8 @@ const ProfilePage = () => {
               { color:colors.light,textTransform:'uppercase' },
               'Continue',
               ()=>{
-                console.log('this')
+                dispatch(SetAuthProfileSkipped(true))
+                navigation.navigate('SelectProfile')
               }
             )
             :

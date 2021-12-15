@@ -8,7 +8,7 @@ const CheckNavigation = () => {
   const {token} = useSelector(state => state.authReducer)
   return (
     <NavigationContainer>
-      {token !== '' ? (<Navigation/>) :  (<AuthNavigation/> )}
+      {token === '' ? (<Navigation/>) :  (<AuthNavigation/> )}
     </NavigationContainer>
   );
 };

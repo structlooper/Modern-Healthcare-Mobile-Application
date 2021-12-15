@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {setIntroScreen} from "./redux/actions";
 import CheckNavigation from "./navigation/checkNavigation";
 
-export const Application = () => {
+const Application = () => {
   const dispatch = useDispatch();
   const {introScreen} = useSelector(state => state.settingReducer);
   const [splash, setSplash] = React.useState(true);
@@ -42,3 +42,4 @@ export const Application = () => {
     </View>
   );
 }
+export default Application;
