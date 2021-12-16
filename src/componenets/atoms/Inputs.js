@@ -75,6 +75,44 @@ export const ThemeIconTextInput = (state,setState,placeHolder,iconShow,autoFocus
     </View>
   );
 };
+export const ThemeIconNumericInput = (state,setState,placeHolder,iconShow,autoFocus = false) => {
+  return (
+    <View style={{
+      flexDirection:'row',
+      borderRadius:10,
+      backgroundColor:colors.lightGrey,
+      height:heightPercentageToDP(7),
+      marginVertical:heightPercentageToDP(1),
+      paddingHorizontal:widthPercentageToDP(3),
+      alignItems:'center',
+      elevation:5
+    }}>
+      <TextInput
+        style={{
+          flex:1,
+          // color:colors.dark
+        }}
+        placeholderTextColor={colors.grey}
+        onChangeText={setState}
+        value={state}
+        autoFocus={autoFocus}
+        keyboardType={'numeric'}
+        placeholder={placeHolder}
+      />
+      {
+        iconShow?
+          <FontAwesome5
+            name={'check'}
+            size={30}
+            color={colors.lightGreen}
+            style={{  }}
+          />
+        :null
+      }
+
+    </View>
+  );
+};
 export const ThemePasswordInput = (state,setState,placeHolder,showPass,changeShowPassword,autoFocus = false) => {
   let iconColor = showPass?colors.lightGreen:colors.grey
   return (

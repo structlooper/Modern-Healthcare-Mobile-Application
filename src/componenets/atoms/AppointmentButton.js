@@ -7,7 +7,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 const AppointmentButton = ({state,SetSate}) => {
   return (
-    <TouchableOpacity style={{ borderRadius:100,backgroundColor:colors.light,width:widthPercentageToDP(60),alignItems:'center',height:heightPercentageToDP(5),flexDirection:'row' }}
+    <TouchableOpacity style={{ elevation:5,borderRadius:100,backgroundColor:colors.light,width:widthPercentageToDP(60),alignItems:'center',height:heightPercentageToDP(5),flexDirection:'row' }}
                       onPress={()=>SetSate(true)}
     >
       <View style={{ flex:.35 }} />

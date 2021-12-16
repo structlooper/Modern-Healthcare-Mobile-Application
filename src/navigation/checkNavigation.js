@@ -13,7 +13,6 @@ const CheckNavigation = () => {
     if (!tokenContext){
       return <Navigation />
     }else{
-      console.log('token =>',profileSkipped)
       if (profileSkipped){
         return <AuthNavigation />
       }else{

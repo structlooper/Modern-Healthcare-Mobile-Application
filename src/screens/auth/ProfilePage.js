@@ -6,33 +6,48 @@ import { colors } from "../../theme/colors";
 import { Button, GradientButton, IconButton } from "../../componenets/atoms/Buttons";
 import { size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inputs";
+import { ThemeIconNumericInput, ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inputs";
 import Gender from "../../componenets/molecules/gender";
 import { useDispatch, useSelector } from "react-redux";
 import { SetAuthProfileSkipped } from "../../redux/actions";
 import { useUserContext } from "../../redux/context";
-
-const ProfilePage = ({ navigation }) => {
+import moment from "moment";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+const ProfilePage = ({ navigation,route }) => {
+  let profileHeader = undefined;
+  if (route.params !== undefined){
+     profileHeader = route.params.profileHeader;
+  }
   const {ProfileSkipped} = useUserContext();
   const dispatch = useDispatch();
-  const {authUserDetails} = useSelector(state => state.authReducer);
-  const [showButton,SetShowButton] = useState(false)
   const [name,SetName] = useState('')
   const [middleName,SetMiddleName] = useState('')
   const [lastName,SetLastName] = useState('')
   const [gender,SetGender] = useState('')
-  const [genderModal,SetGenderModal] = useState(false)
+  const [genderModal,SetGenderModal] = useState(false);
+  const [isDatePickerVisible, setDatePickerVisibility] = React.useState(false);
   const [dob,SetDob] = useState('')
   const [healthCardProvince,SetHealthCardProvince] = useState('')
   const [healthCard,SetHealthCard] = useState('')
   const [healthCardVersion,SetHealthCardVersion] = useState('')
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = (date) => {
+    console.log("A date has been picked: ", date);
+    SetDob(date)
+    hideDatePicker();
+  };
   return (
     <View style={style.mainContainer}>
       {statusBar(colors.light) }
+
       <View style={{ flex:.9, }}>
         <View style={{ flexDirection:'row',justifyContent:'center',alignItems:'center',marginBottom:heightPercentageToDP(4) }}>
           <View style={{ flex:.9,alignItems:'center' }}>
-            <Text style={{ color:colors.dark, fontSize:size.heading }}>Complete profile</Text>
+            <Text style={{ color:colors.dark, fontSize:size.heading }}>{profileHeader === undefined? 'Complete':profileHeader} profile</Text>
           </View>
           <TouchableOpacity style={{ flex:.1,alignItems:'flex-end' }} onPress={()=>{
             dispatch(SetAuthProfileSkipped(true));
@@ -84,19 +99,31 @@ const ProfilePage = ({ navigation }) => {
             elevation:5,
             justifyContent:'center'
           }}
+          onPress={()=>setDatePickerVisibility(true)}
+          >
+            <Text style={[{ fontSize:size.text},dob===''?{color:colors.grey} :{color:colors.dark }]}>{dob===''?'DOB':moment(dob).format('MMM Do YYYY')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+          style={{
+            borderRadius:10,
+            backgroundColor:colors.lightGrey,
+            height:heightPercentageToDP(7),
+            marginVertical:heightPercentageToDP(1),
+            paddingHorizontal:widthPercentageToDP(3),
+            elevation:5,
+            justifyContent:'center'
+          }}
           onPress={()=>SetGenderModal(true)}
           >
-            <Text style={{ fontSize:size.text,color:colors.grey }}>{gender===''?'Gender':gender}</Text>
+            <Text style={[{ fontSize:size.text},gender===''?{color:colors.grey} :{color:colors.dark }]}>{gender===''?'Gender':gender}</Text>
           </TouchableOpacity>
-          {
-            ThemeIconTextInput(
-              dob,
-              SetDob,
-              'DOB',
-              false,
-              false,
-            )
-          }
+          <DateTimePickerModal
+            isVisible={isDatePickerVisible}
+            mode="date"
+            maximumDate={new Date()}
+            onConfirm={handleConfirm}
+            onCancel={hideDatePicker}
+          />
           {
             ThemeIconTextInput(
               healthCardProvince,
@@ -109,7 +136,7 @@ const ProfilePage = ({ navigation }) => {
           <View style={{ flexDirection:'row' }}>
             <View style={{ flex:.7 }}>
               {
-                ThemeIconTextInput(
+                ThemeIconNumericInput(
                   healthCard,
                   SetHealthCard,
                   'Health Card',
@@ -120,7 +147,7 @@ const ProfilePage = ({ navigation }) => {
             </View>
             <View style={{ flex:.3,marginLeft:widthPercentageToDP(2) }}>
               {
-                ThemeIconTextInput(
+                ThemeIconNumericInput(
                   healthCardVersion,
                   SetHealthCardVersion,
                   'Version',
@@ -157,7 +184,7 @@ const ProfilePage = ({ navigation }) => {
               { color:colors.light,textTransform:'uppercase' },
               'Continue',
               ()=>{
-                navigation.navigate('SelectProfile')
+                navigation.navigate('ShowProfile')
               }
             )
             :

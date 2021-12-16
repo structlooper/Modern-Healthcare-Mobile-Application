@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Text, TouchableOpacity, View } from "react-native";
+import {  Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../componenets/organisms/style";
 import statusBar from "../../componenets/molecules/statusBar";
 import { colors } from "../../theme/colors";
@@ -12,9 +12,15 @@ import ProfileComplePercent from "../../componenets/molecules/ProfileComplePerce
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
+import { SetAuthProfileSkipped, SetAuthUserToken } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { useUserContext } from "../../redux/context";
 
 
 const HomePage = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const {SignOut}= useUserContext();
+  const {ProfileSkipped}= useUserContext();
   const [appointmentModal,SetAppointmentModal] = useState(false);
   return (
     <View style={style.linearGradientContainer}>
@@ -35,7 +41,10 @@ const HomePage = ({ navigation }) => {
              <View style={{ flex:1,marginHorizontal:widthPercentageToDP(1)}}>
                <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}
                                  onPress={()=> {
-
+                                   dispatch(SetAuthUserToken(''))
+                                   dispatch(SetAuthProfileSkipped(false))
+                                   SignOut()
+                                   ProfileSkipped(false)
                                  }}
                >
                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={[ colors.obcBlue, colors.purple] } style={style.linearGradientHorizontal}>

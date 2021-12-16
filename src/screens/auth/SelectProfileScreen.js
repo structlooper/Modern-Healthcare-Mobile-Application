@@ -1,15 +1,72 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react";
+import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../componenets/organisms/style";
 import statusBar from "../../componenets/molecules/statusBar";
 import { colors } from "../../theme/colors";
 import { fonts, size } from "../../theme/fonts";
-import { heightPercentageToDP } from "react-native-responsive-screen";
+import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
+import AppointmentButton from "../../componenets/atoms/AppointmentButton";
+import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { SetAuthProfileSkipped } from "../../redux/actions";
+import { useUserContext } from "../../redux/context";
+import { useDispatch } from "react-redux";
 
-const SelectProfileScreen = () => {
+const SelectProfileScreen = ({ navigation }) => {
+  const [appointmentModal,SetAppointmentModal] = useState(false);
+  const {ProfileSkipped} = useUserContext();
+  const dispatch = useDispatch();
+
+  const showProfileBackground = (imageName,text) => {
+    return (
+      <ImageBackground source={imageName}
+                       style={{ width:200,height:200, resizeMode:'contain',alignItems:'center',justifyContent:'center' }} >
+
+        <Text style={{ color:colors.light,fontWeight:'bold',fontFamily:fonts.family }}>{text}</Text>
+      </ImageBackground>
+    )
+  }
+  const TwoProfileDataRender = ({imageOneName,ProfileOneName},{imageTwoName, ProfileTwoName}) => {
+    return (
+      <View style={{ flexDirection:'row',marginHorizontal:widthPercentageToDP(4)  }}>
+        <TouchableOpacity style={{ flex:1 }} onPress={()=>{
+          dispatch(SetAuthProfileSkipped(true));
+          ProfileSkipped(true)
+        }}>
+          {showProfileBackground(imageOneName,ProfileOneName)}
+        </TouchableOpacity>
+        <TouchableOpacity style={{ flex:1 }} onPress={()=>console.log('this')}>
+          {showProfileBackground(imageTwoName,ProfileTwoName)}
+        </TouchableOpacity>
+      </View>
+    )
+  }
+  const OneProfileDataRender = ({imageOneName,ProfileOneName}) => {
+    return (
+      <View style={{ flexDirection:'row',marginHorizontal:widthPercentageToDP(4)  }}>
+        <TouchableOpacity style={{ flex:1 }} onPress={()=>console.log('this')}>
+          {showProfileBackground(imageOneName,ProfileOneName)}
+        </TouchableOpacity>
+        <TouchableOpacity style={{ flex:1,alignItems:'center',justifyContent:'center' }} onPress={()=>navigation.navigate('CreateProfile',{profileHeader:'Add'})}>
+          <View style={{ borderRadius:10,borderColor:colors.grey,borderStyle:'dashed',alignItems:'center',borderWidth:1,justifyContent:'center',height:145,width:135 }}>
+            <Text>Add</Text>
+            <View style={{ backgroundColor:colors.lightGrey,width:50,height:50,borderRadius:100,alignItems:'center',justifyContent:'center' }}>
+              <MaterialCommunityIcons
+                name={"plus"}
+                color={colors.grey}
+                size={30}
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
+    )
+  }
   return (
     <View style={style.mainContainer}>
       {statusBar(colors.light) }
+      <MyAppointmentModal state={appointmentModal} SetState={SetAppointmentModal} />
+
       <View style={{ flex:.9 }}>
         <View style={{
           alignItems:'center',
@@ -22,14 +79,23 @@ const SelectProfileScreen = () => {
             With Teja profile you can secure health records, manage appointments,
             and take care of your families health.
           </Text>
-          <View>
-
-          </View>
         </View>
+        <ScrollView >
+            { TwoProfileDataRender({
+              imageOneName: require('../../assets/images/profileBackground/red.png'),
+              ProfileOneName:'Alan walker'},{
+              imageTwoName: require('../../assets/images/profileBackground/blue.png'),
+              ProfileTwoName:'Thomas van'}) }
 
+          { OneProfileDataRender({
+              imageOneName: require('../../assets/images/profileBackground/biscut.png'),
+              ProfileOneName:'Ava van'}) }
+
+        </ScrollView>
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
-        <Text>Appointments</Text>
+        <AppointmentButton state={appointmentModal} SetSate={SetAppointmentModal} />
+
       </View>
     </View>
   );
