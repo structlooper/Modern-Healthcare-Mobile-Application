@@ -32,6 +32,7 @@
     "react-native-modal-datetime-picker": "^13.0.0",
     "react-native-otp-verify": "^1.0.4",
     "react-native-password-strength-meter": "^0.0.5",
+    "react-native-progress": "^5.0.0",
     "react-native-reanimated": "^2.3.1",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^3.3.2",

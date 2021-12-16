@@ -14,7 +14,7 @@ const BookAppointmentBtn = ({ navigation }) => {
       justifyContent:'center',
       borderRadius:20,
       elevation:20
-    }} onPress={()=>console.log('book oppint')}>
+    }} onPress={()=>navigation.navigate('VerifyDetailsInfo')}>
       <Text style={{ fontSize:size.label,color:colors.blue,fontFamily:fonts.family,fontWeight:'bold' }}>Book an Appointment</Text>
       <View style={{ flexDirection:'row',marginTop:heightPercentageToDP(1),alignItems:'center' }}>
         <Text style={{ color:colors.grey,fontSize:size.text,fontFamily:fonts.family }}>
