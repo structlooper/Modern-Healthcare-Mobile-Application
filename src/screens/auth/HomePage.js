@@ -13,9 +13,9 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
 
+
 const HomePage = ({ navigation }) => {
   const [appointmentModal,SetAppointmentModal] = useState(false);
-
   return (
     <View style={style.linearGradientContainer}>
       {statusBar(colors.lightBlue) }
@@ -33,7 +33,11 @@ const HomePage = ({ navigation }) => {
            <View style={{ flexDirection:'row' }}>
             <ProfileComplePercent navigation={navigation} />
              <View style={{ flex:1,marginHorizontal:widthPercentageToDP(1)}}>
-               <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}>
+               <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}
+                                 onPress={()=> {
+
+                                 }}
+               >
                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={[ colors.obcBlue, colors.purple] } style={style.linearGradientHorizontal}>
                   <View style={{ marginVertical:heightPercentageToDP(2),justifyContent:'center' }}>
                     <Text style={{ fontSize:size.text, color:colors.light,fontFamily:fonts.family }}>April 2</Text>

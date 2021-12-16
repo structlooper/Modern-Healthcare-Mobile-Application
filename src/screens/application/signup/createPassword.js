@@ -19,8 +19,10 @@ import {
 } from "../../../componenets/organisms/functions";
 import { SetAuthUserDetails, SetAuthUserToken, SetSignUpDetailsEmail } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { useUserContext } from "../../../redux/context";
 
 const CreatePassword = ({ navigation }) => {
+  const {SignIn}= useUserContext();
   const dispatch = useDispatch();
   const [screenModalVisibility,SetScreenModalVisibility] = useState(true);
   const [exitModal, setExitModal] = useState(false);
@@ -84,7 +86,6 @@ const CreatePassword = ({ navigation }) => {
               */}
               {PasswordChecks('10 Character long',CheckStringLength(password),'1 uppercase letter',CheckStringOneUppercase(password))}
               {PasswordChecks('1 special character',CheckStringOneSymbol(password),'1 number',CheckStringOneDigit(password))}
-
             </View>
           </View>
           </View>
@@ -114,6 +115,8 @@ const CreatePassword = ({ navigation }) => {
                   ()=>{
                     dispatch(SetAuthUserToken('token_of_user'))
                     dispatch(SetAuthUserDetails(JSON.stringify({user_id:1,name:'user name'})))
+                    SignIn('token_of_user')
+
                   }
                 )
                 :

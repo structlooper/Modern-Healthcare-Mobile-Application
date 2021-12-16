@@ -31,15 +31,8 @@ const Application = () => {
   if (splash){
     return <Splash />
   }
-  if (intro){
-    return <CheckNavigation />
-  }
   return (
-    <View>
-      <Text>
-        index
-      </Text>
-    </View>
+    <CheckNavigation />
   );
 }
 export default Application;

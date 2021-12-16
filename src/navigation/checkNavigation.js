@@ -2,15 +2,33 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import Navigation from "./navigation";
 import  AuthNavigation  from "./authNavigation";
-import { useSelector } from "react-redux";
+import MidNavigation from "./MidNavigation";
+import { useUserContext } from "../redux/context";
 
 const CheckNavigation = () => {
-  const {token} = useSelector(state => state.authReducer)
+  const {tokenContext}= useUserContext();
+  const {profileSkipped} = useUserContext()
+
+  const CheckStackNavigation = () => {
+    if (!tokenContext){
+      return <Navigation />
+    }else{
+      console.log('token =>',profileSkipped)
+      if (profileSkipped){
+        return <AuthNavigation />
+      }else{
+        return <MidNavigation />
+      }
+    }
+  }
+
   return (
     <NavigationContainer>
-      {token === '' ? (<Navigation/>) :  (<AuthNavigation/> )}
+      { CheckStackNavigation() }
     </NavigationContainer>
-  );
+  )
 };
+
+
 
 export default CheckNavigation;

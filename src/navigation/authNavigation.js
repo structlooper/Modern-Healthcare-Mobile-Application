@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors } from "../theme/colors";
@@ -13,13 +13,15 @@ import ProfilePage from "../screens/auth/ProfilePage";
 import { useSelector } from "react-redux";
 import SelectProfileScreen from "../screens/auth/SelectProfileScreen";
 import HomePage from "../screens/auth/HomePage";
+import MidNavigation from "./MidNavigation";
+import { useUserContext } from "../redux/context";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
   let iconsSize = 33;
   return (
     <Tab.Navigator
-      initialRouteName="HomeTab"
+      initialRouteName="HomeScreen"
       tabBarOptions={{
         activeTintColor: colors.dark,
         inactiveTintColor: colors.dark,
@@ -38,7 +40,7 @@ const BottomStack = () => {
         showLabel: false,
       }}>
       <Tab.Screen
-        name="HomeTab"
+        name="HomeScreen"
         component={HomePage}
         options={{
           tabBarLabel: 'Home',
@@ -103,13 +105,12 @@ const BottomStack = () => {
   )
 }
 const HomeScreenStack = () => {
-  const {profile_skipped} = useSelector(state => state.authReducer );
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={profile_skipped?'HomeTab':"Profile"}
+      initialRouteName={'HomeTab'}
     >
       <Stack.Screen name="HomeTab"  component={BottomStack} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
@@ -122,7 +123,7 @@ const HomeScreenStack = () => {
 };
 
 export const AuthNavigation = () => {
-  return <HomeScreenStack />
+    return <HomeScreenStack />
 }
 
 export default AuthNavigation;

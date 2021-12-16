@@ -10,8 +10,10 @@ import { ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inpu
 import Gender from "../../componenets/molecules/gender";
 import { useDispatch, useSelector } from "react-redux";
 import { SetAuthProfileSkipped } from "../../redux/actions";
+import { useUserContext } from "../../redux/context";
 
 const ProfilePage = ({ navigation }) => {
+  const {ProfileSkipped} = useUserContext();
   const dispatch = useDispatch();
   const {authUserDetails} = useSelector(state => state.authReducer);
   const [showButton,SetShowButton] = useState(false)
@@ -32,7 +34,10 @@ const ProfilePage = ({ navigation }) => {
           <View style={{ flex:.9,alignItems:'center' }}>
             <Text style={{ color:colors.dark, fontSize:size.heading }}>Complete profile</Text>
           </View>
-          <TouchableOpacity style={{ flex:.1,alignItems:'flex-end' }} onPress={()=>{console.log('skip')}}>
+          <TouchableOpacity style={{ flex:.1,alignItems:'flex-end' }} onPress={()=>{
+            dispatch(SetAuthProfileSkipped(true));
+            ProfileSkipped(true)
+          }}>
             <Text style={{ fontSize:size.label,color:colors.grey }}>Skip</Text>
           </TouchableOpacity>
         </View>
@@ -152,7 +157,6 @@ const ProfilePage = ({ navigation }) => {
               { color:colors.light,textTransform:'uppercase' },
               'Continue',
               ()=>{
-                dispatch(SetAuthProfileSkipped(true))
                 navigation.navigate('SelectProfile')
               }
             )

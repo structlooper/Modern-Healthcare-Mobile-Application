@@ -30,6 +30,7 @@ import Application from './src/index'
 import {Provider} from 'react-redux';
 import {store, persistor} from './src/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
+import {ModalContextProvider} from './src/redux/context'
 //
 // const Section = ({children, title}): Node => {
 //   const isDarkMode = useColorScheme() === 'dark';
@@ -98,7 +99,9 @@ const App: () => Node = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Application />
+        <ModalContextProvider>
+          <Application />
+        </ModalContextProvider>
       </PersistGate>
     </Provider>
   )

@@ -20,21 +20,21 @@ const VerificationOtpPage = ({ navigation }) => {
   // navigation.addListener('blur', () => {
   //   RNOtpVerify.removeListener();
   // });
-  const getHash = () =>
-    RNOtpVerify.getHash()
-      .then(console.log)
-      .catch(console.log);
-  const startListeningForOtp = () =>
-    RNOtpVerify.getOtp()
-      .then(p => RNOtpVerify.addListener(otpHandler))
-      .catch(p => console.log(p));
-
-  const otpHandler = (message: string) => {
-    const otp = /(\d{6})/g.exec(message)[1];
-    SetOtp({ otp });
-    RNOtpVerify.removeListener();
-    Keyboard.dismiss();
-  }
+  // const getHash = () =>
+  //   RNOtpVerify.getHash()
+  //     .then(console.log)
+  //     .catch(console.log);
+  // const startListeningForOtp = () =>
+  //   RNOtpVerify.getOtp()
+  //     .then(p => RNOtpVerify.addListener(otpHandler))
+  //     .catch(p => console.log(p));
+  //
+  // const otpHandler = (message: string) => {
+  //   const otp = /(\d{6})/g.exec(message)[1];
+  //   SetOtp({ otp });
+  //   RNOtpVerify.removeListener();
+  //   Keyboard.dismiss();
+  // }
   return (
     <View style={style.mainContainer}>
       {statusBar(colors.light) }
@@ -86,6 +86,7 @@ const VerificationOtpPage = ({ navigation }) => {
               onCodeFilled = {(code) => {
                 console.log(`Code is ${code}, you are good to go!`)
                 SetOtp(code)
+                // RNOtpVerify.removeListener();
                 navigation.navigate('CreatePassword')
               }}
             />
