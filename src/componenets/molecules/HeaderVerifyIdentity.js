@@ -5,9 +5,11 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import { Bar } from "react-native-progress";
 import { size } from "../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { IconButton } from "../atoms/Buttons";
 
-const HeaderVerifyIdentity = ({barPercent,backButton}) => {
+const HeaderVerifyIdentity = ({barPercent,titleText,backButton,navigation}) => {
   return (
+    <>
     <View style={{ flex:.25,alignItems:'center'
       ,borderWidth:.4,borderRadius:20,borderTopColor:'transparent',borderColor:colors.grey}}>
       <View style={{  marginTop:heightPercentageToDP(8) }}>
@@ -16,23 +18,38 @@ const HeaderVerifyIdentity = ({barPercent,backButton}) => {
              height={heightPercentageToDP(1.5)}
              borderRadius={100}
         />
-        <View style={{ flexDirection:'row',marginTop:heightPercentageToDP(5) }}>
-          <View style={{ flex:.35}} />
-          <View style={{ flex:1 }}>
-            <Text style={{ fontSize:size.subTitle, color:colors.dark }}>Verify Identity</Text>
-          </View>
-          <TouchableOpacity style={{ flex:.3 }} onPress={()=>console.log('cancel modal')}>
-            <FontAwesome5
-              name={'times'}
-              size={30}
-              color={colors.dark}
-              style={{  }}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+
 
     </View>
+      <View style={{ flex:.8,flexDirection:'row',marginTop:heightPercentageToDP(5),paddingHorizontal:widthPercentageToDP(8),alignItems:'center' }}>
+        <View style={{ flex:.3}}  >
+          {backButton?IconButton(
+            {
+              backgroundColor:colors.bckGreen,
+              width:60,height:60,borderRadius:100,
+              justifyContent:'center',alignItems:'center'
+            },
+            'arrow-left',
+            30,
+            colors.ltnGreen,
+            {  },
+            ()=> navigation.goBack()
+          ):null}
+        </View>
+        <View style={{ flex:1 }}>
+          <Text style={{ fontSize:size.subHeading, color:colors.dark }}>{titleText}</Text>
+        </View>
+        <TouchableOpacity style={{ flex:.2 }} onPress={()=>console.log('cancel modal')}>
+          <FontAwesome5
+            name={'times'}
+            size={30}
+            color={colors.dark}
+            style={{  }}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+    </>
   );
 };
 
