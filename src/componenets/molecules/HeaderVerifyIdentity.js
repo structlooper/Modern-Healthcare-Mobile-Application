@@ -6,8 +6,9 @@ import { Bar } from "react-native-progress";
 import { size } from "../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { IconButton } from "../atoms/Buttons";
+import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
 
-const HeaderVerifyIdentity = ({barPercent,titleText,backButton,navigation}) => {
+const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetModalSate,navigation}) => {
   return (
     <>
     <View style={{ flex:.25,alignItems:'center'
@@ -21,6 +22,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,navigation}) => {
 
 
     </View>
+      {ExitModalAuthConfirmation(modalState,SetModalSate,navigation)}
       <View style={{ flex:.8,flexDirection:'row',marginTop:heightPercentageToDP(5),paddingHorizontal:widthPercentageToDP(8),alignItems:'center' }}>
         <View style={{ flex:.3}}  >
           {backButton?IconButton(
@@ -39,7 +41,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,navigation}) => {
         <View style={{ flex:1 }}>
           <Text style={{ fontSize:size.subHeading, color:colors.dark }}>{titleText}</Text>
         </View>
-        <TouchableOpacity style={{ flex:.2 }} onPress={()=>console.log('cancel modal')}>
+        <TouchableOpacity style={{ flex:.2 }} onPress={()=>SetModalSate(true)}>
           <FontAwesome5
             name={'times'}
             size={30}

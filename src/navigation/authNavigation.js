@@ -17,6 +17,7 @@ import MidNavigation from "./MidNavigation";
 import { useUserContext } from "../redux/context";
 import VerifyDetailsInfo from "../screens/auth/VerifyDocument/VerifyDetailsInfo";
 import VerifyIdentityList from "../screens/auth/VerifyDocument/VerifyIdentityList";
+import VerifyDetailsUploadDoc from "../screens/auth/VerifyDocument/VerifyDetailsUploadDoc";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -117,6 +118,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="HomeTab"  component={BottomStack} />
       <Stack.Screen name="VerifyDetailsInfo"  component={VerifyDetailsInfo} />
       <Stack.Screen name="VerifyDetailsList"  component={VerifyIdentityList} />
+      <Stack.Screen name="VerifyDetailsUploadDoc"  component={VerifyDetailsUploadDoc} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />

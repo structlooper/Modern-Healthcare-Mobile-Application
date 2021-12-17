@@ -18,6 +18,8 @@ target 'Teja' do
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'TejaTests' do
     inherit! :complete
     # Pods for testing
