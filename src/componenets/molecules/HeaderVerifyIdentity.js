@@ -39,7 +39,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
           ):null}
         </View>
         <View style={{ flex:1 }}>
-          <Text style={{ fontSize:size.subHeading, color:colors.dark }}>{titleText}</Text>
+          <Text style={{ fontSize:size.subTitle, color:colors.dark }}>{titleText}</Text>
         </View>
         <TouchableOpacity style={{ flex:.2 }} onPress={()=>SetModalSate(true)}>
           <FontAwesome5

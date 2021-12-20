@@ -1,24 +1,18 @@
-import React, { useContext } from "react";
+import React  from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors } from "../theme/colors";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-
-import { appName } from "../componenets/organisms/settings";
-
 import Testing from "../screens/auth/Testing";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import ProfilePage from "../screens/auth/ProfilePage";
-import { useSelector } from "react-redux";
 import SelectProfileScreen from "../screens/auth/SelectProfileScreen";
 import HomePage from "../screens/auth/HomePage";
-import MidNavigation from "./MidNavigation";
-import { useUserContext } from "../redux/context";
-import VerifyDetailsInfo from "../screens/auth/VerifyDocument/VerifyDetailsInfo";
-import VerifyIdentityList from "../screens/auth/VerifyDocument/VerifyIdentityList";
-import VerifyDetailsUploadDoc from "../screens/auth/VerifyDocument/VerifyDetailsUploadDoc";
-import VerifyIdentityConfirm from "../screens/auth/VerifyDocument/VerifyIdentityConfirm";
+import VerifyDetailsInfo from "../screens/auth/BookAppointment/VerifyDocument/VerifyDetailsInfo";
+import VerifyIdentityList from "../screens/auth/BookAppointment/VerifyDocument/VerifyIdentityList";
+import VerifyDetailsUploadDoc from "../screens/auth/BookAppointment/VerifyDocument/VerifyDetailsUploadDoc";
+import VerifyIdentityConfirm from "../screens/auth/BookAppointment/VerifyDocument/VerifyIdentityConfirm";
+import TypeOfAppointments from "../screens/auth/BookAppointment/TypeOfAppointments";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -121,6 +115,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="VerifyDetailsList"  component={VerifyIdentityList} />
       <Stack.Screen name="VerifyDetailsUploadDoc"  component={VerifyDetailsUploadDoc} />
       <Stack.Screen name="VerifyDetailsConfirmation"  component={VerifyIdentityConfirm} />
+      <Stack.Screen name="TypesOfAppointments"  component={TypeOfAppointments} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />

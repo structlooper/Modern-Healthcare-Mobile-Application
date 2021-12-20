@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { colors } from "../../../theme/colors";
-import statusBar from "../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIdentity";
+import { colors } from "../../../../theme/colors";
+import statusBar from "../../../../componenets/molecules/statusBar";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
 import { Image, ImageBackground, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import {launchCamera} from 'react-native-image-picker';
 import ImagePicker from 'react-native-image-crop-picker';
-import { fonts, size } from "../../../theme/fonts";
-import { Button } from "../../../componenets/atoms/Buttons";
+import { fonts, size } from "../../../../theme/fonts";
+import { Button } from "../../../../componenets/atoms/Buttons";
 
 const VerifyDetailsUploadDoc = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);

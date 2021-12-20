@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../../theme/colors";
-import statusBar from "../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIdentity";
-import { fonts, size } from "../../../theme/fonts";
+import { colors } from "../../../../theme/colors";
+import statusBar from "../../../../componenets/molecules/statusBar";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import { fonts, size } from "../../../../theme/fonts";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
@@ -40,10 +40,10 @@ const VerifyIdentityList = ({ navigation }) => {
         </View>
         <View style={{ marginTop:heightPercentageToDP(2) }}>
           <ScrollView>
-            {ListButton(require('../../../assets/images/verifyDetailsIcons/19.png'),'Health card')}
-            {ListButton(require('../../../assets/images/verifyDetailsIcons/20.png'),"Driver's licences")}
-            {ListButton(require('../../../assets/images/verifyDetailsIcons/21.png'),"Social")}
-            {ListButton(require('../../../assets/images/verifyDetailsIcons/22.png'),"Passport")}
+            {ListButton(require('../../../../assets/images/verifyDetailsIcons/19.png'),'Health card')}
+            {ListButton(require('../../../../assets/images/verifyDetailsIcons/20.png'),"Driver's licences")}
+            {ListButton(require('../../../../assets/images/verifyDetailsIcons/21.png'),"Social")}
+            {ListButton(require('../../../../assets/images/verifyDetailsIcons/22.png'),"Passport")}
           </ScrollView>
         </View>
       </View>

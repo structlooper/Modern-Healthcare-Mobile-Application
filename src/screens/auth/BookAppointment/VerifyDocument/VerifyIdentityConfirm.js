@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import SuccessIcon from "../../../componenets/atoms/successIcon";
+import SuccessIcon from "../../../../componenets/atoms/successIcon";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { fonts, size } from "../../../theme/fonts";
-import { colors } from "../../../theme/colors";
-import statusBar from "../../../componenets/molecules/statusBar";
+import { fonts, size } from "../../../../theme/fonts";
+import { colors } from "../../../../theme/colors";
+import statusBar from "../../../../componenets/molecules/statusBar";
 
 const VerifyIdentityConfirm = ({ navigation }) => {
   const [screenModalVisibility,SetScreenModalVisibility] = useState(true)
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      navigation.navigate('TypesOfAppointments')
+    },5000)
+  },[])
   navigation.addListener('focus', () => {
     SetScreenModalVisibility(true)
   });
