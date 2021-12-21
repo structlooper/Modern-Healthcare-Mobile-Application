@@ -5,15 +5,33 @@ import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIde
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { size } from "../../../theme/fonts";
+import { Button, GradientButton } from "../../../componenets/atoms/Buttons";
 
 const ReasonForVisit = ({ navigation }) => {
+  const [SelectedItems,SetSelectedItems] = useState([
+    'Symptoms',
+  ]);
+  const [SelectedOneItems,SetSelectedOneItems] = useState([
+    'Travel-Vaccine'
+  ]);
   const [exitModal,SetExitModal] = useState(false)
+  const [showNextButton,SetShowNextButton] = useState(false)
 
   const Item = ({ icon,name,action }) => {
     return (
       <TouchableOpacity style={{ flex:1,margin:'2%',padding:'1%',backgroundColor:colors.light,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
         <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
         <Text style={{ fontSize:size.text,color:colors.blue }}>
+          {name}
+        </Text>
+      </TouchableOpacity>
+    )
+  }
+  const ItemSelected = ({ icon,name,action }) => {
+    return (
+      <TouchableOpacity style={{ flex:1,margin:'2%',padding:'1%',backgroundColor:colors.blue,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
+        <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+        <Text style={{ fontSize:size.text,color:colors.light }}>
           {name}
         </Text>
       </TouchableOpacity>
@@ -36,13 +54,34 @@ const ReasonForVisit = ({ navigation }) => {
         </TouchableOpacity>
     )
   }
-  const renderItem = ({ item }) =><Item icon={item.icon}  name={item.name} action={item.action}/>
-  const renderItemOne = ({ item }) =><ItemOne icon={item.icon}  name={item.name} action={item.action}/>
+  const ItemOneSelected = ({ icon,name,action }) => {
+    return (
+      <TouchableOpacity style={{ width:'48%',margin:'1%',padding:'1%',
+        backgroundColor:colors.blue,elevation:2,borderRadius:20,alignItems:'center',justifyContent:'center',
+        flexDirection:'row'
+      }} onPress={action}>
+        <View style={{ flex:.5 }}>
+          <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+        </View>
+        <View style={{ flex:1 }}>
+          <Text style={{ fontSize:size.text,color:colors.light }}>
+            {name}
+          </Text>
+        </View>
+        </TouchableOpacity>
+    )
+  }
+  const renderItem = ({ item }) => SelectedItems.includes(item.name)?
+    <ItemSelected icon={item.icon}  name={item.name} action={item.action}/> :
+    <Item icon={item.icon}  name={item.name} action={item.action}/>
+  const renderItemOne = ({ item }) => SelectedOneItems.includes(item.name)?
+    <ItemOneSelected icon={item.icon}  name={item.name} action={item.action}/>:
+    <ItemOne icon={item.icon}  name={item.name} action={item.action}/>
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
       {statusBar(colors.light)}
       <HeaderVerifyIdentity
-        barPercent={.4}
+        barPercent={.5}
         backButton={true}
         titleText={'Reason for visit'}
         navigation={navigation}
@@ -59,7 +98,7 @@ const ReasonForVisit = ({ navigation }) => {
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/37.png'),
                 name:'Symptoms',
-                action:()=>console.log('Symptoms')
+                action:()=>navigation.navigate('SymptomsPage')
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/38.png'),
@@ -94,7 +133,7 @@ const ReasonForVisit = ({ navigation }) => {
                 action:()=>console.log('Travel-Vaccine')
               },
               {
-                icon:require('../../../assets/images/familyDoctorServicesIcons/38.png'),
+                icon:require('../../../assets/images/familyDoctorServicesIcons/85.png'),
                 name:"Driver's Physical",
                 action:()=>console.log('Refill-medicines')
               },
@@ -104,7 +143,7 @@ const ReasonForVisit = ({ navigation }) => {
                 action:()=>console.log('Pre-employment Physical')
               },
               {
-                icon:require('../../../assets/images/familyDoctorServicesIcons/40.png'),
+                icon:require('../../../assets/images/familyDoctorServicesIcons/43.png'),
                 name:'Third Party Assessment',
                 action:()=>console.log('Third Party Assessment')
               },
@@ -122,7 +161,52 @@ const ReasonForVisit = ({ navigation }) => {
           />
         </View>
       </View>
-      <View style={{ flex:.2 }} />
+      <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }} >
+        {
+          showNextButton?
+            GradientButton(
+              {
+                width:widthPercentageToDP('88%'),
+                height:heightPercentageToDP(5),
+                borderRadius:50,
+                alignItems:'center',
+                justifyContent:'center',
+                borderWidth:.5,
+                borderColor:'transparent',
+              },
+              [colors.ltnGreen, colors.lightGreen],
+              {
+                width:widthPercentageToDP('88%'),
+                height:heightPercentageToDP(5),
+                borderRadius:50,
+                alignItems:'center',
+                justifyContent:'center',
+              },
+              { color:colors.light,textTransform:'uppercase' },
+              'Next',
+              ()=>{
+                navigation.navigate('VerificationOtpPage')
+              }
+            )
+            :
+            Button(
+              {
+                backgroundColor:colors.light,
+                width:widthPercentageToDP(88),
+                height:heightPercentageToDP(5),
+                borderRadius:50,
+                alignItems:'center',
+                justifyContent:'center',
+                elevation:3,
+                borderWidth:.5,
+                borderColor:colors.lightGrey,
+              },
+              { color:colors.grey,textTransform:'uppercase' },
+              'Next',
+              ()=>{}
+            )
+        }
+      </View>
     </View>
   );
 };

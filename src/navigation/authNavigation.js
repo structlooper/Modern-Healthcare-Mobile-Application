@@ -14,6 +14,7 @@ import VerifyDetailsUploadDoc from "../screens/auth/BookAppointment/VerifyDocume
 import VerifyIdentityConfirm from "../screens/auth/BookAppointment/VerifyDocument/VerifyIdentityConfirm";
 import TypeOfAppointments from "../screens/auth/BookAppointment/TypeOfAppointments";
 import ReasonForVisit from "../screens/auth/BookAppointment/ReasonForVisit";
+import SymptomsPage from "../screens/auth/BookAppointment/FamilyDoctorServicesScreens/SymptomsPage";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -118,6 +119,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="VerifyDetailsConfirmation"  component={VerifyIdentityConfirm} />
       <Stack.Screen name="TypesOfAppointments"  component={TypeOfAppointments} />
       <Stack.Screen name="ReasonForVisit"  component={ReasonForVisit} />
+      <Stack.Screen name="SymptomsPage"  component={SymptomsPage} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />
