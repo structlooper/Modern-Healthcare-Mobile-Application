@@ -3,16 +3,21 @@ import { colors } from "../../theme/colors";
 import { Text, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { Bar } from "react-native-progress";
-import { size } from "../../theme/fonts";
+import { fonts, size } from "../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { IconButton } from "../atoms/Buttons";
 import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
 
-const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetModalSate,navigation}) => {
+const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetModalSate,navigation,bottomTextShow = false,bottomText = null}) => {
   return (
-    <>
     <View style={{ flex:.25,alignItems:'center'
-      ,borderWidth:.4,borderRadius:20,borderTopColor:'transparent',borderColor:colors.grey}}>
+      ,borderWidth:5,borderRadius:20,borderTopColor:'transparent',borderColor:colors.lightGrey,
+      // shadowColor: '#000',
+      // shadowOffset: { width: 1, height: 1 },
+      // shadowOpacity:  0.4,
+      // shadowRadius: 3,
+      // elevation: 5,
+    }}>
       <View style={{  marginTop:heightPercentageToDP(8) }}>
         <Bar progress={barPercent} width={widthPercentageToDP(70)}
              color={colors.blue}
@@ -24,7 +29,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
     </View>
       {ExitModalAuthConfirmation(modalState,SetModalSate,navigation)}
       <View style={{ flex:.8,flexDirection:'row',marginTop:heightPercentageToDP(5),paddingHorizontal:widthPercentageToDP(8),alignItems:'center' }}>
-        <View style={{ flex:.3}}  >
+        <View style={{ flex:.1}}  >
           {backButton?IconButton(
             {
               backgroundColor:colors.bckGreen,
@@ -38,10 +43,10 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
             ()=> navigation.goBack()
           ):null}
         </View>
-        <View style={{ flex:1 }}>
-          <Text style={{ fontSize:size.subTitle, color:colors.dark }}>{titleText}</Text>
+        <View style={{ flex:1,alignItems:'center' }}>
+          <Text style={{ fontSize:size.subTitle, color:colors.dark, fontWeight:'bold' }}>{titleText}</Text>
         </View>
-        <TouchableOpacity style={{ flex:.2 }} onPress={()=>SetModalSate(true)}>
+        <TouchableOpacity style={{ flex:.1}} onPress={()=>SetModalSate(true)}>
           <FontAwesome5
             name={'times'}
             size={30}
@@ -50,8 +55,15 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
           />
         </TouchableOpacity>
       </View>
+      {
+        bottomTextShow?
+          <View>
+            <Text style={{ color:colors.grey,fontSize:size.text,fontFamily:fonts.family }}>{bottomText}</Text>
+          </View>
+          :null
+      }
+
     </View>
-    </>
   );
 };
 
