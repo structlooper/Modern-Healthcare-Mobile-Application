@@ -16,6 +16,7 @@ import TypeOfAppointments from "../screens/auth/BookAppointment/TypeOfAppointmen
 import ReasonForVisit from "../screens/auth/BookAppointment/ReasonForVisit";
 import SymptomsPage from "../screens/auth/BookAppointment/FamilyDoctorServicesScreens/SymptomsPage";
 import RefillMedicines from "../screens/auth/BookAppointment/FamilyDoctorServicesScreens/RefillMedicines";
+import Consultation from "../screens/auth/BookAppointment/FamilyDoctorServicesScreens/Consultation";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -122,6 +123,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="ReasonForVisit"  component={ReasonForVisit} />
       <Stack.Screen name="SymptomsPage"  component={SymptomsPage} />
       <Stack.Screen name="RefillMedicines"  component={RefillMedicines} />
+      <Stack.Screen name="Consultation"  component={Consultation} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />

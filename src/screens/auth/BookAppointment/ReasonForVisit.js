@@ -114,7 +114,7 @@ const ReasonForVisit = ({ navigation }) => {
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/39.png'),
                 name:'Consultations',
-                action:()=>console.log('Consultations')
+                action:()=>navigation.navigate('Consultation')
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/40.png'),
