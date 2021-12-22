@@ -119,7 +119,7 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
       {ImagePickerModal()}
       {statusBar(colors.light)}
       <HeaderVerifyIdentity barPercent={.3} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal}  />
-      <View style={{ flex:.75,paddingHorizontal:'5%'}}>
+      <View style={{ flex:.8,paddingHorizontal:'5%'}}>
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(4) }}>
           <TouchableOpacity style={{
             width:100,height:100,

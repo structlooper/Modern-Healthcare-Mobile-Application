@@ -10,7 +10,8 @@ import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
 
 const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetModalSate,navigation,bottomTextShow = false,bottomText = null}) => {
   return (
-    <View style={{ flex:.25,alignItems:'center'
+
+    <View style={{ height:heightPercentageToDP(25), alignItems:'center'
       ,borderWidth:5,borderRadius:20,borderTopColor:'transparent',borderColor:colors.lightGrey,
       // shadowColor: '#000',
       // shadowOffset: { width: 1, height: 1 },
@@ -28,7 +29,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
 
     </View>
       {ExitModalAuthConfirmation(modalState,SetModalSate,navigation)}
-      <View style={{ flex:.8,flexDirection:'row',marginTop:heightPercentageToDP(5),paddingHorizontal:widthPercentageToDP(8),alignItems:'center' }}>
+      <View style={{flexDirection:'row',marginTop:heightPercentageToDP(5),paddingHorizontal:widthPercentageToDP(8),alignItems:'center' }}>
         <View style={{ flex:.1}}  >
           {backButton?IconButton(
             {

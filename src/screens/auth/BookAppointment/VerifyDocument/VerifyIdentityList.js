@@ -33,7 +33,7 @@ const VerifyIdentityList = ({ navigation }) => {
     <View style={{ flex:1,backgroundColor:colors.light }}>
       {statusBar(colors.light)}
       <HeaderVerifyIdentity barPercent={.2} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} />
-      <View style={{ flex:.6,padding:'5%' }}>
+      <View style={{ flex:.8,padding:'5%' }}>
         <View style={{ alignItems:'center' }}>
           <Text style={{ fontSize:size.subTitle,fontWeight:'bold',fontFamily:fonts.family,color:colors.dark }}>Select a document</Text>
         <Text style={{ marginVertical:heightPercentageToDP(1),fontSize:size.text,color:colors.grey,fontFamily:fonts.family }}>You will take a picture of it in the next step</Text>

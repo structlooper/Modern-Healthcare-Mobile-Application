@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIdentity";
@@ -12,10 +12,15 @@ const ReasonForVisit = ({ navigation }) => {
     'Symptoms',
   ]);
   const [SelectedOneItems,SetSelectedOneItems] = useState([
-    'Travel-Vaccine'
   ]);
   const [exitModal,SetExitModal] = useState(false)
   const [showNextButton,SetShowNextButton] = useState(false)
+
+  // useEffect(()=> {
+  //   setTimeout(()=>{
+  //     SetShowNextButton(true)
+  //   },5000)
+  // },[])
 
   const Item = ({ icon,name,action }) => {
     return (
@@ -90,7 +95,7 @@ const ReasonForVisit = ({ navigation }) => {
         bottomTextShow={true}
         bottomText={'Select 1 or more'}
       />
-      <View style={{ flex:.7,paddingHorizontal:widthPercentageToDP(5)}}>
+      <View style={{ flex:.8,paddingHorizontal:widthPercentageToDP(5)}}>
         <View style={{ paddingTop:heightPercentageToDP(3) }}>
           <Text style={{ fontSize:size.label,color:colors.dark }}>Covered by OHIP (Free)</Text>
           <FlatList
