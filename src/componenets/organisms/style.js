@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../theme/colors";
-import { widthPercentageToDP } from "react-native-responsive-screen";
+import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
 export const style = StyleSheet.create({
   mainContainer:{
@@ -31,5 +31,36 @@ export const style = StyleSheet.create({
     width:widthPercentageToDP(38),
     borderRadius:20,alignItems:'center'
   },
+  bottomDisableButtonContainer:
+    {
+      backgroundColor:colors.light,
+      width:widthPercentageToDP(88),
+      height:heightPercentageToDP(5),
+      borderRadius:50,
+      alignItems:'center',
+      justifyContent:'center',
+      elevation:3,
+      borderWidth:.5,
+      borderColor:colors.lightGrey,
+    },
+  bottomDisableButton:{ color:colors.grey,textTransform:'uppercase' },
+  GradientButtonContainer:{
+    width:widthPercentageToDP('88%'),
+    height:heightPercentageToDP(5),
+    borderRadius:50,
+    alignItems:'center',
+    justifyContent:'center',
+    borderWidth:.5,
+    borderColor:'transparent',
+  },
+  GradientButton:{
+    width:widthPercentageToDP('88%'),
+    height:heightPercentageToDP(5),
+    borderRadius:50,
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  GradientColors:[colors.ltnGreen, colors.lightGreen],
+  GradientTextStyle:{ color:colors.light,textTransform:'uppercase' }
 
 });

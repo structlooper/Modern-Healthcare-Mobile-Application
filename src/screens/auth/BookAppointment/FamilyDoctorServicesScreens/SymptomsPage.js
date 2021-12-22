@@ -7,7 +7,7 @@ import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } 
 import { Button, GradientButton } from "../../../../componenets/atoms/Buttons";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import SafeAreaView from "react-native/Libraries/Components/SafeAreaView/SafeAreaView";
+import ButtomButton from "../../../../componenets/molecules/ButtomButton";
 
 const SymptomsPage = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
@@ -17,8 +17,10 @@ const SymptomsPage = ({ navigation }) => {
   useEffect(()=> {
     setTimeout(()=>{
       SetShowNextButton(true)
-    },5000)
-  },[])
+    },5000);
+  },[]);
+
+
   const TextBadge = ({ text }) => {
     return (
       <View style={{ width:widthPercentageToDP(42),
@@ -55,7 +57,6 @@ const SymptomsPage = ({ navigation }) => {
   return (
     <View style={{ flex:1,backgroundColor:colors.light }} >
       {statusBar(colors.light)}
-
         <HeaderVerifyIdentity
           barPercent={.5}
           backButton={true}
@@ -64,10 +65,6 @@ const SymptomsPage = ({ navigation }) => {
           modalState={exitModal}
           SetModalSate={SetExitModal}
         />
-
-
-
-
       <View style={{ flex:.8,paddingHorizontal:widthPercentageToDP(5)}}>
         <View style={{ marginVertical:heightPercentageToDP(2) }}>
           <View style={{ alignItems:'center',justifyContent:'center' }}>
@@ -75,7 +72,7 @@ const SymptomsPage = ({ navigation }) => {
           </View>
 
           {/*
-          Search Input
+           Search Input
           */}
           <View style={{
             flexDirection:'row',
@@ -122,12 +119,11 @@ const SymptomsPage = ({ navigation }) => {
               numColumns={2}
               renderItem={renderItem}
               keyExtractor={item => item.text}
-
             />
           </ScrollView>
 
         {/*
-        Common suggestion list
+         Common suggestion list
         */}
           <View style={{ flexDirection:'row',paddingVertical:heightPercentageToDP(1),borderBottomWidth:.5 }}>
             <View style={{ flex:.7 }}>
@@ -164,7 +160,6 @@ const SymptomsPage = ({ navigation }) => {
                     {
                       text:'unconscious',
                     },
-
                   ]}
                   numColumns={2}
                   renderItem={CommonItemRender}
@@ -176,55 +171,13 @@ const SymptomsPage = ({ navigation }) => {
             </View>
           </View>
         </View>
-        {
-          showNextButton?
-            GradientButton(
-              {
-                width:widthPercentageToDP('88%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                borderWidth:.5,
-                borderColor:'transparent',
-              },
-              [colors.ltnGreen, colors.lightGreen],
-              {
-                width:widthPercentageToDP('88%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-              },
-              { color:colors.light,textTransform:'uppercase' },
-              'Save',
-              ()=>{
-                navigation.goBack()
-              }
-            )
-            :
-            Button(
-              {
-                backgroundColor:colors.light,
-                width:widthPercentageToDP(88),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                elevation:3,
-                borderWidth:.5,
-                borderColor:colors.lightGrey,
-              },
-              { color:colors.grey,textTransform:'uppercase' },
-              'Save',
-              ()=>{}
-            )
-        }
+        <ButtomButton showButton={showNextButton} action={()=>{
+          navigation.goBack()
+        }} text={'Save'} />
 
       </View>
 
       <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }} >
-
       </View>
     </View>
   );

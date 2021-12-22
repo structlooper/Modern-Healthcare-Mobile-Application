@@ -6,6 +6,7 @@ import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { size } from "../../../theme/fonts";
 import { Button, GradientButton } from "../../../componenets/atoms/Buttons";
+import ButtomButton from "../../../componenets/molecules/ButtomButton";
 
 const ReasonForVisit = ({ navigation }) => {
   const [SelectedItems,SetSelectedItems] = useState([
@@ -108,7 +109,7 @@ const ReasonForVisit = ({ navigation }) => {
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/38.png'),
                 name:'Refill-medicines',
-                action:()=>console.log('Refill-medicines')
+                action:()=>navigation.navigate('RefillMedicines')
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/39.png'),
@@ -167,50 +168,9 @@ const ReasonForVisit = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }} >
-        {
-          showNextButton?
-            GradientButton(
-              {
-                width:widthPercentageToDP('88%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                borderWidth:.5,
-                borderColor:'transparent',
-              },
-              [colors.ltnGreen, colors.lightGreen],
-              {
-                width:widthPercentageToDP('88%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-              },
-              { color:colors.light,textTransform:'uppercase' },
-              'Next',
-              ()=>{
-                navigation.navigate('VerificationOtpPage')
-              }
-            )
-            :
-            Button(
-              {
-                backgroundColor:colors.light,
-                width:widthPercentageToDP(88),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                elevation:3,
-                borderWidth:.5,
-                borderColor:colors.lightGrey,
-              },
-              { color:colors.grey,textTransform:'uppercase' },
-              'Next',
-              ()=>{}
-            )
-        }
+        <ButtomButton showButton={showNextButton} action={()=>{
+          navigation.navigate('VerificationOtpPage')
+        }} text={'Next'} />
       </View>
     </View>
   );
