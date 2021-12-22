@@ -9,88 +9,13 @@ import {launchCamera} from 'react-native-image-picker';
 import ImagePicker from 'react-native-image-crop-picker';
 import { fonts, size } from "../../../../theme/fonts";
 import { Button } from "../../../../componenets/atoms/Buttons";
+import UploadImageModal from "../../../../componenets/molecules/UploadImageModal";
 
 const VerifyDetailsUploadDoc = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);
   const [uploadedPictures,SetUploadedPictures] = useState([]);
   const [uploadedPicturesCount,SetUploadedPicturesCount] = useState(0);
   const [imagePickerModal,SetImagePickerModal] = useState(false);
-  const ImagePickerModal = () => {
-    return (
-      <Modal visible={imagePickerModal} transparent={true} animationType="fade" >
-        <View style={{ backgroundColor:'rgba(0,0,0,0.5)',flex:1,borderRadius:50 }}>
-          <View style={{ flex:.9 }} />
-          <View style={{ flex:.2,marginVertical:'5%',marginHorizontal:'10%',backgroundColor:colors.light,borderRadius:20 }}>
-            <TouchableOpacity style={{
-              flex:1,
-              justifyContent:'center',
-              alignItems:'center',
-              borderBottomWidth:.3,
-              borderBottomColor:colors.grey
-            }} onPress={()=>{
-              SetImagePickerModal(false)
-              launchCamera({
-                includeBase64: true,
-                mediaType: 'photo',
-                maxHeight: 500,
-                maxWidth: 500,
-              }, (response) => {
-                if (response["didCancel"] === undefined) {
-                  let state = uploadedPictures;
-                  let imageDetails = {
-                    base64:response.assets[0].base64,
-                    path:response.assets[0].uri
-                  }
-                  state.push(imageDetails)
-                  SetUploadedPictures(state)
-                  SetUploadedPicturesCount(state.length)
-                } else {
-                  console.log('something went wrong!!')
-                }
-              }).then()
-            }}>
-               <Text style={{ fontSize:size.label, fontFamily:fonts.family, color:colors.dark }}>Take Photo</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{
-              flex:1,
-              justifyContent:'center',
-              alignItems:'center',
-
-            }} onPress={()=>{
-              SetImagePickerModal(false)
-              ImagePicker.openPicker({
-                includeBase64: true,
-                multiple: true,
-                quality: 1.0,
-                maxWidth: 500,
-                maxHeight: 500,
-              }).then(image => {
-                for (let i = 0; i < image.length; i++) {
-                  let state = uploadedPictures;
-                  let imageDetails = {
-                    base64:image[i].data,
-                    path:image[i].path
-                  }
-                  state.push(imageDetails)
-                  SetUploadedPictures(state)
-                  SetUploadedPicturesCount(state.length)
-
-                }
-              }).catch(error => {
-                console.log(error)
-              })
-            }}>
-              <Text style={{ fontSize:size.label, fontFamily:fonts.family, color:colors.dark }}>Upload Photo</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={{ flex:.1,backgroundColor:colors.light,borderRadius:20,marginHorizontal:'10%',marginBottom:'10%',alignItems:'center',justifyContent:'center' }} onPress={()=>SetImagePickerModal(false)}>
-            <Text style={{ fontSize:size.label,color:colors.red,fontFamily:fonts.family }}>Cancel</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-    )
-  }
-
   const RenderUploadedData = (image,i) => {
     const removePictureFromUploads = (needle) => {
       let index = uploadedPictures.findIndex(item => item.path === needle);
@@ -116,7 +41,13 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
   }
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
-      {ImagePickerModal()}
+      <UploadImageModal
+        modalState={imagePickerModal}
+        SetModalState={SetImagePickerModal}
+        uploadedPictures={uploadedPictures}
+        SetUploadedPictures={SetUploadedPictures}
+        SetUploadedPicturesCount={SetUploadedPicturesCount}
+                        />
       {statusBar(colors.light)}
       <HeaderVerifyIdentity barPercent={.3} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal}  />
       <View style={{ flex:.8,paddingHorizontal:'5%'}}>

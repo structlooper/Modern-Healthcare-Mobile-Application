@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
@@ -7,12 +7,125 @@ import ButtomButton from "../../../../componenets/molecules/ButtomButton";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import UploadImageModal from "../../../../componenets/molecules/UploadImageModal";
+import { style } from "../../../../componenets/organisms/style";
+import { ThemeTextInput } from "../../../../componenets/atoms/Inputs";
+import { CheckEmail } from "../../../../componenets/organisms/functions";
 
 const RefillMedicines = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);
   const [showNextButton,SetShowNextButton] = useState(false);
   const [SelectedMedications,SetSelectedMedications] = useState([]);
-  const [SelectedMedicationCount,SetSelectedMedicationsCount] = useState(0)
+  const [SelectedMedicationCount,SetSelectedMedicationsCount] = useState(0);
+  const [showOtherMedication,SetShowOtherMedications] = useState(false);
+  const [uploadedPictures,SetUploadedPictures] = useState([]);
+  const [uploadedPicturesCount,SetUploadedPicturesCount] = useState(0);
+  const [imagePickerModal,SetImagePickerModal] = useState(false);
+
+  const [medicineName,setMedicineName] = useState('');
+  const [medineDose,setMedicineDose] = useState('');
+  const [instruction,setInstruction] = useState('');
+
+  useEffect(()=> {
+    setTimeout(()=>{
+      SetShowNextButton(true)
+    },5000);
+  },[]);
+
+  const otherMedicationView = () => {
+    return (
+      <View style={{ marginTop:heightPercentageToDP(5),height:heightPercentageToDP(80) }}>
+        <UploadImageModal
+          modalState={imagePickerModal}
+          SetModalState={SetImagePickerModal}
+          uploadedPictures={uploadedPictures}
+          SetUploadedPictures={SetUploadedPictures}
+          SetUploadedPicturesCount={SetUploadedPicturesCount}
+        />
+        <View>
+          <Text style={style.commonTitle}>Add Photo</Text>
+          <Text style={{ fontSize:size.text,fontFamily:fonts.family,color:colors.grey,marginVertical:heightPercentageToDP(1) }}>Upload a photo of your medication you would like to refill.</Text>
+          <TouchableOpacity style={{
+            width:80,height:80,
+            borderRadius:10,
+            borderColor:colors.dark,
+            elevation:20,
+            backgroundColor:colors.light,
+            alignItems:'center',
+            justifyContent:'center',
+            // marginTop:heightPercentageToDP(1)
+          }} onPress={()=>SetImagePickerModal(true)}>
+            <FontAwesome5
+              name={'camera'}
+              size={30}
+              color={colors.blue}
+              style={{  }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={{ marginTop:heightPercentageToDP(4) }}>
+          <View style={{ flexDirection:'row',alignItems:'center' }}>
+            <Text style={style.commonTitle}>Manual Entry</Text>
+            <Text style={{ fontSize:size.text,fontFamily:fonts.family,color:colors.grey }}> (optional)</Text>
+            <TouchableOpacity style={{
+              height:heightPercentageToDP(3),width:widthPercentageToDP(20),
+              alignItems:'center',justifyContent:'center',
+              backgroundColor:colors.grey,borderRadius:100,
+              marginHorizontal:widthPercentageToDP(2)
+            }}>
+              <Text style={{
+                fontSize:size.text,
+                fontWeight:'bold',
+                color:colors.light,
+                fontFamily:fonts.family
+              }}>Help?</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{
+            borderRadius:20,
+            backgroundColor:colors.light,
+            marginTop:heightPercentageToDP(1),
+            elevation:10,padding:'5%' }} >
+           <View style={{ marginTop:heightPercentageToDP(1) }}>
+             {
+               ThemeTextInput(
+                 medicineName,setMedicineName,'Name of Medication',false,false
+               )
+             }
+           </View>
+            <View style={{ marginTop:heightPercentageToDP(1) }}>
+             {
+               ThemeTextInput(
+                 medineDose,setMedicineDose,'Dosage',false,false
+               )
+             }
+           </View>
+          <View style={{ marginTop:heightPercentageToDP(1) }}>
+             {
+               ThemeTextInput(
+                 instruction,setInstruction,'Instruction',false,false
+               )
+             }
+           </View>
+          </View>
+          <View style={{ marginTop:heightPercentageToDP(2),alignItems:'center'}}>
+            <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }}>
+              <FontAwesome5
+                name={'plus-circle'}
+                size={30}
+                color={colors.blue}
+                style={{  }}
+              />
+              <Text style={style.commonTitle}> Add Medication</Text>
+            </TouchableOpacity>
+
+          </View>
+        </View>
+
+      </View>
+    )
+  }
   const ListButton = ({text}) => {
     let iconColor = SelectedMedications.includes(text)?colors.light :colors.blue
     let bckColor = SelectedMedications.includes(text)?colors.lightBlue :colors.bckGreen
@@ -57,7 +170,10 @@ const RefillMedicines = ({ navigation }) => {
     )
   }
   return (
-    <View style={{ flex:1,backgroundColor:colors.light }} >
+    <View style={{ flex:1,backgroundColor:colors.light  }}>
+
+
+    <View style={{ flex:.9 }} >
       {statusBar(colors.light)}
 
       <HeaderVerifyIdentity
@@ -68,29 +184,67 @@ const RefillMedicines = ({ navigation }) => {
         modalState={exitModal}
         SetModalSate={SetExitModal}
       />
+      <View style={{ height:heightPercentageToDP(70),paddingBottom:heightPercentageToDP(1)}}>
 
-      <View style={{ flex:.8,paddingVertical:heightPercentageToDP(2),paddingHorizontal:widthPercentageToDP(10) }}>
+      <ScrollView style={{paddingVertical:heightPercentageToDP(2)}} contentContainerStyle={{  paddingHorizontal:widthPercentageToDP(10),paddingBottom:heightPercentageToDP(5) }} nestedScrollEnabled = {true}>
         <View style={{  }}>
-          <Text style={{ fontSize:size.label,color:colors.dark,fontFamily:fonts.family }}>Would you like to re-fill any of these medications?</Text>
+          <Text style={style.commonTitle}>Would you like to re-fill any of these medications?</Text>
         </View>
-          <View style={{ height:heightPercentageToDP(50),overflow:'hidden' }}>
-            <ScrollView style={{ marginVertical:heightPercentageToDP(2) }} >
+          <View style={{ height:heightPercentageToDP(46),overflow:'hidden' }}>
+            <ScrollView style={{ marginVertical:heightPercentageToDP(2) }}  nestedScrollEnabled = {true}>
               <ListButton text={'Advil'} />
               <ListButton text={'Vitamin D'} />
               <ListButton text={'Norvase'} />
               <ListButton text={'Amoxil'} />
               <ListButton text={'Combiflame'} />
+              <ListButton text={'Peracitamol'} />
+              <ListButton text={'Peracitamol'} />
+              <ListButton text={'Peracitamol'} />
+              <ListButton text={'Peracitamol'} />
+              <ListButton text={'Peracitamol'} />
+              <ListButton text={'Peracitamol'} />
             </ScrollView>
-
           </View>
-        </View>
+        <View style={{ justifyContent:'center',marginVertical:heightPercentageToDP(1) }}>
+          <View style={{ alignItems:'center' }} >
 
-      <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
+          <TouchableOpacity style={[
+            showOtherMedication?{backgroundColor:colors.blue}:{backgroundColor:colors.light},
+            { elevation:5,borderRadius:100,width:widthPercentageToDP(80),alignItems:'center',height:heightPercentageToDP(5),flexDirection:'row' }]}
+                            onPress={()=>SetShowOtherMedications(!showOtherMedication)}
+          >
+            <View style={{ flex:.35 }} />
+            <Text style={[{ fontSize:size.text,fontFamily:fonts.family,flex:.55,fontWeight:'bold' },showOtherMedication? {color:colors.light}:{color:colors.blue}]}>Other Medications  </Text>
+            <MaterialCommunityIcons
+              name={showOtherMedication?"chevron-down":"chevron-up"}
+              color={showOtherMedication?colors.light :colors.blue}
+              size={30}
+            />
+          </TouchableOpacity>
+          </View>
+
+          {/*
+          Bottom container to show
+
+          */}
+          {
+            showOtherMedication?
+              otherMedicationView()
+              :null
+          }
+
+        </View>
+        </ScrollView>
+      </View>
+
+      <View style={{ alignItems:'center',justifyContent:'center' }}>
         <ButtomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
 
       </View>
+    </View>
+      <View style={{ flex:.05,alignItems:'center',justifyContent:'center' }} />
 
     </View>
   );

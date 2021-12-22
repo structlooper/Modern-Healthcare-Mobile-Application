@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
+import { fonts, size } from "../../theme/fonts";
 
 export const style = StyleSheet.create({
   mainContainer:{
@@ -61,6 +62,7 @@ export const style = StyleSheet.create({
     justifyContent:'center',
   },
   GradientColors:[colors.ltnGreen, colors.lightGreen],
-  GradientTextStyle:{ color:colors.light,textTransform:'uppercase' }
+  GradientTextStyle:{ color:colors.light,textTransform:'uppercase' },
+  commonTitle:{ fontSize:size.label,color:colors.dark,fontFamily:fonts.family }
 
 });
