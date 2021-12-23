@@ -8,7 +8,7 @@ import ImagePicker from "react-native-image-crop-picker";
 const UploadImageModal = ({modalState,SetModalState,uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount}) => {
   return (
     <Modal visible={modalState} transparent={true} animationType="fade" >
-      <View style={{ backgroundColor:'rgba(0,0,0,0.5)',flex:1,borderRadius:50 }}>
+      <View style={{ backgroundColor:'rgba(0,0,0,0.5)',flex:1,borderRadius:20 }}>
         <View style={{ flex:.9 }} />
         <View style={{ flex:.2,marginVertical:'5%',marginHorizontal:'10%',backgroundColor:colors.light,borderRadius:20 }}>
           <TouchableOpacity style={{

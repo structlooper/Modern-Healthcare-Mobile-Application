@@ -17,11 +17,11 @@ const ReasonForVisit = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
   const [showNextButton,SetShowNextButton] = useState(false)
 
-  // useEffect(()=> {
-  //   setTimeout(()=>{
-  //     SetShowNextButton(true)
-  //   },5000)
-  // },[])
+  useEffect(()=> {
+    setTimeout(()=>{
+      SetShowNextButton(true)
+    },5000)
+  },[])
 
   const Item = ({ icon,name,action }) => {
     return (
@@ -169,7 +169,7 @@ const ReasonForVisit = ({ navigation }) => {
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'flex-end',marginBottom:heightPercentageToDP(2) }} >
         <ButtomButton showButton={showNextButton} action={()=>{
-          navigation.navigate('VerificationOtpPage')
+          navigation.navigate('FamilyDoctorList')
         }} text={'Next'} />
       </View>
     </View>
