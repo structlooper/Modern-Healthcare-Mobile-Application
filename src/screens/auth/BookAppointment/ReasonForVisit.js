@@ -136,27 +136,27 @@ const ReasonForVisit = ({ navigation }) => {
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/41.png'),
                 name:'Travel-Vaccine',
-                action:()=>console.log('Travel-Vaccine')
+                action:()=>navigation.navigate('CommonPage',{name:'Travel-Vaccine'})
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/85.png'),
                 name:"Driver's Physical",
-                action:()=>console.log('Refill-medicines')
+                action:()=>navigation.navigate('CommonPage',{name:"Driver's Physical"})
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/42.png'),
                 name:'Pre-employment Physical',
-                action:()=>console.log('Pre-employment Physical')
+                action:()=>navigation.navigate('CommonPage',{name:'Pre-employment Physical'})
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/43.png'),
                 name:'Third Party Assessment',
-                action:()=>console.log('Third Party Assessment')
+                action:()=>navigation.navigate('CommonPage',{name:'Third Party Assessment'})
               },
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/44.png'),
                 name:'Immigration Physical',
-                action:()=>console.log('Immigration Physical')
+                action:()=>navigation.navigate('CommonPage',{name:'Immigration Physical'})
               },
 
             ]}
