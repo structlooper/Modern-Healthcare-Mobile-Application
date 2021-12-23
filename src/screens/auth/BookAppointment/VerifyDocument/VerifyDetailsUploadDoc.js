@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
-import { Image, ImageBackground, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {  ImageBackground,  ScrollView, TouchableOpacity, View } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import {launchCamera} from 'react-native-image-picker';
-import ImagePicker from 'react-native-image-crop-picker';
-import { fonts, size } from "../../../../theme/fonts";
 import { Button } from "../../../../componenets/atoms/Buttons";
 import UploadImageModal from "../../../../componenets/molecules/UploadImageModal";
+import ShowUploadedImage from "../../../../componenets/molecules/ShowUploadedImage";
 
 const VerifyDetailsUploadDoc = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);
@@ -72,7 +70,11 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
         <ScrollView contentContainerStyle={{alignItems:'center' }}>
           {
             uploadedPictures.length > 0?
-              uploadedPictures.map((data,i) => RenderUploadedData(data,i))
+              uploadedPictures.map((data,i) => {
+                return <ShowUploadedImage
+                uploadedPictures={uploadedPictures}
+                SetUploadedPicturesCount={SetUploadedPicturesCount}
+                index={i} image={data} />})
               :null
           }
 

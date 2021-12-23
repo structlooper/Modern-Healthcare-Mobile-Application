@@ -119,7 +119,7 @@ const ReasonForVisit = ({ navigation }) => {
               {
                 icon:require('../../../assets/images/familyDoctorServicesIcons/40.png'),
                 name:'Note/Forms',
-                action:()=>console.log('Note/Forms')
+                action:()=>navigation.navigate('NoteFormsScreen')
               },
 
             ]}
