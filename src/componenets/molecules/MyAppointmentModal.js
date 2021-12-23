@@ -11,14 +11,14 @@ const MyAppointmentModal = ({ state,SetState }) => {
       <Modal visible={state} transparent={true} animationType="fade" >
         <View style={{ flex:1,backgroundColor:'rgba(0,0,0,0.5)',borderRadius:30 }}>
           <View style={{ flex:.5 }} />
-          <View style={{ flex:.5,backgroundColor:colors.light,borderRadius:30,padding:'5%' }}>
-            <View style={{ flex:.8 }}>
+          <View style={{ flex:.6,backgroundColor:colors.light,borderRadius:30,padding:'5%' }}>
+            <View style={{ flex:1 }}>
               <Calendar
                 // Collection of dates that have to be marked. Default = {}
               />
 
             </View>
-            <View style={{ flex:.2,alignItems:'center' }}>
+            <View style={{ alignItems:'center' }}>
               <TouchableOpacity style={{ borderRadius:100,backgroundColor:colors.blue,width:widthPercentageToDP(40),alignItems:'center',justifyContent:'center',height:heightPercentageToDP(5),flexDirection:'row' }}
                                 onPress={()=>SetState(false)}
               >

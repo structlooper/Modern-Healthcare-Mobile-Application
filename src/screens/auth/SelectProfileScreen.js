@@ -20,7 +20,7 @@ const SelectProfileScreen = ({ navigation }) => {
   const showProfileBackground = (imageName,text) => {
     return (
       <ImageBackground source={imageName}
-                       style={{ width:200,height:200, resizeMode:'contain',alignItems:'center',justifyContent:'center' }} >
+                       style={{ width:150,height:150, resizeMode:'contain',alignItems:'center',justifyContent:'center' }} >
 
         <Text style={{ color:colors.light,fontWeight:'bold',fontFamily:fonts.family }}>{text}</Text>
       </ImageBackground>
@@ -29,13 +29,13 @@ const SelectProfileScreen = ({ navigation }) => {
   const TwoProfileDataRender = ({imageOneName,ProfileOneName},{imageTwoName, ProfileTwoName}) => {
     return (
       <View style={{ flexDirection:'row',marginHorizontal:widthPercentageToDP(4)  }}>
-        <TouchableOpacity style={{ flex:1 }} onPress={()=>{
+        <TouchableOpacity style={{ flex:1,alignItems:'center' }} onPress={()=>{
           dispatch(SetAuthProfileSkipped(true));
           ProfileSkipped(true)
         }}>
           {showProfileBackground(imageOneName,ProfileOneName)}
         </TouchableOpacity>
-        <TouchableOpacity style={{ flex:1 }} onPress={()=>console.log('this')}>
+        <TouchableOpacity style={{ flex:1,alignItems:'center' }} onPress={()=>console.log('this')}>
           {showProfileBackground(imageTwoName,ProfileTwoName)}
         </TouchableOpacity>
       </View>
@@ -44,11 +44,11 @@ const SelectProfileScreen = ({ navigation }) => {
   const OneProfileDataRender = ({imageOneName,ProfileOneName}) => {
     return (
       <View style={{ flexDirection:'row',marginHorizontal:widthPercentageToDP(4)  }}>
-        <TouchableOpacity style={{ flex:1 }} onPress={()=>console.log('this')}>
+        <TouchableOpacity style={{ flex:1,alignItems:'center' }} onPress={()=>console.log('this')}>
           {showProfileBackground(imageOneName,ProfileOneName)}
         </TouchableOpacity>
         <TouchableOpacity style={{ flex:1,alignItems:'center',justifyContent:'center' }} onPress={()=>navigation.navigate('CreateProfile',{profileHeader:'Add'})}>
-          <View style={{ borderRadius:10,borderColor:colors.grey,borderStyle:'dashed',alignItems:'center',borderWidth:1,justifyContent:'center',height:145,width:135 }}>
+          <View style={{ borderRadius:10,borderColor:colors.grey,borderStyle:'dashed',alignItems:'center',borderWidth:1,justifyContent:'center',height:110,width:100 }}>
             <Text>Add</Text>
             <View style={{ backgroundColor:colors.lightGrey,width:50,height:50,borderRadius:100,alignItems:'center',justifyContent:'center' }}>
               <MaterialCommunityIcons

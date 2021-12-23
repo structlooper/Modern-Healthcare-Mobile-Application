@@ -23,8 +23,8 @@ const SymptomsPage = ({ navigation }) => {
 
   const TextBadge = ({ text }) => {
     return (
-      <View style={{ width:widthPercentageToDP(42),
-        padding:'2%',alignItems:'center',justifyContent:'center',paddingVertical:heightPercentageToDP(2),
+      <View style={{ width:widthPercentageToDP(40),
+        padding:'2%',alignItems:'center',justifyContent:'center',paddingVertical:heightPercentageToDP(1),
         backgroundColor:colors.lightBlue,borderRadius:50,margin:widthPercentageToDP(1) }}>
         <View style={{ flexDirection:'row',justifyContent:'center',alignItems:'center' }}>
 
@@ -93,7 +93,8 @@ const SymptomsPage = ({ navigation }) => {
             <TextInput
               style={{
                 flex:1,
-                marginLeft:widthPercentageToDP(2)
+                marginLeft:widthPercentageToDP(2),
+                color:colors.dark
                 // color:colors.dark
               }}
               placeholderTextColor={colors.grey}
@@ -103,7 +104,7 @@ const SymptomsPage = ({ navigation }) => {
               placeholder={'Search ex .., Headache'}
             />
           </View>
-          <ScrollView style={{ height:heightPercentageToDP(16),borderBottomColor:colors.grey,borderBottomWidth:.5 }}>
+          <ScrollView style={{ height:heightPercentageToDP(13),borderBottomColor:colors.grey,borderBottomWidth:.5 }}>
             <FlatList
               data={[
                 {

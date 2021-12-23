@@ -34,7 +34,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
           {backButton?IconButton(
             {
               backgroundColor:colors.bckGreen,
-              width:60,height:60,borderRadius:100,
+              width:45,height:45,borderRadius:100,
               justifyContent:'center',alignItems:'center'
             },
             'arrow-left',

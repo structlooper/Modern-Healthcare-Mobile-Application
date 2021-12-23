@@ -25,8 +25,8 @@ const ReasonForVisit = ({ navigation }) => {
 
   const Item = ({ icon,name,action }) => {
     return (
-      <TouchableOpacity style={{ flex:1,margin:'2%',padding:'1%',backgroundColor:colors.light,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
-        <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+      <TouchableOpacity style={{ flex:1,margin:'2%',padding:'.5%',backgroundColor:colors.light,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
+        <Image source={icon} style={{ width:60, height:60, resizeMode:'contain' }} />
         <Text style={{ fontSize:size.text,color:colors.blue }}>
           {name}
         </Text>
@@ -35,8 +35,8 @@ const ReasonForVisit = ({ navigation }) => {
   }
   const ItemSelected = ({ icon,name,action }) => {
     return (
-      <TouchableOpacity style={{ flex:1,margin:'2%',padding:'1%',backgroundColor:colors.blue,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
-        <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+      <TouchableOpacity style={{ flex:1,margin:'2%',padding:'.5%',backgroundColor:colors.blue,elevation:5,borderRadius:20,alignItems:'center',justifyContent:'center' }} onPress={action}>
+        <Image source={icon} style={{ width:60, height:60, resizeMode:'contain' }} />
         <Text style={{ fontSize:size.text,color:colors.light }}>
           {name}
         </Text>
@@ -45,12 +45,12 @@ const ReasonForVisit = ({ navigation }) => {
   }
   const ItemOne = ({ icon,name,action }) => {
     return (
-      <TouchableOpacity style={{ width:'48%',margin:'1%',padding:'1%',
+      <TouchableOpacity style={{ width:'47%',margin:'1%',padding:'1%',
         backgroundColor:colors.light,elevation:2,borderRadius:20,alignItems:'center',justifyContent:'center',
         flexDirection:'row'
       }} onPress={action}>
         <View style={{ flex:.5 }}>
-          <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+          <Image source={icon} style={{ width:60, height:60, resizeMode:'contain' }} />
         </View>
         <View style={{ flex:1 }}>
           <Text style={{ fontSize:size.text,color:colors.blue }}>
@@ -67,7 +67,7 @@ const ReasonForVisit = ({ navigation }) => {
         flexDirection:'row'
       }} onPress={action}>
         <View style={{ flex:.5 }}>
-          <Image source={icon} style={{ width:80, height:80, resizeMode:'contain' }} />
+          <Image source={icon} style={{ width:60, height:60, resizeMode:'contain' }} />
         </View>
         <View style={{ flex:1 }}>
           <Text style={{ fontSize:size.text,color:colors.light }}>
@@ -167,7 +167,7 @@ const ReasonForVisit = ({ navigation }) => {
           />
         </View>
       </View>
-      <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }} >
+      <View style={{ flex:.2,alignItems:'center',justifyContent:'flex-end',marginBottom:heightPercentageToDP(2) }} >
         <ButtomButton showButton={showNextButton} action={()=>{
           navigation.navigate('VerificationOtpPage')
         }} text={'Next'} />

@@ -131,6 +131,7 @@ export const ThemePasswordInput = (state,setState,placeHolder,showPass,changeSho
         }}
         onChangeText={setState}
         value={state}
+        placeholderTextColor={colors.grey}
         autoFocus={autoFocus}
         placeholder={placeHolder}
         secureTextEntry={!showPass}
