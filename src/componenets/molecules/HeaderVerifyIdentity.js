@@ -56,7 +56,7 @@ const HeaderVerifyIdentity = ({
           ):null}
         </View>
         <View style={{ flex:1,alignItems:'center' }}>
-          <Text style={{ fontSize:size.subTitle, color:colors.dark, fontWeight:'bold' }}>{titleText}</Text>
+          <Text style={{ fontSize:size.subTitle, color:colors.dark, fontWeight:'bold',textAlign:'center' }}>{titleText}</Text>
         </View>
         <TouchableOpacity style={{ flex:.1}} onPress={()=>SetModalSate(true)}>
           <FontAwesome5

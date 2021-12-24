@@ -5,11 +5,11 @@ import { colors } from "../../theme/colors";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import SearchInput from "../atoms/SearchInput";
 
-const SearchAndFilter = ({ Search,SetSearch,color }) => {
+const SearchAndFilter = ({ Search,SetSearch,color,placeHolder = 'a doctor' }) => {
   return (
     <View style={{ flexDirection:'row',marginVertical:heightPercentageToDP(2),alignItems:'center' }}>
       <View style={{ flex:1 }}>
-        <SearchInput Search={Search} SetSearch={SetSearch} color={color} placeHolder={'Search a doctor..'} />
+        <SearchInput Search={Search} SetSearch={SetSearch} color={color} placeHolder={'Search '+placeHolder +'...'} />
       </View>
       <View style={{ flex:.2,alignItems:'flex-end' }}>
         <TouchableOpacity style={{ width:50,height:50,backgroundColor:colors.light,borderRadius:100,elevation:10,alignItems:'center',justifyContent:'center' }}>

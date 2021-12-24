@@ -23,7 +23,7 @@ const ServiceList = ({ navigation }) => {
         justifyContent:'center',
         margin:'2%'
       }} onPress={()=> {
-        console.log(text)
+        navigation.navigate('SpecialistDoctorList',{serviceName:text})
       }}>
         <Image source={icon} style={{ height:90,width:90,resizeMode:'contain' }} />
         <Text style={style.commonTitle}>
@@ -39,7 +39,7 @@ const ServiceList = ({ navigation }) => {
       <HeaderVerifyIdentity
         barPercent={.5}
         backButton={true}
-        titleText={'Select a specialist'}
+        titleText={'Select a speciality'}
         navigation={navigation}
         modalState={exitModal}
         SetModalSate={SetExitModal}
@@ -56,7 +56,7 @@ const ServiceList = ({ navigation }) => {
           data={[
             {
               text:'Cardiology',
-              icon:require('../../../../assets/images/SpecialistServiceIcons/68.png')
+              icon:require('../../../../assets/images/SpecialistServiceIcons/68.png'),
             },
             {
               text:'Orthopedic',

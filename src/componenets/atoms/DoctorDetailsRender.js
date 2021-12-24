@@ -8,6 +8,7 @@ import { fonts, size } from "../../theme/fonts";
 const DoctorDetailsRender = ({ doctorName,icon,activeColor,doctorType,SetState,activeSate }) => {
   let backGroundColor = activeSate === doctorName?activeColor:colors.light;
   let titleColor = activeSate === doctorName?colors.light:colors.dark;
+  let descColor = activeSate === doctorName?colors.light:colors.grey;
   return (
     <View style={{
       height:heightPercentageToDP(10),
@@ -24,7 +25,7 @@ const DoctorDetailsRender = ({ doctorName,icon,activeColor,doctorType,SetState,a
         </View>
         <View style={{ flex:.7 }}>
           <Text style={[style.commonTitle,{fontWeight:'bold',color: titleColor}]}>{doctorName}</Text>
-          <Text style={{ fontSize:size.text,fontFamily:fonts.family }}>{doctorType}</Text>
+          <Text style={{ fontSize:size.text,fontFamily:fonts.family,color:descColor }}>{doctorType}</Text>
         </View>
 
       </TouchableOpacity>

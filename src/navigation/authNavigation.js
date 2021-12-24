@@ -21,6 +21,7 @@ import NoteFormsScreen from "../screens/auth/BookAppointment/FamilyDoctorService
 import CommonPage from "../screens/auth/BookAppointment/FamilyDoctorServicesScreens/ChargedServices/CommonPage";
 import FamilyDoctorList from "../screens/auth/BookAppointment/FamilyDoctorList";
 import ServiceList from "../screens/auth/BookAppointment/SpecialistServices/ServiceList";
+import SpecialistDoctorList from "../screens/auth/BookAppointment/SpecialistDoctorList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -132,6 +133,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="CommonPage"  component={CommonPage} />
       <Stack.Screen name="FamilyDoctorList"  component={FamilyDoctorList} />
       <Stack.Screen name="ServiceList"  component={ServiceList} />
+      <Stack.Screen name="SpecialistDoctorList"  component={SpecialistDoctorList} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />
