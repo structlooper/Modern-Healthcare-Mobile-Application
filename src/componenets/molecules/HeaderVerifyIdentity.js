@@ -8,7 +8,18 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { IconButton } from "../atoms/Buttons";
 import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
 
-const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetModalSate,navigation,bottomTextShow = false,bottomText = null}) => {
+const HeaderVerifyIdentity = ({
+                                barPercent,
+                                color = colors.ltnBlue,
+                                bckColor = colors.bckGreen,
+                                titleText,
+                                backButton,
+                                modalState,
+                                SetModalSate,
+                                navigation,
+                                bottomTextShow = false,
+                                bottomText = null
+}) => {
   return (
 
     <View style={{ height:heightPercentageToDP(25), alignItems:'center'
@@ -21,7 +32,7 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
     }}>
       <View style={{  marginTop:heightPercentageToDP(8) }}>
         <Bar progress={barPercent} width={widthPercentageToDP(70)}
-             color={colors.blue}
+             color={color}
              height={heightPercentageToDP(1.5)}
              borderRadius={100}
         />
@@ -33,13 +44,13 @@ const HeaderVerifyIdentity = ({barPercent,titleText,backButton,modalState,SetMod
         <View style={{ flex:.1}}  >
           {backButton?IconButton(
             {
-              backgroundColor:colors.bckGreen,
+              backgroundColor:bckColor,
               width:45,height:45,borderRadius:100,
               justifyContent:'center',alignItems:'center'
             },
             'arrow-left',
             30,
-            colors.ltnGreen,
+            color,
             {  },
             ()=> navigation.goBack()
           ):null}

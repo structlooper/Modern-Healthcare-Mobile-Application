@@ -35,7 +35,8 @@ const TypeOfAppointments = ({ navigation }) => {
            </View>
          </ImageBackground>
        </TouchableOpacity>
-        <TouchableOpacity style={{ width:widthPercentageToDP(80),height:heightPercentageToDP(20),overflow:'hidden',alignItems:'center',justifyContent:'center' }}>
+        <TouchableOpacity style={{ width:widthPercentageToDP(80),height:heightPercentageToDP(20),overflow:'hidden',alignItems:'center',justifyContent:'center' }}
+                          onPress={()=>navigation.navigate('ServiceList')}>
          <ImageBackground source={require('../../../assets/images/65.png')} style={{ width:'100%',height:'100%',alignItems:'center',flexDirection:'row' }} imageStyle={{ resizeMode:'stretch'}}>
            <View style={{ flex:.6,paddingHorizontal:widthPercentageToDP(2) }}>
              <Image source={require('../../../assets/images/48.png')} style={{ width:100, height:100,resizeMode:'contain' }} />
