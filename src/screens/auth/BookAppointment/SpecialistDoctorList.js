@@ -18,6 +18,7 @@ const SpecialistDoctorList = ({ navigation,route }) => {
   const [selectedDoctor,SetSelectedDoctor] = useState(null);
   const [filterModal,SetFilterModal] = useState(false);
   const [filterApplied,SetFilterApplied] = useState(false);
+  const [countryModal,SetCountryModal] = useState(false);
 
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
@@ -39,6 +40,7 @@ const SpecialistDoctorList = ({ navigation,route }) => {
         search view
         */}
         <SearchAndFilter
+          countryModalState={{state:countryModal,setState:SetCountryModal }}
           filterShowState={filterModal}
           SetFilterShowState={SetFilterModal}
           filterAppliedState={{state:filterApplied,setState:SetFilterApplied}}

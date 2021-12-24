@@ -5,10 +5,14 @@ import { style } from "../organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../theme/fonts";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CountryLanguageModal from "./CountryLanguageModal";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import GenderButton from "../atoms/GenderButton";
+import { SetDoctorGender } from "../../redux/actions";
 
 const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModalState }) => {
+  const dispatch = useDispatch()
   const {SelectedCountry} = useSelector(state => state.doctorFilterReducer);
   return (
     <Modal visible={state} transparent={true} animationType="fade" >
@@ -17,7 +21,7 @@ const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModa
         <View style={{ flex:.5 }} />
         <View style={{ flex:.6,backgroundColor:colors.light,borderRadius:30,padding:'5%' }}>
           <View style={{ flex:1 }}>
-            <View style={{ alignItems:'center' }}>
+            <View style={{ alignItems:'center',borderBottomWidth:.5 }}>
               <Text style={style.headerTitle}>Filter Search list</Text>
             </View>
             <View style={{ padding:'5%' }}>
@@ -42,8 +46,16 @@ const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModa
                     <Text style={{ color:colors.grey,fontSize:size.text,fontFamily:fonts.family,marginLeft:widthPercentageToDP(3) }}> {SelectedCountry.language}</Text>
                   </View>
                 </TouchableOpacity>
-
               </View>
+              <View style={{ marginTop:heightPercentageToDP(2) }}>
+                <Text style={style.commonTitle}>Gender</Text>
+                <Text style={style.commonText}>Preferred doctor's gender</Text>
+                <View style={{ flexDirection:'row',alignItems:'center',marginTop:heightPercentageToDP(2) }}>
+                 <GenderButton color={color} text={'Male'} icon={'male'}  />
+                 <GenderButton color={color} text={'Female'} icon={'female'}   />
+                </View>
+              </View>
+
             </View>
 
           </View>
@@ -67,6 +79,7 @@ const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModa
             <TouchableOpacity style={{
               borderRadius:100,backgroundColor:colors.red,flex:1,alignItems:'center',justifyContent:'center',height:heightPercentageToDP(5),flexDirection:'row' }}
                               onPress={()=>{
+                                dispatch(SetDoctorGender(''))
                                 filterAppliedState.setState(false)
                                 SetState(false)}}
             >
