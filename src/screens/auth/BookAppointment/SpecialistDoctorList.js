@@ -16,8 +16,8 @@ const SpecialistDoctorList = ({ navigation,route }) => {
   const [showNextButton,SetShowNextButton] = useState(false)
   const [searched,SetSearched] = useState('');
   const [selectedDoctor,SetSelectedDoctor] = useState(null);
-
-
+  const [filterModal,SetFilterModal] = useState(false);
+  const [filterApplied,SetFilterApplied] = useState(false);
 
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
@@ -38,7 +38,15 @@ const SpecialistDoctorList = ({ navigation,route }) => {
         {/*
         search view
         */}
-        <SearchAndFilter Search={searched} SetSearch={SetSearched} color={colors.pink} placeHolder={serviceName+' Specialist'}/>
+        <SearchAndFilter
+          filterShowState={filterModal}
+          SetFilterShowState={SetFilterModal}
+          filterAppliedState={{state:filterApplied,setState:SetFilterApplied}}
+          Search={searched}
+          SetSearch={SetSearched}
+          color={colors.pink}
+          placeHolder={serviceName+' Specialist'}
+        />
 
         <NoPreferences />
 

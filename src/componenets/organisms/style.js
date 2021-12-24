@@ -63,6 +63,9 @@ export const style = StyleSheet.create({
   },
   GradientColors:[colors.ltnGreen, colors.lightGreen],
   GradientTextStyle:{ color:colors.light,textTransform:'uppercase' },
-  commonTitle:{ fontSize:size.label,color:colors.dark,fontFamily:fonts.family }
+  commonTitle:{ fontSize:size.label,color:colors.dark,fontFamily:fonts.family },
+  commonText:{ fontSize:size.text,color:colors.grey,fontFamily:fonts.family },
+  headerTitle:{ fontSize:size.subTitle,color:colors.dark,fontFamily:fonts.family },
+  headerHeading:{ fontSize:size.subHeading,color:colors.dark,fontFamily:fonts.family }
 
 });

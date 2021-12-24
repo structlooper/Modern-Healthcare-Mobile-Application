@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIdentity";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import ButtomButton from "../../../componenets/molecules/ButtomButton";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import SearchAndFilter from "../../../componenets/molecules/SearchAndFilter";
-import { fonts, size } from "../../../theme/fonts";
 import { style } from "../../../componenets/organisms/style";
 import NoPreferences from "../../../componenets/atoms/NoPreferences";
 import DoctorDetailsRender from "../../../componenets/atoms/DoctorDetailsRender";
@@ -17,6 +15,9 @@ const FamilyDoctorList = ({ navigation }) => {
   const [showNextButton,SetShowNextButton] = useState(false)
   const [searched,SetSearched] = useState('');
   const [selectedDoctor,SetSelectedDoctor] = useState(null);
+  const [filterModal,SetFilterModal] = useState(false);
+  const [filterApplied,SetFilterApplied] = useState(false);
+  const [countryModal,SetCountryModal] = useState(false);
 
 
 
@@ -37,7 +38,15 @@ const FamilyDoctorList = ({ navigation }) => {
         {/*
         search view
         */}
-        <SearchAndFilter Search={searched} SetSearch={SetSearched} color={colors.lightBlue}/>
+        <SearchAndFilter
+          filterShowState={filterModal}
+          SetFilterShowState={SetFilterModal}
+          filterAppliedState={{state:filterApplied,setState:SetFilterApplied}}
+          countryModalState={{state:countryModal,setState:SetCountryModal}}
+          Search={searched}
+          SetSearch={SetSearched}
+          color={colors.lightBlue}
+        />
 
        <NoPreferences />
 

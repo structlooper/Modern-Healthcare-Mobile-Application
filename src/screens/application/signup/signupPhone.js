@@ -13,31 +13,13 @@ import { countryListModal } from "../../../componenets/molecules/selectCountryMo
 import { ExitModalConfirmation } from "../../../componenets/molecules/exitModalConfirmation";
 import { useDispatch } from "react-redux";
 import SignInNavigation from "../../../componenets/molecules/signInNavigation";
+import { CountryList } from "../../../componenets/atoms/DummyData";
 
 
 
 const SignupPhone = ({ navigation }) => {
   const dispatch = useDispatch();
-  const [countryCode, setCountryCode] = useState([
-    {
-      iconUrl:'https://seeklogo.com/images/I/Indian_Flag-logo-19B702FA68-seeklogo.com.png',
-      title:'+91',
-      country:'ind',
-      countryIcon:'🇮🇳 ',
-    },
-    {
-      iconUrl:'https://cdn1.vectorstock.com/i/1000x1000/69/45/canada-flag-vector-5786945.jpg',
-      title:'+1',
-      country:'can',
-      countryIcon:'🇨🇦 ',
-    },
-    {
-      iconUrl:'https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg',
-      title:'+61',
-      country:'aus',
-      countryIcon:'🇦🇺 ',
-    }
-  ]);
+  const [countryCode, setCountryCode] = useState(CountryList);
   const [localPhone, setPhone] = useState('');
   const [selectedCountryCode, setSelectedCountryCode] = useState({
     iconUrl:'https://seeklogo.com/images/I/Indian_Flag-logo-19B702FA68-seeklogo.com.png',

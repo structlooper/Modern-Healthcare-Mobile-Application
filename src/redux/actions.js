@@ -44,3 +44,15 @@ export const SetSelectedProfile = value => dispatch => {
     payload: value,
   });
 };
+export const SetSelectedCountry = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_selected_country,
+    payload: value,
+  });
+};
+export const SetDoctorGender = value => dispatch => {
+  dispatch({
+    type: actionTypes.set_doctor_gender,
+    payload: value,
+  });
+};

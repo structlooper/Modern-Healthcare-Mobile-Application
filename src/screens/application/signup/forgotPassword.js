@@ -11,36 +11,19 @@ import { CheckPhone } from "../../../componenets/organisms/functions";
 import { countryListModal } from "../../../componenets/molecules/selectCountryModal";
 import { SetSignUpDetailsPhone } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
+import { CountryList } from "../../../componenets/atoms/DummyData";
 
 const ForgotPassword = ({ navigation }) => {
   const dispatch = useDispatch();
-  const [countryCode, setCountryCode] = useState([
-    {
-      iconUrl:'https://seeklogo.com/images/I/Indian_Flag-logo-19B702FA68-seeklogo.com.png',
-      title:'+91',
-      country:'ind',
-      countryIcon:'🇮🇳 ',
-    },
-    {
-      iconUrl:'https://cdn1.vectorstock.com/i/1000x1000/69/45/canada-flag-vector-5786945.jpg',
-      title:'+1',
-      country:'can',
-      countryIcon:'🇨🇦 ',
-    },
-    {
-      iconUrl:'https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg',
-      title:'+61',
-      country:'aus',
-      countryIcon:'🇦🇺 ',
-    }
-  ]);
+  const [countryCode, setCountryCode] = useState(CountryList);
   const [localPhone, setPhone] = useState('');
   const [selectedCountryCode, setSelectedCountryCode] = useState({
-    iconUrl:'https://seeklogo.com/images/I/Indian_Flag-logo-19B702FA68-seeklogo.com.png',
-    title:'+91',
-    country:'ind',
-    countryIcon:'🇮🇳 ',
-  });
+    iconUrl:'https://cdn1.vectorstock.com/i/1000x1000/69/45/canada-flag-vector-5786945.jpg',
+    title:'+1',
+    country:'can',
+    countryIcon:'🇨🇦 ',
+    language:'English',
+  },);
   const [countryModal, setCountryModal] = useState(false);
   return (
     <View style={style.mainContainer}>
