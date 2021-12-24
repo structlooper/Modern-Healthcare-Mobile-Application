@@ -10,7 +10,7 @@ import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
 
 const HeaderVerifyIdentity = ({
                                 barPercent,
-                                color = colors.ltnBlue,
+                                color = colors.ltnGreen,
                                 bckColor = colors.bckGreen,
                                 titleText,
                                 backButton,

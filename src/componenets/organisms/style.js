@@ -35,7 +35,7 @@ export const style = StyleSheet.create({
   bottomDisableButtonContainer:
     {
       backgroundColor:colors.light,
-      width:widthPercentageToDP(88),
+      width:widthPercentageToDP(90),
       height:heightPercentageToDP(5),
       borderRadius:50,
       alignItems:'center',
@@ -46,7 +46,7 @@ export const style = StyleSheet.create({
     },
   bottomDisableButton:{ color:colors.grey,textTransform:'uppercase' },
   GradientButtonContainer:{
-    width:widthPercentageToDP('88%'),
+    width:widthPercentageToDP('90'),
     height:heightPercentageToDP(5),
     borderRadius:50,
     alignItems:'center',

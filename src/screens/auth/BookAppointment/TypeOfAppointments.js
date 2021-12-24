@@ -12,7 +12,7 @@ const TypeOfAppointments = ({ navigation }) => {
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
       {statusBar(colors.light)}
-      <HeaderVerifyIdentity barPercent={.4} backButton={false} titleText={'Types of appointment'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} />
+      <HeaderVerifyIdentity barPercent={.4} backButton={false} titleText={'Types of appointment'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} color={colors.blue}/>
       <View style={{ flex:.7,alignItems:'center',justifyContent:'center' }}>
        <TouchableOpacity style={{ width:widthPercentageToDP(80),height:heightPercentageToDP(20),overflow:'hidden',alignItems:'center',justifyContent:'center' }}
        onPress={()=>navigation.navigate('ReasonForVisit')}

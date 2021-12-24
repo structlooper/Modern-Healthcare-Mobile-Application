@@ -46,7 +46,7 @@ const ServiceList = ({ navigation }) => {
         color={colors.pink}
         bckColor={colors.bckPink}
       />
-      <View style={{ flex:.8,paddingHorizontal:widthPercentageToDP(5)}}>
+      <View style={{ flex:1,paddingHorizontal:widthPercentageToDP(5)}}>
         <View>
           <SearchInput Search={searched} color={colors.pink} SetSearch={SetSearched} placeHolder={'Search speciality ...'} />
         </View>
@@ -89,7 +89,7 @@ const ServiceList = ({ navigation }) => {
             {
               text:'Hematology',
               icon:require('../../../../assets/images/SpecialistServiceIcons/72.png')
-            },
+            }
           ]}
           numColumns={3}
           renderItem={ServiceListRender}
@@ -100,7 +100,7 @@ const ServiceList = ({ navigation }) => {
 
       </View>
 
-      <View style={{ flex:.2 }} />
+      {/*<View style={{ flex:.2 }} />*/}
 
     </View>
   );

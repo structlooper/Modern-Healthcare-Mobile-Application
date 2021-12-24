@@ -47,7 +47,7 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
         SetUploadedPicturesCount={SetUploadedPicturesCount}
                         />
       {statusBar(colors.light)}
-      <HeaderVerifyIdentity barPercent={.3} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal}  />
+      <HeaderVerifyIdentity barPercent={.3} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} color={colors.blue} />
       <View style={{ flex:.8,paddingHorizontal:'5%'}}>
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(4) }}>
           <TouchableOpacity style={{
