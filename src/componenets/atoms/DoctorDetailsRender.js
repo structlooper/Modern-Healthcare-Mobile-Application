@@ -4,8 +4,9 @@ import { heightPercentageToDP } from "react-native-responsive-screen";
 import { colors } from "../../theme/colors";
 import { style } from "../organisms/style";
 import { fonts, size } from "../../theme/fonts";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const DoctorDetailsRender = ({ doctorName,icon,activeColor,doctorType,SetState,activeSate }) => {
+const DoctorDetailsRender = ({ doctorName,icon,activeColor,doctorType,SetState,activeSate,showRatting = false }) => {
   let backGroundColor = activeSate === doctorName?activeColor:colors.light;
   let titleColor = activeSate === doctorName?colors.light:colors.dark;
   let descColor = activeSate === doctorName?colors.light:colors.grey;
@@ -26,6 +27,19 @@ const DoctorDetailsRender = ({ doctorName,icon,activeColor,doctorType,SetState,a
         <View style={{ flex:.7 }}>
           <Text style={[style.commonTitle,{fontWeight:'bold',color: titleColor}]}>{doctorName}</Text>
           <Text style={{ fontSize:size.text,fontFamily:fonts.family,color:descColor }}>{doctorType}</Text>
+          {
+            showRatting?
+              <View style={{ flexDirection:'row' }}>
+                <MaterialIcons
+                  name={'star'}
+                  size={20}
+                  color={colors.yellow}
+                  style={{  }}
+                />
+                <Text style={style.commonText}>4.5</Text>
+              </View>
+              :null
+          }
         </View>
 
       </TouchableOpacity>

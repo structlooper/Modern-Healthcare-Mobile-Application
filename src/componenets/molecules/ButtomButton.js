@@ -2,12 +2,12 @@ import React from "react";
 import { Button, GradientButton } from "../atoms/Buttons";
 import { style } from "../organisms/style";
 
-const ButtomButton = ({ text,showButton,action }) => {
+const ButtomButton = ({ text,showButton,action,gradientColors = style.GradientColors }) => {
 
       if(showButton) {
         return GradientButton(
           style.GradientButtonContainer,
-          style.GradientColors,
+          gradientColors,
           style.GradientButton,
           style.GradientTextStyle,
           text,

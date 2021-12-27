@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
@@ -19,6 +19,14 @@ const SpecialistDoctorList = ({ navigation,route }) => {
   const [filterModal,SetFilterModal] = useState(false);
   const [filterApplied,SetFilterApplied] = useState(false);
   const [countryModal,SetCountryModal] = useState(false);
+
+  useEffect(()=> {
+    if (selectedDoctor !== null){
+      SetShowNextButton(true)
+    }else{
+      SetShowNextButton(false)
+    }
+  },[selectedDoctor])
 
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
@@ -72,8 +80,8 @@ const SpecialistDoctorList = ({ navigation,route }) => {
 
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
         <ButtomButton showButton={showNextButton} action={()=>{
-          navigation.navigate('FamilyDoctorList')
-        }} text={'Next'} />
+          navigation.navigate('DateTimeSelection',{currentThemeColor:'pink'})
+        }} text={'Next'} gradientColors={[colors.pink,colors.pink]} />
       </View>
     </View>
   );
