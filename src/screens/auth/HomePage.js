@@ -40,11 +40,14 @@ const HomePage = ({ navigation }) => {
             <ProfileComplePercent navigation={navigation} />
              <View style={{ flex:1,marginHorizontal:widthPercentageToDP(1)}}>
                <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}
+                                 // onPress={()=> {
+                                 //   dispatch(SetAuthUserToken(''))
+                                 //   dispatch(SetAuthProfileSkipped(false))
+                                 //   SignOut()
+                                 //   ProfileSkipped(false)
+                                 // }}
                                  onPress={()=> {
-                                   dispatch(SetAuthUserToken(''))
-                                   dispatch(SetAuthProfileSkipped(false))
-                                   SignOut()
-                                   ProfileSkipped(false)
+                                   navigation.navigate('AppointmentDetailsPage')
                                  }}
                >
                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={[ colors.obcBlue, colors.purple] } style={style.linearGradientHorizontal}>

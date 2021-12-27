@@ -9,11 +9,11 @@ import statusBar from "../../../../componenets/molecules/statusBar";
 const VerifyIdentityConfirm = ({ navigation }) => {
   const [screenModalVisibility,SetScreenModalVisibility] = useState(true)
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      navigation.navigate('TypesOfAppointments')
-    },5000)
-  },[])
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     navigation.navigate('TypesOfAppointments')
+  //   },5000)
+  // },[])
   navigation.addListener('focus', () => {
     SetScreenModalVisibility(true)
   });
@@ -24,7 +24,7 @@ const VerifyIdentityConfirm = ({ navigation }) => {
     return (
       <Modal visible={screenModalVisibility} transparent={true} animationType="fade">
         <TouchableOpacity style={{ flex:1 }} onPress={() => {
-          navigation.navigate('HomeTab')
+          navigation.navigate('TypesOfAppointments')
         }}>
           <View style={{ flex:.2 }}/>
           <View style={{ alignItems:'center',flex:.8 }}>

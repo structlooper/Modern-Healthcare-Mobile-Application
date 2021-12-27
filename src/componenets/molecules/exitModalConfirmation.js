@@ -57,7 +57,7 @@ export const ExitModalAuthConfirmation = (modalState,changeModalState,navigation
               <TouchableOpacity
                 onPress={()=>{
                   changeModalState(false)
-                  navigation.navigate('StartScreen')}}
+                  navigation.navigate('HomeTab')}}
               >
                 <Text style={{ fontSize:size.label,color:colors.ltnGreen }}>Yes</Text>
               </TouchableOpacity>

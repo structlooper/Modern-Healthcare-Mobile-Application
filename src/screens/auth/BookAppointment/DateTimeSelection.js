@@ -10,6 +10,7 @@ import DoctorDetailsRender from "../../../componenets/atoms/DoctorDetailsRender"
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment from "moment";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import CustomListView from "../../../componenets/atoms/CustomListView";
 
 const DateTimeSelection = ({ navigation,route }) => {
   const {currentThemeColor} = route.params;
@@ -40,16 +41,7 @@ const DateTimeSelection = ({ navigation,route }) => {
     hideDatePicker();
   };
 
-  const CustomListView = ({text}) => {
-    return (
-      <View style={{ flexDirection:'row',alignItems:'center',marginVertical:heightPercentageToDP(.5) }}>
-        <View style={{ height:20,width:20,backgroundColor:themeColor,borderRadius:100 }} />
-        <View style={{ marginLeft:widthPercentageToDP(1) }}>
-          <Text style={style.commonText}>{text}</Text>
-        </View>
-      </View>
-    )
-  }
+
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
       {statusBar(colors.light)}
@@ -76,8 +68,8 @@ const DateTimeSelection = ({ navigation,route }) => {
             <Text style={[style.commonTitle,{fontWeight:'bold'}]}>Reason:</Text>
           </View>
 
-           <CustomListView text={'Symptoms'} />
-           <CustomListView text={'Refill medication'} />
+           <CustomListView text={'Symptoms'} themeColor={themeColor}/>
+           <CustomListView text={'Refill medication'} themeColor={themeColor}/>
 
         </View>
         <View style={{ marginBottom:heightPercentageToDP(3) }}>
