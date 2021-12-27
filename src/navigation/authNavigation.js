@@ -23,6 +23,7 @@ import FamilyDoctorList from "../screens/auth/BookAppointment/FamilyDoctorList";
 import ServiceList from "../screens/auth/BookAppointment/SpecialistServices/ServiceList";
 import SpecialistDoctorList from "../screens/auth/BookAppointment/SpecialistDoctorList";
 import DateTimeSelection from "../screens/auth/BookAppointment/DateTimeSelection";
+import AppointmentConfirmPage from "../screens/auth/BookAppointment/AppointmentConfirmPage";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -136,6 +137,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="ServiceList"  component={ServiceList} />
       <Stack.Screen name="SpecialistDoctorList"  component={SpecialistDoctorList} />
       <Stack.Screen name="DateTimeSelection"  component={DateTimeSelection} />
+      <Stack.Screen name="AppointmentConfirmPage"  component={AppointmentConfirmPage} />
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />

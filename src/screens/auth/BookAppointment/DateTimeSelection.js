@@ -126,7 +126,7 @@ const DateTimeSelection = ({ navigation,route }) => {
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
         <ButtomButton showButton={showNextButton} action={()=>{
-          navigation.navigate('DateTimeSelection',{currentThemeColor:'pink'})
+          navigation.navigate('AppointmentConfirmPage')
         }} text={'Next'} gradientColors={[themeColor,themeColor]} />
       </View>
     </View>
