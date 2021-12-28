@@ -25,6 +25,7 @@ import SpecialistDoctorList from "../screens/auth/BookAppointment/SpecialistDoct
 import DateTimeSelection from "../screens/auth/BookAppointment/DateTimeSelection";
 import AppointmentConfirmPage from "../screens/auth/BookAppointment/AppointmentConfirmPage";
 import AppointmentDetailsPage from "../screens/auth/BookAppointment/AppointmentDetailsPage";
+import HealthRecordList from "../screens/auth/HealthRecords/HealthRecordList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -65,11 +66,9 @@ const BottomStack = () => {
 
       />
       <Tab.Screen
-        name="Orders"
-        component={Testing}
+        name="HeathRecordList"
+        component={HealthRecordList}
         options={{
-          tabBarLabel: 'Orders',
-
           tabBarIcon:({color , focused}) => (
             <MaterialCommunityIcons
               name={focused ? "folder" : "folder-outline"}

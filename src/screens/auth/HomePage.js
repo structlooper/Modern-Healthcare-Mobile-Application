@@ -65,9 +65,9 @@ const HomePage = ({ navigation }) => {
                                  //   SignOut()
                                  //   ProfileSkipped(false)
                                  // }}
-                                 onPress={()=> {
-                                   navigation.navigate('AppointmentDetailsPage')
-                                 }}
+                                 // onPress={()=> {
+                                 //   navigation.navigate('AppointmentDetailsPage')
+                                 // }}
                >
                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={[ colors.obcBlue, colors.purple] } style={style.linearGradientHorizontal}>
                   <View style={{ marginVertical:heightPercentageToDP(2),justifyContent:'center' }}>

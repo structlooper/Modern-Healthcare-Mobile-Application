@@ -16,6 +16,20 @@ const SelectProfileScreen = ({ navigation }) => {
   const [appointmentModal,SetAppointmentModal] = useState(false);
   const {ProfileSkipped} = useUserContext();
   const dispatch = useDispatch();
+  const [CalenderItems, SetCalenderItems] = useState({
+    '2021-12-25': [],
+    '2021-12-26': [{name: 'Cardiologist',time:'2:00 - 3:00 am',doctor:'Edward zampa'}],
+    '2021-12-28': [{name: 'Family doctor',time:'8:00 - 10:00 am',doctor:'John doe'}],
+    '2021-12-30': [{name: 'Cardiologist',time:'4:00 - 5:00 pm',doctor:'Edward zampa'}, {name: 'Family doctor',time:'8:00 - 10:00 am',doctor:'John doe'}]
+  });
+  const userTwo = {key: 'alan Van', color: 'red'};
+  const userOne = {key: 'thomas van', color: 'blue'};
+  const userThree = {key: 'john', color: 'green'};
+  const [MarkDates,SetMarkDates] = useState({
+    '2021-12-26': {dots: [userOne,userTwo,userThree ]},
+    '2021-12-28': {dots: [userOne,userOne ]},
+    '2021-12-30': {dots: [userOne, userThree]}
+  });
 
   const showProfileBackground = (imageName,text) => {
     return (
@@ -65,7 +79,13 @@ const SelectProfileScreen = ({ navigation }) => {
   return (
     <View style={style.mainContainer}>
       {statusBar(colors.light) }
-      <MyAppointmentModal state={appointmentModal} SetState={SetAppointmentModal} />
+      <MyAppointmentModal
+        state={appointmentModal}
+        SetState={SetAppointmentModal}
+        selectedItem={{ state:CalenderItems, satState:SetCalenderItems }}
+        markDates={{ state:MarkDates, setState:SetMarkDates }}
+        navigation={navigation}
+      />
 
       <View style={{ flex:.9 }}>
         <View style={{

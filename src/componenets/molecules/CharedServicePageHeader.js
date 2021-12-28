@@ -1,12 +1,9 @@
 import React from "react";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { colors } from "../../theme/colors";
-import { Text, TouchableOpacity, View } from "react-native";
-import { Bar } from "react-native-progress";
-import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
+import { Text, View } from "react-native";
 import { IconButton } from "../atoms/Buttons";
 import { fonts, size } from "../../theme/fonts";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 const CharedServicePageHeader = ({titleText,backButton,navigation,bottomTextShow = false,bottomText = null}) => {
   return (
