@@ -12,7 +12,6 @@ import ProfileComplePercent from "../../componenets/molecules/ProfileComplePerce
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
-import { SetAuthProfileSkipped, SetAuthUserToken } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useUserContext } from "../../redux/context";
 
@@ -22,10 +21,30 @@ const HomePage = ({ navigation }) => {
   const {SignOut}= useUserContext();
   const {ProfileSkipped}= useUserContext();
   const [appointmentModal,SetAppointmentModal] = useState(false);
+  const [CalenderItems, SetCalenderItems] = useState({
+      '2021-12-25': [],
+      '2021-12-26': [{name: 'Cardiologist',time:'2:00 - 3:00 am',doctor:'Edward zampa'}],
+      '2021-12-28': [{name: 'Family doctor',time:'8:00 - 10:00 am',doctor:'John doe'}],
+      '2021-12-30': [{name: 'Cardiologist',time:'4:00 - 5:00 pm',doctor:'Edward zampa'}, {name: 'Family doctor',time:'8:00 - 10:00 am',doctor:'John doe'}]
+  });
+  const userTwo = {key: 'alan Van', color: 'red'};
+  const userOne = {key: 'thomas van', color: 'blue'};
+  const userThree = {key: 'john', color: 'green'};
+  const [MarkDates,SetMarkDates] = useState({
+    '2021-12-26': {dots: [userOne, ]},
+    '2021-12-28': {dots: [userOne, ]},
+    '2021-12-30': {dots: [userOne, ]}
+  });
   return (
     <View style={style.linearGradientContainer}>
       {statusBar(colors.lightBlue) }
-      <MyAppointmentModal state={appointmentModal} SetState={SetAppointmentModal} />
+      <MyAppointmentModal
+        state={appointmentModal}
+        SetState={SetAppointmentModal}
+        selectedItem={{ state:CalenderItems, satState:SetCalenderItems }}
+        markDates={{ state:MarkDates, setState:SetMarkDates }}
+        navigation={navigation}
+      />
       <LinearGradient start={{x: 0, y: 0}} end={{x: 0, y: 1}} colors={[colors.lightBlue, colors.blue,]} style={style.linearGradient}>
        <View style={{ flex:.9 }}>
         <View style={{ alignItems:'flex-end' }}>
