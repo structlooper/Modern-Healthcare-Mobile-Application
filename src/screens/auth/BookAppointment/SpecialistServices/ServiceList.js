@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import {  widthPercentageToDP } from "react-native-responsive-screen";
 import SearchInput from "../../../../componenets/atoms/SearchInput";
 import { style } from "../../../../componenets/organisms/style";

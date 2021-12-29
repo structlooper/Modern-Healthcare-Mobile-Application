@@ -52,7 +52,7 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Medical History',
                 icon:require('../../../assets/images/HealthRecordsImages/186.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('MedicalHistoryList')
               },
               {
                 title:'Medications',

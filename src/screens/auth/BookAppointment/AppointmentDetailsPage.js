@@ -3,7 +3,7 @@ import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-nativ
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import { style } from "../../../componenets/organisms/style";
-import AppointmentDetailsHeader from "../../../componenets/molecules/AppointmentDetailsHeader";
+import AppointmentDetailsHeader from "../../../componenets/molecules/Headers/AppointmentDetailsHeader";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import ColoredButton from "../../../componenets/atoms/ColoredButton";

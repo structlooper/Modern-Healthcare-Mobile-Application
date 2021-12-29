@@ -5,7 +5,7 @@ import statusBar from "../../../componenets/molecules/statusBar";
 import { colors } from "../../../theme/colors";
 import { Button, GradientButton, IconButton } from "../../../componenets/atoms/Buttons";
 import { fonts, size } from "../../../theme/fonts";
-import { ExitModalConfirmation } from "../../../componenets/molecules/exitModalConfirmation";
+import { ExitModalConfirmation } from "../../../componenets/molecules/Modals/exitModalConfirmation";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemePasswordInput, ThemeTextInput } from "../../../componenets/atoms/Inputs";
 import  { BarPasswordStrengthDisplay } from "react-native-password-strength-meter";

@@ -1,15 +1,15 @@
 import React from "react";
 import { Image, Modal, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
-import { style } from "../organisms/style";
+import { colors } from "../../../theme/colors";
+import { style } from "../../organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { fonts, size } from "../../theme/fonts";
+import { fonts, size } from "../../../theme/fonts";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import CountryLanguageModal from "./CountryLanguageModal";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import GenderButton from "../atoms/GenderButton";
-import { SetDoctorGender } from "../../redux/actions";
+import GenderButton from "../../atoms/GenderButton";
+import { SetDoctorGender } from "../../../redux/actions";
 
 const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModalState }) => {
   const dispatch = useDispatch()

@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { size } from "../../theme/fonts";
+import { size } from "../../../theme/fonts";
 
 export const ExitModalConfirmation = (modalState,changeModalState,navigation) => {
   return (

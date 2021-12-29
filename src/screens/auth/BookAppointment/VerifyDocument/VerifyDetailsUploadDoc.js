@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import {  ImageBackground,  ScrollView, TouchableOpacity, View } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { Button } from "../../../../componenets/atoms/Buttons";
-import UploadImageModal from "../../../../componenets/molecules/UploadImageModal";
+import UploadImageModal from "../../../../componenets/molecules/Modals/UploadImageModal";
 import ShowUploadedImage from "../../../../componenets/molecules/ShowUploadedImage";
 
 const VerifyDetailsUploadDoc = ({ navigation }) => {

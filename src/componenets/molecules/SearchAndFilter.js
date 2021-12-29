@@ -4,7 +4,7 @@ import { TouchableOpacity, View } from "react-native";
 import { colors } from "../../theme/colors";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import SearchInput from "../atoms/SearchInput";
-import DoctorFilterModal from "./DoctorFilterModal";
+import DoctorFilterModal from "./Modals/DoctorFilterModal";
 
 const SearchAndFilter = ({ Search,SetSearch,color,placeHolder = 'a doctor',filterShowState,SetFilterShowState,filterAppliedState,countryModalState }) => {
 

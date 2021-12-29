@@ -1,10 +1,10 @@
 import React from "react";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import { Text, View } from "react-native";
-import { IconButton } from "../atoms/Buttons";
-import { colors } from "../../theme/colors";
-import { size } from "../../theme/fonts";
-import { style } from "../organisms/style";
+import { IconButton } from "../../atoms/Buttons";
+import { colors } from "../../../theme/colors";
+import { size } from "../../../theme/fonts";
+import { style } from "../../organisms/style";
 
 const AppointmentDetailsHeader = ({ header,dec,action }) => {
   return (

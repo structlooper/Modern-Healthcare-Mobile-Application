@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { colors } from "../../../../../theme/colors";
 import statusBar from "../../../../../componenets/molecules/statusBar";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import CharedServicePageHeader from "../../../../../componenets/molecules/CharedServicePageHeader";
+import CharedServicePageHeader from "../../../../../componenets/molecules/Headers/CharedServicePageHeader";
 import { style } from "../../../../../componenets/organisms/style";
 import ButtomButton from "../../../../../componenets/molecules/ButtomButton";
 

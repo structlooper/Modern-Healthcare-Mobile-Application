@@ -1,12 +1,12 @@
 import React from "react";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { Text, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { Bar } from "react-native-progress";
-import { fonts, size } from "../../theme/fonts";
+import { fonts, size } from "../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import { IconButton } from "../atoms/Buttons";
-import { ExitModalAuthConfirmation } from "./exitModalConfirmation";
+import { IconButton } from "../../atoms/Buttons";
+import { ExitModalAuthConfirmation } from "../Modals/exitModalConfirmation";
 
 const HeaderVerifyIdentity = ({
                                 barPercent,

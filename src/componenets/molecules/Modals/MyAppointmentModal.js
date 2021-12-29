@@ -1,11 +1,11 @@
 import React from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { Agenda, Calendar } from "react-native-calendars";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { fonts, size } from "../../theme/fonts";
+import { fonts, size } from "../../../theme/fonts";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { style } from "../organisms/style";
+import { style } from "../../organisms/style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import LinearGradient from "react-native-linear-gradient";
 

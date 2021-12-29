@@ -1,8 +1,8 @@
 import { Image, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { fonts, size } from "../../theme/fonts";
-import { IconButton } from "../atoms/Buttons";
+import { fonts, size } from "../../../theme/fonts";
+import { IconButton } from "../../atoms/Buttons";
 import React from "react";
 
 export const countryListModal = (countryCode,selectedCountryCode,setSelectedCountryCode,countryModal,setCountryModal) => {

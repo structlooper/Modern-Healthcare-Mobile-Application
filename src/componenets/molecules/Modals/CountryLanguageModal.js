@@ -1,12 +1,12 @@
 import React from "react";
 import { Image, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { fonts, size } from "../../theme/fonts";
-import { IconButton } from "../atoms/Buttons";
-import { CountryList } from "../atoms/DummyData";
+import { fonts, size } from "../../../theme/fonts";
+import { IconButton } from "../../atoms/Buttons";
+import { CountryList } from "../../atoms/DummyData";
 import { useDispatch, useSelector } from "react-redux";
-import { SetSelectedCountry } from "../../redux/actions";
+import { SetSelectedCountry } from "../../../redux/actions";
 
 const CountryLanguageModal = ({ modalShowState }) => {
   const dispatch = useDispatch()

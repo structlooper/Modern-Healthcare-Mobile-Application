@@ -11,7 +11,7 @@ import BookAppointmentBtn from "../../componenets/molecules/BookAppointmentBtn";
 import ProfileComplePercent from "../../componenets/molecules/ProfileComplePercent";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
-import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
+import MyAppointmentModal from "../../componenets/molecules/Modals/MyAppointmentModal";
 import { useDispatch } from "react-redux";
 import { useUserContext } from "../../redux/context";
 

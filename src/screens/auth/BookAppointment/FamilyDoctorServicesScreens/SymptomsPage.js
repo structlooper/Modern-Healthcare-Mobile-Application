@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Button, GradientButton } from "../../../../componenets/atoms/Buttons";

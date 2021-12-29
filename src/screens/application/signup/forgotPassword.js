@@ -8,7 +8,7 @@ import { fonts, size } from "../../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import SignInNavigation from "../../../componenets/molecules/signInNavigation";
 import { CheckPhone } from "../../../componenets/organisms/functions";
-import { countryListModal } from "../../../componenets/molecules/selectCountryModal";
+import { countryListModal } from "../../../componenets/molecules/Modals/selectCountryModal";
 import { SetSignUpDetailsPhone } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
 import { CountryList } from "../../../componenets/atoms/DummyData";

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import ButtomButton from "../../../../componenets/molecules/ButtomButton";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import UploadImageModal from "../../../../componenets/molecules/UploadImageModal";
+import UploadImageModal from "../../../../componenets/molecules/Modals/UploadImageModal";
 import { style } from "../../../../componenets/organisms/style";
 import { ThemeTextInput } from "../../../../componenets/atoms/Inputs";
 import { CheckEmail } from "../../../../componenets/organisms/functions";

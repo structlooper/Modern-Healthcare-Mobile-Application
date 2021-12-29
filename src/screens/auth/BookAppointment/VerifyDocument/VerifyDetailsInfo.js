@@ -4,7 +4,7 @@ import statusBar from "../../../../componenets/molecules/statusBar";
 import { colors } from "../../../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { Button } from "../../../../componenets/atoms/Buttons";
-import HeaderVerifyIdentity from "../../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { fonts, size } from "../../../../theme/fonts";
 
 const VerifyDetailsInfo = ({ navigation }) => {

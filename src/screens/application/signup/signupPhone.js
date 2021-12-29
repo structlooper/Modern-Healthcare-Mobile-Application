@@ -9,8 +9,8 @@ import { Button, GradientButton, IconButton } from "../../../componenets/atoms/B
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { CheckPhone } from "../../../componenets/organisms/functions";
 import { SetSignUpDetailsPhone } from "../../../redux/actions";
-import { countryListModal } from "../../../componenets/molecules/selectCountryModal";
-import { ExitModalConfirmation } from "../../../componenets/molecules/exitModalConfirmation";
+import { countryListModal } from "../../../componenets/molecules/Modals/selectCountryModal";
+import { ExitModalConfirmation } from "../../../componenets/molecules/Modals/exitModalConfirmation";
 import { useDispatch } from "react-redux";
 import SignInNavigation from "../../../componenets/molecules/signInNavigation";
 import { CountryList } from "../../../componenets/atoms/DummyData";

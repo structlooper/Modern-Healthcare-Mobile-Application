@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
-import HeaderVerifyIdentity from "../../../componenets/molecules/HeaderVerifyIdentity";
+import HeaderVerifyIdentity from "../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import ButtomButton from "../../../componenets/molecules/ButtomButton";
 import { style } from "../../../componenets/organisms/style";

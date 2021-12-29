@@ -6,7 +6,7 @@ import { colors } from "../../theme/colors";
 import { fonts, size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
-import MyAppointmentModal from "../../componenets/molecules/MyAppointmentModal";
+import MyAppointmentModal from "../../componenets/molecules/Modals/MyAppointmentModal";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { SetAuthProfileSkipped } from "../../redux/actions";
 import { useUserContext } from "../../redux/context";

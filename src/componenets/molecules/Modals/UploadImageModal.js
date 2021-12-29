@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { launchCamera } from "react-native-image-picker";
-import { fonts, size } from "../../theme/fonts";
+import { fonts, size } from "../../../theme/fonts";
 import ImagePicker from "react-native-image-crop-picker";
 
 const UploadImageModal = ({modalState,SetModalState,uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount}) => {

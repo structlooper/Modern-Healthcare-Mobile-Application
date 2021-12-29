@@ -26,6 +26,7 @@ import DateTimeSelection from "../screens/auth/BookAppointment/DateTimeSelection
 import AppointmentConfirmPage from "../screens/auth/BookAppointment/AppointmentConfirmPage";
 import AppointmentDetailsPage from "../screens/auth/BookAppointment/AppointmentDetailsPage";
 import HealthRecordList from "../screens/auth/HealthRecords/HealthRecordList";
+import MedicalHistoryList from "../screens/auth/HealthRecords/MedicalHistory/MedicalHistoryList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -139,6 +140,11 @@ const HomeScreenStack = () => {
       <Stack.Screen name="DateTimeSelection"  component={DateTimeSelection} />
       <Stack.Screen name="AppointmentConfirmPage"  component={AppointmentConfirmPage} />
       <Stack.Screen name="AppointmentDetailsPage"  component={AppointmentDetailsPage} />
+
+
+      <Stack.Screen name="MedicalHistoryList"  component={MedicalHistoryList} />
+
+
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />
       <Stack.Screen name="Test"  component={Testing} />
