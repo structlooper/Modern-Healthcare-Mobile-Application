@@ -1,11 +1,11 @@
 import React from "react";
 import { Collapse, CollapseBody, CollapseHeader } from "accordion-collapse-react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { colors } from "../../theme/colors";
+import { colors } from "../../../theme/colors";
 import { Text, TouchableOpacity, View } from "react-native";
-import { style } from "../organisms/style";
+import { style } from "../../organisms/style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import { commonIconSize } from "../organisms/settings";
+import { commonIconSize } from "../../organisms/settings";
 
 const DropDownContainer = ({title,ModalState}) => {
   return (
