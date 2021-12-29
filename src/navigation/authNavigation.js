@@ -68,7 +68,7 @@ const BottomStack = () => {
       />
       <Tab.Screen
         name="HeathRecordList"
-        component={HealthRecordList}
+        component={HealthRecordListStack}
         options={{
           tabBarIcon:({color , focused}) => (
             <MaterialCommunityIcons
@@ -114,6 +114,23 @@ const BottomStack = () => {
     </Tab.Navigator>
   )
 }
+const HealthRecordListStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName={'HealthRecordListMainTab'}
+    >
+      <Stack.Screen name="HealthRecordListMainTab"  component={HealthRecordList} />
+      <Stack.Screen name="MedicalHistoryList"  component={MedicalHistoryList} />
+
+
+
+    </Stack.Navigator>
+  );
+};
+
 const HomeScreenStack = () => {
   return (
     <Stack.Navigator
@@ -142,7 +159,6 @@ const HomeScreenStack = () => {
       <Stack.Screen name="AppointmentDetailsPage"  component={AppointmentDetailsPage} />
 
 
-      <Stack.Screen name="MedicalHistoryList"  component={MedicalHistoryList} />
 
 
       <Stack.Screen name="Profile"  component={ProfilePage} />
