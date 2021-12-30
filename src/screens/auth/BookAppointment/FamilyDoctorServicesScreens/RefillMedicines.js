@@ -12,6 +12,7 @@ import UploadImageModal from "../../../../componenets/molecules/Modals/UploadIma
 import { style } from "../../../../componenets/organisms/style";
 import { ThemeTextInput } from "../../../../componenets/atoms/Inputs";
 import { CheckEmail } from "../../../../componenets/organisms/functions";
+import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const RefillMedicines = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);
@@ -58,7 +59,7 @@ const RefillMedicines = ({ navigation }) => {
           }} onPress={()=>SetImagePickerModal(true)}>
             <FontAwesome5
               name={'camera'}
-              size={30}
+              size={commonIconSize+5}
               color={colors.blue}
               style={{  }}
             />
@@ -113,7 +114,7 @@ const RefillMedicines = ({ navigation }) => {
             <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }}>
               <FontAwesome5
                 name={'plus-circle'}
-                size={30}
+                size={commonIconSize+5}
                 color={colors.blue}
                 style={{  }}
               />
@@ -150,7 +151,7 @@ const RefillMedicines = ({ navigation }) => {
         <View style={{ flex:.5 }}>
           <FontAwesome5
             name={'pills'}
-            size={30}
+            size={commonIconSize+5}
             color={iconColor}
             style={{  }}
           />
@@ -161,7 +162,7 @@ const RefillMedicines = ({ navigation }) => {
         <View style={{ flex:.5,alignItems:'flex-end' }}>
           <FontAwesome5
             name={icon}
-            size={25}
+            size={commonIconSize}
             color={iconColor}
             style={{  }}
           />
@@ -218,7 +219,7 @@ const RefillMedicines = ({ navigation }) => {
             <MaterialCommunityIcons
               name={showOtherMedication?"chevron-down":"chevron-up"}
               color={showOtherMedication?colors.light :colors.blue}
-              size={30}
+              size={commonIconSize+5}
             />
           </TouchableOpacity>
           </View>

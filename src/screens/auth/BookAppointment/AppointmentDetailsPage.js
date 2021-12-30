@@ -10,6 +10,7 @@ import ColoredButton from "../../../componenets/atoms/ColoredButton";
 import DoctorDetailsRender from "../../../componenets/atoms/DoctorDetailsRender";
 import CustomListView from "../../../componenets/atoms/CustomListView";
 import CheckBox from "@react-native-community/checkbox";
+import { commonIconSize } from "../../../componenets/organisms/settings";
 
 
 const MeetingView = () => {
@@ -241,7 +242,7 @@ const AppointmentDetailsPage = ({ navigation }) => {
               <MaterialCommunityIcons
                 name={showMoreDetails?'chevron-up-circle' :"chevron-down-circle"}
                 color={colors.dark}
-                size={30}
+                size={commonIconSize+5}
               />
             </View>
           </TouchableOpacity>

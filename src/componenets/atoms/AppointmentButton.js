@@ -4,6 +4,7 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import { Text, TouchableOpacity, View } from "react-native";
 import { fonts, size } from "../../theme/fonts";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { commonIconSize } from "../organisms/settings";
 
 const AppointmentButton = ({state,SetSate}) => {
   return (
@@ -15,7 +16,7 @@ const AppointmentButton = ({state,SetSate}) => {
       <MaterialCommunityIcons
         name={"chevron-up"}
         color={colors.blue}
-        size={30}
+        size={commonIconSize+5}
       />
     </TouchableOpacity>
   );

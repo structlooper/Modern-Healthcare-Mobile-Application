@@ -8,6 +8,7 @@ import { Button, GradientButton } from "../../../../componenets/atoms/Buttons";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const SymptomsPage = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
@@ -86,7 +87,7 @@ const SymptomsPage = ({ navigation }) => {
           }}>
             <FontAwesome5
               name={'search'}
-              size={25}
+              size={commonIconSize}
               color={colors.grey}
               style={{  }}
             />

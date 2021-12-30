@@ -6,6 +6,7 @@ import HeaderVerifyIdentity from "../../../componenets/molecules/Headers/HeaderV
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { commonIconSize } from "../../../componenets/organisms/settings";
 
 const TypeOfAppointments = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
@@ -28,7 +29,7 @@ const TypeOfAppointments = ({ navigation }) => {
            <View style={{ flex:.3 }}>
              <FontAwesome5
                name={'chevron-right'}
-               size={30}
+               size={commonIconSize+5}
                color={colors.drkGreen}
                style={{  }}
              />
@@ -48,7 +49,7 @@ const TypeOfAppointments = ({ navigation }) => {
            <View style={{ flex:.3 }}>
              <FontAwesome5
                name={'chevron-right'}
-               size={30}
+               size={commonIconSize+5}
                color={colors.bDarkPurple}
                style={{  }}
              />

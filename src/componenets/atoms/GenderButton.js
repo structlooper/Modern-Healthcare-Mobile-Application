@@ -6,6 +6,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { style } from "../organisms/style";
 import { useDispatch, useSelector } from "react-redux";
 import { SetDoctorGender } from "../../redux/actions";
+import { commonIconSize } from "../organisms/settings";
 
 const GenderButton = ({ text,icon,color }) => {
   const {DoctorGender} = useSelector(state => state.doctorFilterReducer);
@@ -28,7 +29,7 @@ const GenderButton = ({ text,icon,color }) => {
     }}>
       <FontAwesome5
         name={icon}
-        size={25}
+        size={commonIconSize}
         color={DoctorGender===text?colors.light:colors.dark}
         style={{  }}
       />

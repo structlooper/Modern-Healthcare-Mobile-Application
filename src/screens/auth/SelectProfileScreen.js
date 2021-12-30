@@ -11,6 +11,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { SetAuthProfileSkipped } from "../../redux/actions";
 import { useUserContext } from "../../redux/context";
 import { useDispatch } from "react-redux";
+import { commonIconSize } from "../../componenets/organisms/settings";
 
 const SelectProfileScreen = ({ navigation }) => {
   const [appointmentModal,SetAppointmentModal] = useState(false);
@@ -68,7 +69,7 @@ const SelectProfileScreen = ({ navigation }) => {
               <MaterialCommunityIcons
                 name={"plus"}
                 color={colors.grey}
-                size={30}
+                size={commonIconSize+5}
               />
             </View>
           </View>

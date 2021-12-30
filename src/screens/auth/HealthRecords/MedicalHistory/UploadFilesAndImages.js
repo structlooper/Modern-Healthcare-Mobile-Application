@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../../../componenets/organisms/style";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";

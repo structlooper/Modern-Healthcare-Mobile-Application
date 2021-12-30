@@ -3,6 +3,7 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 import { colors } from "../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { commonIconSize } from "../organisms/settings";
 
 export const ThemeTextInput = (state,setState,placeHolder,iconShow,autoFocus = false) => {
   return (
@@ -28,7 +29,7 @@ export const ThemeTextInput = (state,setState,placeHolder,iconShow,autoFocus = f
         iconShow?
           <FontAwesome5
             name={'check'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.lightGreen}
             style={{  }}
           />
@@ -65,7 +66,7 @@ export const ThemeIconTextInput = (state,setState,placeHolder,iconShow,autoFocus
         iconShow?
           <FontAwesome5
             name={'check'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.lightGreen}
             style={{  }}
           />
@@ -103,7 +104,7 @@ export const ThemeIconNumericInput = (state,setState,placeHolder,iconShow,autoFo
         iconShow?
           <FontAwesome5
             name={'check'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.lightGreen}
             style={{  }}
           />

@@ -1,14 +1,13 @@
 import React from "react";
-import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, View } from "react-native";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import { style } from "../../../../componenets/organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { colors } from "../../../../theme/colors";
 import { DeleteModalAuthConfirmation } from "../../../../componenets/molecules/Modals/exitModalConfirmation";
 import DropDownContainer from "../../../../componenets/atoms/DropDownAtoms/DropDownContainer";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import { commonIconSize } from "../../../../componenets/organisms/settings";
 import DropDownContainerInput from "../../../../componenets/atoms/DropDownAtoms/DropDownContainerInput";
+import AddNewDataButton from "../../../../componenets/atoms/MedicalHistoryButtons/AddNewDataButton";
+import RemoveItemButton from "../../../../componenets/atoms/MedicalHistoryButtons/RemoveItemButton";
 
 const MedicalHistoryList = ({ navigation }) => {
   const [deleteModal, setDeleteModal] = React.useState(false);
@@ -26,56 +25,9 @@ const MedicalHistoryList = ({ navigation }) => {
       <View style={{ flex:.1,justifyContent:'center' }}>
         {
           addNewItem?
-            <TouchableOpacity
-              style={{
-                height: heightPercentageToDP(5),
-                width: widthPercentageToDP(50),
-                borderRadius: 10,
-                backgroundColor: colors.red,
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row",
-                padding: "2%",
-              }}
-              onPress={()=>setAddNewItem(false)}
-            >
-              <View style={{ flex: .1 }} />
-              <View style={{ flex: .2 }}>
-                <FontAwesome5
-                  name={"minus"}
-                  size={commonIconSize - 5}
-                  color={colors.light}
-                />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[style.commonText, { color: colors.light, fontWeight: "bold" }]}>Delete Medical History</Text>
-              </View>
-            </TouchableOpacity>:
-            <TouchableOpacity
-              style={{
-                height: heightPercentageToDP(5),
-                width: widthPercentageToDP(50),
-                borderRadius: 10,
-                backgroundColor: colors.ltnGreen,
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row",
-                padding: "2%",
-              }}
-              onPress={()=>setAddNewItem(true)}
-            >
-              <View style={{ flex: .1 }} />
-              <View style={{ flex: .2 }}>
-                <FontAwesome5
-                  name={"plus"}
-                  size={commonIconSize - 5}
-                  color={colors.light}
-                />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[style.commonText, { color: colors.light, fontWeight: "bold" }]}>Add Medical History</Text>
-              </View>
-            </TouchableOpacity>
+          <RemoveItemButton text={'Delete Medical History'} action={()=>setAddNewItem(false)} />
+          :<AddNewDataButton text={'Add Medical History'} action={()=>setAddNewItem(true)} />
+
         }
       </View>
       <View style={{ flex:1 }}>

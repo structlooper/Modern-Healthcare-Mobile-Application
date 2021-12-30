@@ -28,6 +28,7 @@ import AppointmentDetailsPage from "../screens/auth/BookAppointment/AppointmentD
 import HealthRecordList from "../screens/auth/HealthRecords/HealthRecordList";
 import MedicalHistoryList from "../screens/auth/HealthRecords/MedicalHistory/MedicalHistoryList";
 import UploadFilesAndImages from "../screens/auth/HealthRecords/MedicalHistory/UploadFilesAndImages";
+import MedicationsList from "../screens/auth/HealthRecords/Medications/MedicationsList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -125,6 +126,7 @@ const HealthRecordListStack = () => {
     >
       <Stack.Screen name="HealthRecordListMainTab"  component={HealthRecordList} />
       <Stack.Screen name="MedicalHistoryList"  component={MedicalHistoryList} />
+      <Stack.Screen name="MedicationsList"  component={MedicationsList} />
 
 
 

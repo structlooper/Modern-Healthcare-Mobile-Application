@@ -6,6 +6,7 @@ import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/Head
 import { fonts, size } from "../../../../theme/fonts";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const VerifyIdentityList = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
@@ -21,7 +22,7 @@ const VerifyIdentityList = ({ navigation }) => {
         <View style={{ flex:.5,alignItems:'flex-end' }}>
           <FontAwesome5
             name={'chevron-circle-right'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.blue}
             style={{  }}
           />

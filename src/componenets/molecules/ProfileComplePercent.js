@@ -4,6 +4,7 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import { colors } from "../../theme/colors";
 import { fonts, size } from "../../theme/fonts";
 import CircularProgress from "react-native-circular-progress-indicator/src/circularProgress/index";
+import { commonIconSize } from "../organisms/settings";
 
 const ProfileComplePercent = ({ navigation }) => {
   return (
@@ -11,7 +12,7 @@ const ProfileComplePercent = ({ navigation }) => {
       <Text style={{ color:colors.light,fontSize:size.text,fontFamily:fonts.family,fontWeight:'bold' }}>Setup Profile</Text>
       <View style={{ marginTop:heightPercentageToDP(1) }}>
         <CircularProgress
-          value={25}
+          value={commonIconSize}
           inActiveStrokeColor={colors.light}
           activeStrokeColor={colors.light}
           inActiveStrokeOpacity={0.2}

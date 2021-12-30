@@ -10,6 +10,7 @@ import CountryLanguageModal from "./CountryLanguageModal";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import GenderButton from "../../atoms/GenderButton";
 import { SetDoctorGender } from "../../../redux/actions";
+import { commonIconSize } from "../../organisms/settings";
 
 const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModalState }) => {
   const dispatch = useDispatch()
@@ -72,7 +73,7 @@ const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModa
                 <MaterialCommunityIcons
                   color={colors.light}
                   name={"filter"}
-                  size={30}
+                  size={commonIconSize+5}
                 />
               </View>
             </TouchableOpacity>
@@ -89,7 +90,7 @@ const DoctorFilterModal = ({ state,SetState,filterAppliedState,color,countryModa
                 <MaterialCommunityIcons
                   color={colors.light}
                   name={"lock-reset"}
-                  size={30}
+                  size={commonIconSize+5}
                 />
               </View>
             </TouchableOpacity>

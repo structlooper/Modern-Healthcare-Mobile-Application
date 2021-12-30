@@ -10,6 +10,7 @@ import { heightPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import ShowUploadedImage from "../../../../componenets/molecules/ShowUploadedImage";
 import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const NoteFormsScreen = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false)
@@ -60,7 +61,7 @@ const NoteFormsScreen = ({ navigation }) => {
           }} onPress={()=>SetImagePickerModal(true)}>
             <FontAwesome5
               name={'camera'}
-              size={30}
+              size={commonIconSize+5}
               color={colors.blue}
               style={{  }}
             />

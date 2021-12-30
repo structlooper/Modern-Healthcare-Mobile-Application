@@ -57,7 +57,7 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Medications',
                 icon:require('../../../assets/images/HealthRecordsImages/87.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('MedicationsList')
               },
               {
                 title:'Vaccinations',

@@ -8,6 +8,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { style } from "../../organisms/style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import LinearGradient from "react-native-linear-gradient";
+import { commonIconSize } from "../../organisms/settings";
 
 const MyAppointmentModal = ({ state,SetState,selectedItem,markDates = {state:{}},navigation }) => {
 
@@ -67,7 +68,7 @@ const MyAppointmentModal = ({ state,SetState,selectedItem,markDates = {state:{}}
             <View style={{ flex:.3,alignItems:'center' }}>
               <FontAwesome5
                 name={'chevron-right'}
-                size={30}
+                size={commonIconSize+5}
                 color={colors.light}
                 style={{  }}
               />
@@ -119,7 +120,7 @@ const MyAppointmentModal = ({ state,SetState,selectedItem,markDates = {state:{}}
                   <MaterialCommunityIcons
                     name={"chevron-down"}
                     color={colors.light}
-                    size={30}
+                    size={commonIconSize+5}
                   />
                 </View>
               </TouchableOpacity>

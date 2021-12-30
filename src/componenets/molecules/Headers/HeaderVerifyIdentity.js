@@ -7,6 +7,7 @@ import { fonts, size } from "../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { IconButton } from "../../atoms/Buttons";
 import { ExitModalAuthConfirmation } from "../Modals/exitModalConfirmation";
+import { commonIconSize } from "../../organisms/settings";
 
 const HeaderVerifyIdentity = ({
                                 barPercent,
@@ -61,7 +62,7 @@ const HeaderVerifyIdentity = ({
         <TouchableOpacity style={{ flex:.1}} onPress={()=>SetModalSate(true)}>
           <FontAwesome5
             name={'times'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.dark}
             style={{  }}
           />

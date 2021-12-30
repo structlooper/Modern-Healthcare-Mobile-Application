@@ -5,6 +5,7 @@ import { colors } from "../../theme/colors";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import SearchInput from "../atoms/SearchInput";
 import DoctorFilterModal from "./Modals/DoctorFilterModal";
+import { commonIconSize } from "../organisms/settings";
 
 const SearchAndFilter = ({ Search,SetSearch,color,placeHolder = 'a doctor',filterShowState,SetFilterShowState,filterAppliedState,countryModalState }) => {
 
@@ -27,7 +28,7 @@ const SearchAndFilter = ({ Search,SetSearch,color,placeHolder = 'a doctor',filte
           justifyContent:'center' }} onPress={()=>SetFilterShowState(!filterShowState)}>
           <FontAwesome5
             name={'list-ul'}
-            size={25}
+            size={commonIconSize}
             color={filterAppliedState.state?colors.light :colors.dark}
             style={{  }}
           />
