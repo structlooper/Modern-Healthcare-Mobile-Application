@@ -14,29 +14,7 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
   const [uploadedPictures,SetUploadedPictures] = useState([]);
   const [uploadedPicturesCount,SetUploadedPicturesCount] = useState(0);
   const [imagePickerModal,SetImagePickerModal] = useState(false);
-  const RenderUploadedData = (image,i) => {
-    const removePictureFromUploads = (needle) => {
-      let index = uploadedPictures.findIndex(item => item.path === needle);
-      uploadedPictures.splice(index, 1);
-      SetUploadedPicturesCount(uploadedPictures.length)
-    }
-    return (
-      <View style={{ marginTop:heightPercentageToDP(1) }} key={i}>
-        <ImageBackground source={{ uri:image.path }} style={{ width:300,height:300,resizeMode:'cover',alignItems:'flex-end',padding:'1%' }}  >
-          <TouchableOpacity onPress={()=>{
-            removePictureFromUploads(image.path)
-          }}>
-            <FontAwesome5
-              name={'trash'}
-              size={30}
-              color={colors.red}
-              style={{  }}
-            />
-          </TouchableOpacity>
-        </ImageBackground>
-      </View>
-    )
-  }
+
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
       <UploadImageModal

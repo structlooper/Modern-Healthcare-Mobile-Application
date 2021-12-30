@@ -3,6 +3,7 @@ import { ImageBackground, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { colors } from "../../theme/colors";
+import { commonIconSize } from "../organisms/settings";
 
 const ShowUploadedImage = ({ image,index,uploadedPictures,SetUploadedPicturesCount }) => {
   const removePictureFromUploads = (needle) => {
@@ -18,7 +19,7 @@ const ShowUploadedImage = ({ image,index,uploadedPictures,SetUploadedPicturesCou
         }}>
           <FontAwesome5
             name={'trash'}
-            size={30}
+            size={commonIconSize+5}
             color={colors.red}
             style={{  }}
           />

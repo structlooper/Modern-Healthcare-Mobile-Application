@@ -17,12 +17,12 @@ const MedicalHistoryList = ({ navigation }) => {
   const deleteModalState = { state:deleteModal, setState:setDeleteModal };
   const NewInputState = { state:newInputName, setState:setNewInputName };
 
-  const CommonItemRender = ({ item }) => <DropDownContainer title={item.text} ModalState={deleteModalState} />
+  const CommonItemRender = ({ item }) => <DropDownContainer title={item.text} ModalState={deleteModalState} cameraAction={()=>navigation.navigate('UploadFilesAndImages')} />
 
   return (
     <View style={style.mainContainer}>
       <DeleteModalAuthConfirmation ModalState={deleteModalState} />
-      <HealthRecordsHeader action={()=>navigation.goBack()} header={'Medical History'} />
+      <HealthRecordsHeader action={()=>navigation.goBack()} header={'Medical History'} backButton={true} />
       <View style={{ flex:.1,justifyContent:'center' }}>
         {
           addNewItem?
@@ -100,7 +100,6 @@ const MedicalHistoryList = ({ navigation }) => {
             numColumns={1}
             renderItem={CommonItemRender}
             keyExtractor={item => item.text}
-
           />
 
         </ScrollView>

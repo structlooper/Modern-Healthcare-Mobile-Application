@@ -27,6 +27,7 @@ import AppointmentConfirmPage from "../screens/auth/BookAppointment/AppointmentC
 import AppointmentDetailsPage from "../screens/auth/BookAppointment/AppointmentDetailsPage";
 import HealthRecordList from "../screens/auth/HealthRecords/HealthRecordList";
 import MedicalHistoryList from "../screens/auth/HealthRecords/MedicalHistory/MedicalHistoryList";
+import UploadFilesAndImages from "../screens/auth/HealthRecords/MedicalHistory/UploadFilesAndImages";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -159,7 +160,7 @@ const HomeScreenStack = () => {
       <Stack.Screen name="AppointmentDetailsPage"  component={AppointmentDetailsPage} />
 
 
-
+      <Stack.Screen name="UploadFilesAndImages"  component={UploadFilesAndImages} />
 
       <Stack.Screen name="Profile"  component={ProfilePage} />
       <Stack.Screen name="SelectProfile"  component={SelectProfileScreen} />

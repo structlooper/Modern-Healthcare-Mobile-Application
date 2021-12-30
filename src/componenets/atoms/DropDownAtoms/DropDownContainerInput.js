@@ -9,6 +9,7 @@ import { commonIconSize } from "../../organisms/settings";
 import { style } from "../../organisms/style";
 
 const DropDownContainerInput = ({NewInputState}) => {
+
   return (
     <View>
       <Collapse style={{
@@ -33,8 +34,8 @@ const DropDownContainerInput = ({NewInputState}) => {
                   width:widthPercentageToDP(40),
                   fontSize:size.label
                 }}
-                onChangeText={NewInputState.state}
-                value={()=>NewInputState.setState}
+                onChangeText={NewInputState.setState}
+                value={NewInputState.state}
                 autoFocus={true}
                 placeholder={'Enter title'}
               />

@@ -1,9 +1,8 @@
 import React from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../../../theme/colors";
-import { launchCamera } from "react-native-image-picker";
 import { fonts, size } from "../../../theme/fonts";
-import ImagePicker from "react-native-image-crop-picker";
+import { ImagePickerFunction, LaunchCameraFunction } from "../../organisms/functions";
 
 const UploadImageModal = ({modalState,SetModalState,uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount}) => {
   return (
@@ -19,25 +18,7 @@ const UploadImageModal = ({modalState,SetModalState,uploadedPictures,SetUploaded
             borderBottomColor:colors.grey
           }} onPress={()=>{
             SetModalState(false)
-            launchCamera({
-              includeBase64: true,
-              mediaType: 'photo',
-              maxHeight: 500,
-              maxWidth: 500,
-            }, (response) => {
-              if (response["didCancel"] === undefined) {
-                let state = uploadedPictures;
-                let imageDetails = {
-                  base64:response.assets[0].base64,
-                  path:response.assets[0].uri
-                }
-                state.push(imageDetails)
-                SetUploadedPictures(state)
-                SetUploadedPicturesCount(state.length)
-              } else {
-                console.log('something went wrong!!')
-              }
-            }).then()
+            LaunchCameraFunction(uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount).then()
           }}>
             <Text style={{ fontSize:size.label, fontFamily:fonts.family, color:colors.dark }}>Take Photo</Text>
           </TouchableOpacity>
@@ -48,27 +29,7 @@ const UploadImageModal = ({modalState,SetModalState,uploadedPictures,SetUploaded
 
           }} onPress={()=>{
             SetModalState(false)
-            ImagePicker.openPicker({
-              includeBase64: true,
-              multiple: true,
-              quality: 1.0,
-              maxWidth: 500,
-              maxHeight: 500,
-            }).then(image => {
-              for (let i = 0; i < image.length; i++) {
-                let state = uploadedPictures;
-                let imageDetails = {
-                  base64:image[i].data,
-                  path:image[i].path
-                }
-                state.push(imageDetails)
-                SetUploadedPictures(state)
-                SetUploadedPicturesCount(state.length)
-
-              }
-            }).catch(error => {
-              console.log(error)
-            })
+            ImagePickerFunction(uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount).then()
           }}>
             <Text style={{ fontSize:size.label, fontFamily:fonts.family, color:colors.dark }}>Upload Photo</Text>
           </TouchableOpacity>

@@ -7,7 +7,7 @@ import { style } from "../../organisms/style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { commonIconSize } from "../../organisms/settings";
 
-const DropDownContainer = ({title,ModalState}) => {
+const DropDownContainer = ({title,ModalState,cameraAction}) => {
   return (
     <View>
       <Collapse style={{
@@ -56,7 +56,7 @@ const DropDownContainer = ({title,ModalState}) => {
               </View>
 
             </TouchableOpacity>
-            <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }} >
+            <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }} onPress={cameraAction}>
               <View style={{ flex:.1}}>
                 <FontAwesome5
                   name={'camera'}
