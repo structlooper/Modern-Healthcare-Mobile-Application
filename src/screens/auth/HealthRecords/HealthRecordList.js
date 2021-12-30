@@ -62,7 +62,7 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Vaccinations',
                 icon:require('../../../assets/images/HealthRecordsImages/88.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('VaccinationsList')
               },
               {
                 title:'Allergies',
@@ -71,7 +71,7 @@ const HealthRecordList = ({ navigation }) => {
               },
               {
                 title:'Tests',
-                icon:require('../../../assets/images/HealthRecordsImages/88.png'),
+                icon:require('../../../assets/images/HealthRecordsImages/90.png'),
                 action:()=>console.log('yhid')
               },
               {

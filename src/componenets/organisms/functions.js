@@ -77,7 +77,7 @@ export const LaunchCameraFunction = (uploadedPictures,SetUploadedPictures,SetUpl
         resolve(true)
       } else {
         console.log('something went wrong!!')
-        resolve(error)
+        resolve('something went wrong')
       }
     }).then()
   })
