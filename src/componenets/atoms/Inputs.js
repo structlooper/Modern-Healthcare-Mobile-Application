@@ -5,7 +5,7 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { commonIconSize } from "../organisms/settings";
 
-export const ThemeTextInput = (state,setState,placeHolder,iconShow,autoFocus = false) => {
+export const ThemeTextInput = (state,setState,placeHolder,iconShow = false,autoFocus = false) => {
   return (
     <View style={{
       flexDirection:'row',

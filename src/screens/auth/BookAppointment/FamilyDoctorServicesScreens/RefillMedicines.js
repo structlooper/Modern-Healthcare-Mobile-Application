@@ -11,8 +11,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import UploadImageModal from "../../../../componenets/molecules/Modals/UploadImageModal";
 import { style } from "../../../../componenets/organisms/style";
 import { ThemeTextInput } from "../../../../componenets/atoms/Inputs";
-import { CheckEmail } from "../../../../componenets/organisms/functions";
 import { commonIconSize } from "../../../../componenets/organisms/settings";
+import HelpButton from "../../../../componenets/atoms/HelpButton";
 
 const RefillMedicines = ({ navigation }) => {
   const [exitModal,SetExitModal] = useState(false);
@@ -69,19 +69,7 @@ const RefillMedicines = ({ navigation }) => {
           <View style={{ flexDirection:'row',alignItems:'center' }}>
             <Text style={style.commonTitle}>Manual Entry</Text>
             <Text style={{ fontSize:size.text,fontFamily:fonts.family,color:colors.grey }}> (optional)</Text>
-            <TouchableOpacity style={{
-              height:heightPercentageToDP(3),width:widthPercentageToDP(20),
-              alignItems:'center',justifyContent:'center',
-              backgroundColor:colors.grey,borderRadius:100,
-              marginHorizontal:widthPercentageToDP(2)
-            }}>
-              <Text style={{
-                fontSize:size.text,
-                fontWeight:'bold',
-                color:colors.light,
-                fontFamily:fonts.family
-              }}>Help?</Text>
-            </TouchableOpacity>
+           <HelpButton />
           </View>
           <View style={{
             borderRadius:20,

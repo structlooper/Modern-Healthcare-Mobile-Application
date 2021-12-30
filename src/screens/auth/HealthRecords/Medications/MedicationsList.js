@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, View } from "react-native";
 import { style } from "../../../../componenets/organisms/style";
 import { DeleteModalAuthConfirmation } from "../../../../componenets/molecules/Modals/exitModalConfirmation";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import AddNewDataButton from "../../../../componenets/atoms/MedicalHistoryButtons/AddNewDataButton";
 import ButtomButton from "../../../../componenets/molecules/ButtomButton";
-import MedicationContainer from "../MedicalHistory/MedicationContainer";
+import MedicationContainer from "./MedicationContainer";
 
 const MedicationsList = ({ navigation }) => {
   const [deleteModal, setDeleteModal] = React.useState(false);
@@ -21,7 +21,7 @@ const MedicationsList = ({ navigation }) => {
       <HealthRecordsHeader action={()=>navigation.goBack()} header={'Medications'} backButton={true} />
 
       <View style={{ flex:.1,justifyContent:'center' }}>
-        <AddNewDataButton text={'Add Medication'} action={()=>console.log('this')} />
+        <AddNewDataButton text={'Add Medication'} action={()=>navigation.navigate('AddNewMedication')} />
       </View>
       <View style={{ flex:.8 }}>
         <ScrollView>

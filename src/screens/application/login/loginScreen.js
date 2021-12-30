@@ -8,8 +8,6 @@ import { fonts, size } from "../../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemePasswordInput, ThemeTextInput } from "../../../componenets/atoms/Inputs";
 import { CheckEmail } from "../../../componenets/organisms/functions";
-import SignInNavigation from "../../../componenets/molecules/signInNavigation";
-import { SetSignUpDetailsEmail } from "../../../redux/actions";
 import SignUpNavigation from "../../../componenets/molecules/signUpNavigation";
 
 const LoginScreen = ({ navigation }) => {
