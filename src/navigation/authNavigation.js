@@ -31,6 +31,7 @@ import UploadFilesAndImages from "../screens/auth/HealthRecords/MedicalHistory/U
 import MedicationsList from "../screens/auth/HealthRecords/Medications/MedicationsList";
 import AddNewMedication from "../screens/auth/HealthRecords/Medications/AddNewMedication";
 import VaccinationsList from "../screens/auth/HealthRecords/Vaccinations/VaccinationsList";
+import AllergiesList from "../screens/auth/HealthRecords/Allergies/AllergiesList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -131,6 +132,7 @@ const HealthRecordListStack = () => {
       <Stack.Screen name="MedicationsList"  component={MedicationsList} />
       <Stack.Screen name="AddNewMedication"  component={AddNewMedication} />
       <Stack.Screen name="VaccinationsList"  component={VaccinationsList} />
+      <Stack.Screen name="AllergiesList"  component={AllergiesList} />
 
 
 

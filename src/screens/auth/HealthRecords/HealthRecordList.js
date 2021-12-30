@@ -67,7 +67,7 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Allergies',
                 icon:require('../../../assets/images/HealthRecordsImages/89.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('AllergiesList')
               },
               {
                 title:'Tests',
