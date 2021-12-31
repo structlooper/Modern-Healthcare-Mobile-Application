@@ -7,7 +7,7 @@ import { style } from "../../organisms/style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { commonIconSize } from "../../organisms/settings";
 
-const DropDownContainer = ({title,ModalState,cameraAction}) => {
+const DropDownContainer = ({title,ModalState,cameraAction,desc,notShowImageUpload =false}) => {
   return (
     <View>
       <Collapse style={{
@@ -20,10 +20,12 @@ const DropDownContainer = ({title,ModalState,cameraAction}) => {
         <CollapseHeader>
           <View style={{
             padding:heightPercentageToDP(2),
-            flexDirection:'row'
+            flexDirection:'row',
+            alignItems:'center'
           }} >
             <View style={{ flex:1 }}>
               <Text style={style.commonTitle}>{title}</Text>
+              {desc === '' || desc === undefined?null :<Text style={style.commonText}>{desc}</Text>}
             </View>
             <View style={{ flex:.1,alignItems:'center' }}>
               <TouchableOpacity onPress={()=>ModalState.setState(true)}>
@@ -42,8 +44,9 @@ const DropDownContainer = ({title,ModalState,cameraAction}) => {
             backgroundColor:colors.light,
             elevation:10,
             padding:heightPercentageToDP(2),
+            justifyContent:'center'
           }}>
-            <TouchableOpacity style={{ marginBottom:heightPercentageToDP(2) ,flexDirection:'row',alignItems:'center' }} >
+            <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }} >
               <View style={{ flex:.1}}>
                 <FontAwesome5
                   name={'align-left'}
@@ -56,19 +59,24 @@ const DropDownContainer = ({title,ModalState,cameraAction}) => {
               </View>
 
             </TouchableOpacity>
-            <TouchableOpacity style={{ flexDirection:'row',alignItems:'center' }} onPress={cameraAction}>
-              <View style={{ flex:.1}}>
-                <FontAwesome5
-                  name={'camera'}
-                  size={commonIconSize}
-                  color={colors.grey}
-                />
-              </View>
-              <View style={{ marginLeft:widthPercentageToDP(1) }}>
-                <Text style={style.commonText}>Photos</Text>
-              </View>
+            {
+              notShowImageUpload?
+                null:
+                <TouchableOpacity style={{ marginTop:heightPercentageToDP(2),flexDirection:'row',alignItems:'center' }} onPress={cameraAction}>
+                  <View style={{ flex:.1}}>
+                    <FontAwesome5
+                      name={'camera'}
+                      size={commonIconSize}
+                      color={colors.grey}
+                    />
+                  </View>
+                  <View style={{ marginLeft:widthPercentageToDP(1) }}>
+                    <Text style={style.commonText}>Photos</Text>
+                  </View>
 
-            </TouchableOpacity>
+                </TouchableOpacity>
+            }
+
           </View>
         </CollapseBody>
       </Collapse>

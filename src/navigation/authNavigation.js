@@ -32,6 +32,7 @@ import MedicationsList from "../screens/auth/HealthRecords/Medications/Medicatio
 import AddNewMedication from "../screens/auth/HealthRecords/Medications/AddNewMedication";
 import VaccinationsList from "../screens/auth/HealthRecords/Vaccinations/VaccinationsList";
 import AllergiesList from "../screens/auth/HealthRecords/Allergies/AllergiesList";
+import PharmaciesList from "../screens/auth/HealthRecords/Pharmacy/PharmaciesList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -133,6 +134,7 @@ const HealthRecordListStack = () => {
       <Stack.Screen name="AddNewMedication"  component={AddNewMedication} />
       <Stack.Screen name="VaccinationsList"  component={VaccinationsList} />
       <Stack.Screen name="AllergiesList"  component={AllergiesList} />
+      <Stack.Screen name="PharmaciesList"  component={PharmaciesList} />
 
 
 
