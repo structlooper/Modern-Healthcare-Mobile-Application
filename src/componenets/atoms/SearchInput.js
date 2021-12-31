@@ -3,6 +3,7 @@ import { TextInput, View } from "react-native";
 import { colors } from "../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { commonIconSize } from "../organisms/settings";
 
 const SearchInput = ({ Search,SetSearch,placeHolder,color }) => {
   return (
@@ -18,7 +19,7 @@ const SearchInput = ({ Search,SetSearch,placeHolder,color }) => {
     }}>
       <FontAwesome5
         name={'search'}
-        size={20}
+        size={commonIconSize-5}
         color={color}
         style={{  }}
       />

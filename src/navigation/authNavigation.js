@@ -33,6 +33,7 @@ import AddNewMedication from "../screens/auth/HealthRecords/Medications/AddNewMe
 import VaccinationsList from "../screens/auth/HealthRecords/Vaccinations/VaccinationsList";
 import AllergiesList from "../screens/auth/HealthRecords/Allergies/AllergiesList";
 import PharmaciesList from "../screens/auth/HealthRecords/Pharmacy/PharmaciesList";
+import AddPharmacy from "../screens/auth/HealthRecords/Pharmacy/AddPharmacy";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -89,7 +90,7 @@ const BottomStack = () => {
         name="Offers"
         component={Testing}
         options={{
-          tabBarLabel: 'Offers',
+          tabBarLabel: 'faq',
 
           tabBarIcon:({color , focused}) => (
             <MaterialCommunityIcons
@@ -104,7 +105,7 @@ const BottomStack = () => {
         name="Profile"
         component={Testing}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'settings',
 
           tabBarIcon:({color , focused}) => (
             <MaterialCommunityIcons
@@ -135,6 +136,7 @@ const HealthRecordListStack = () => {
       <Stack.Screen name="VaccinationsList"  component={VaccinationsList} />
       <Stack.Screen name="AllergiesList"  component={AllergiesList} />
       <Stack.Screen name="PharmaciesList"  component={PharmaciesList} />
+      <Stack.Screen name="AddPharmacy"  component={AddPharmacy} />
 
 
 

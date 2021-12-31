@@ -24,7 +24,7 @@ const PharmaciesList = ({ navigation }) => {
       <HealthRecordsHeader action={()=>navigation.goBack()} header={'Pharmacies'} backButton={true} />
 
       <View style={{ flex:.1,justifyContent:'center' }}>
-        <AddNewDataButton text={'Add Pharmacy'} action={()=>navigation.navigate('AddNewMedication')} />
+        <AddNewDataButton text={'Add Pharmacy'} action={()=>navigation.navigate('AddPharmacy')} />
       </View>
       <View style={{ flex:.8 }}>
         <ScrollView>

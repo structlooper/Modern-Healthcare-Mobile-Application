@@ -2,6 +2,7 @@ import React from "react";
 import { openInbox } from "react-native-email-link";
 import ImagePicker from "react-native-image-crop-picker";
 import { launchCamera } from "react-native-image-picker";
+import { GOOGLE_MAPS_APIKEY } from "./settings";
 
 export const CheckEmail = (email) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -82,3 +83,26 @@ export const LaunchCameraFunction = (uploadedPictures,SetUploadedPictures,SetUpl
     }).then()
   })
 }
+
+export const getLatLngFromAddress = (address) => {
+  return new Promise((resolve) => {
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GOOGLE_MAPS_APIKEY}`
+    fetch(url)
+      .then(res => res.json())
+      .then((resJson) => {
+        // the response had a deeply nested structure :/
+        if (resJson
+          && resJson.results
+          && resJson.results[0].geometry) {
+          resolve(resJson.results[0].geometry.location)
+        } else {
+          resolve()
+        }
+      })
+      .catch((e) => {
+        console.log('Error in getAddressFromCoordinates', e)
+        resolve()
+      })
+  })
+}
+
