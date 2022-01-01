@@ -162,7 +162,7 @@ const RefillMedicines = ({ navigation }) => {
     <View style={{ flex:1,backgroundColor:colors.light  }}>
 
 
-    <View style={{ flex:.9 }} >
+    <View style={{ flex:1 }} >
       {statusBar(colors.light)}
 
       <HeaderVerifyIdentity
@@ -173,7 +173,7 @@ const RefillMedicines = ({ navigation }) => {
         modalState={exitModal}
         SetModalSate={SetExitModal}
       />
-      <View style={{ height:heightPercentageToDP(67),paddingBottom:heightPercentageToDP(1)}}>
+      <View style={{ height:heightPercentageToDP(70),paddingBottom:heightPercentageToDP(1)}}>
 
       <ScrollView style={{paddingVertical:heightPercentageToDP(2)}} contentContainerStyle={{  paddingHorizontal:widthPercentageToDP(10),paddingBottom:heightPercentageToDP(5) }} nestedScrollEnabled = {true}>
         <View style={{  }}>
@@ -230,11 +230,8 @@ const RefillMedicines = ({ navigation }) => {
         <ButtomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
-
       </View>
     </View>
-      <View style={{ flex:.05,alignItems:'center',justifyContent:'center' }} />
-
     </View>
   );
 };

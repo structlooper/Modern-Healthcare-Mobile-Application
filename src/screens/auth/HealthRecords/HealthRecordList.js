@@ -87,7 +87,7 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Care Team',
                 icon:require('../../../assets/images/HealthRecordsImages/93.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('CareTeamList')
               },
             ]}
             numColumns={2}

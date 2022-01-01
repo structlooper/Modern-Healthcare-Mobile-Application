@@ -36,10 +36,10 @@ const AddPharmacy = ({ navigation }) => {
 
   const RenderNearLocationContainer = ({text,desc}) => {
     return (
-      <View style={{ flex:1,padding:'4%',marginTop:heightPercentageToDP(1),borderBottomWidth:.5,borderBottomColor:colors.grey }}>
+      <TouchableOpacity style={{ flex:1,padding:'4%',marginTop:heightPercentageToDP(1),borderBottomWidth:.5,borderBottomColor:colors.grey }} onPress={()=>navigation.goBack()}>
         <Text style={[style.commonTitle,{fontWeight:'bold'}]}>{text}</Text>
         <Text style={style.commonText}>{desc}</Text>
-      </View>
+      </TouchableOpacity>
     )
   }
   return (
