@@ -27,7 +27,6 @@ const PharmaciesList = ({ navigation }) => {
         <AddNewDataButton text={'Add Pharmacy'} action={()=>navigation.navigate('AddPharmacy')} />
       </View>
       <View style={{ flex:.8 }}>
-        <ScrollView>
           <FlatList
             data={[
               {
@@ -43,9 +42,9 @@ const PharmaciesList = ({ navigation }) => {
             numColumns={1}
             renderItem={CommonItemRender}
             keyExtractor={item => item.text}
+            style={{ overflow:'scroll' }}
           />
 
-        </ScrollView>
       </View>
 
 

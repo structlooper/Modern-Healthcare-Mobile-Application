@@ -44,9 +44,7 @@ const HealthRecordList = ({ navigation }) => {
         <Text style={style.headerHeading}>Health Records</Text>
       </View>
       <View style={{ flex:.8,padding:'5%'}}>
-        <ScrollView style={{ borderBottomColor:colors.grey,borderBottomWidth:.5 }}
-        contentContainerStyle={{ alignItems:'center'  }}
-        >
+
           <FlatList
             data={[
               {
@@ -90,11 +88,12 @@ const HealthRecordList = ({ navigation }) => {
                 action:()=>navigation.navigate('CareTeamList')
               },
             ]}
+            style={{ overflow:'scroll' }}
             numColumns={2}
             renderItem={RenderItemContainer}
             keyExtractor={item => item.title}
           />
-        </ScrollView>
+
 
       </View>
 

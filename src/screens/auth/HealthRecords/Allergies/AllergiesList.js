@@ -1,6 +1,6 @@
 import React from "react";
 import DropDownContainer from "../../../../componenets/atoms/DropDownAtoms/DropDownContainer";
-import { FlatList, ScrollView, View } from "react-native";
+import { FlatList,  View } from "react-native";
 import { style } from "../../../../componenets/organisms/style";
 import { DeleteModalAuthConfirmation } from "../../../../componenets/molecules/Modals/exitModalConfirmation";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
@@ -30,9 +30,8 @@ const AllergiesList = ({ navigation }) => {
 
         }
       </View>
-      <View style={{ flex:1 }}>
-        <ScrollView style={{ paddingVertical:heightPercentageToDP(2) }}>
-          {
+      <View style={{ flex:1,paddingVertical:heightPercentageToDP(2) }}>
+         {
             addNewItem?
               <DropDownContainerInput NewInputState={NewInputState} />
               :null
@@ -52,9 +51,9 @@ const AllergiesList = ({ navigation }) => {
             numColumns={1}
             renderItem={CommonItemRender}
             keyExtractor={item => item.text}
+            style={{ overflow:'scroll' }}
           />
 
-        </ScrollView>
       </View>
 
     </View>

@@ -127,6 +127,7 @@ const ReasonForVisit = ({ navigation }) => {
             renderItem={renderItem}
             keyExtractor={item => item.name}
             // extraData={refresh}
+            style={{ overflow:'scroll' }}
           />
         </View>
         <View style={{ paddingTop:heightPercentageToDP(.5) }}>
@@ -164,6 +165,7 @@ const ReasonForVisit = ({ navigation }) => {
             renderItem={renderItemOne}
             keyExtractor={item => item.name}
             // extraData={refresh}
+            style={{ overflow:'scroll' }}
           />
         </View>
       </View>

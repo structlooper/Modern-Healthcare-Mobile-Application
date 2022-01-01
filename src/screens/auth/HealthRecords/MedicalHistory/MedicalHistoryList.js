@@ -31,7 +31,7 @@ const MedicalHistoryList = ({ navigation }) => {
         }
       </View>
       <View style={{ flex:1 }}>
-        <ScrollView style={{ paddingVertical:heightPercentageToDP(2) }}>
+        {/*<ScrollView style={{ paddingVertical:heightPercentageToDP(2) }}>*/}
           {
             addNewItem?
               <DropDownContainerInput NewInputState={NewInputState} />
@@ -49,12 +49,13 @@ const MedicalHistoryList = ({ navigation }) => {
                 text:'Heart Surgery',
               },
             ]}
+            style={{ overflow:'scroll' }}
             numColumns={1}
             renderItem={CommonItemRender}
             keyExtractor={item => item.text}
           />
 
-        </ScrollView>
+        {/*</ScrollView>*/}
       </View>
 
     </View>

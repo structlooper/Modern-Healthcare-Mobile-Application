@@ -31,7 +31,7 @@ const VaccinationsList = ({ navigation }) => {
         }
       </View>
       <View style={{ flex:1 }}>
-        <ScrollView style={{ paddingVertical:heightPercentageToDP(2) }}>
+        {/*<ScrollView style={{ paddingVertical:heightPercentageToDP(2) }}>*/}
           {
             addNewItem?
               <DropDownContainerInput NewInputState={NewInputState} />
@@ -55,9 +55,10 @@ const VaccinationsList = ({ navigation }) => {
             numColumns={1}
             renderItem={CommonItemRender}
             keyExtractor={item => item.text}
+            style={{ overflow:'scroll' }}
           />
 
-        </ScrollView>
+        {/*</ScrollView>*/}
       </View>
 
     </View>
