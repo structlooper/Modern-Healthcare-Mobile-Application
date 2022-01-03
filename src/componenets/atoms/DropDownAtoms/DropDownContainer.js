@@ -24,7 +24,7 @@ const DropDownContainer = ({title,ModalState,cameraAction,desc,notShowImageUploa
             alignItems:'center'
           }} >
             <View style={{ flex:1 }}>
-              <Text style={style.commonTitle}>{title}</Text>
+              <Text style={[style.commonTitle,{textTransform:'capitalize'}]}>{title}</Text>
               {desc === '' || desc === undefined?null :<Text style={style.commonText}>{desc}</Text>}
             </View>
             <View style={{ flex:.1,alignItems:'center' }}>

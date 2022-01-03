@@ -70,12 +70,12 @@ const HealthRecordList = ({ navigation }) => {
               {
                 title:'Tests',
                 icon:require('../../../assets/images/HealthRecordsImages/90.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('TestsList')
               },
               {
                 title:'Others',
                 icon:require('../../../assets/images/HealthRecordsImages/91.png'),
-                action:()=>console.log('yhid')
+                action:()=>navigation.navigate('OthersList')
               },
               {
                 title:'Pharmacies',
@@ -93,7 +93,6 @@ const HealthRecordList = ({ navigation }) => {
             renderItem={RenderItemContainer}
             keyExtractor={item => item.title}
           />
-
 
       </View>
 

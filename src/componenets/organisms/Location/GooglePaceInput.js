@@ -1,10 +1,9 @@
 import React from "react";
-import { Text, View } from "react-native";
+import {  View } from "react-native";
 import { commonIconSize, GOOGLE_MAPS_APIKEY } from "../settings";
 import { colors } from "../../../theme/colors";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { getLatLngFromAddress } from "../functions";
-import { style } from "../style";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { size } from "../../../theme/fonts";
 
@@ -45,26 +44,24 @@ const GooglePaceInput = ({ LocationState }) => {
 
         )}
         styles={{
-
           textInputContainer: {
-            backgroundColor: 'rgba(0,0,0,0)',
+            backgroundColor: colors.light,
             borderTopWidth: 0,
             borderBottomWidth:0,
-
           },
           description: {
             fontWeight: 'bold',
+            color:colors.dark
           },
           textInput: {
             marginRight: 0,
             // height: 38,
             color: colors.dark,
             fontSize: size.label,
-
           },
           predefinedPlacesDescription: {
             color: colors.dark
-          }
+          },
         }}
        placeholder={'Search Pharmacy near you..'}
       />

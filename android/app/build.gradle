@@ -196,6 +196,12 @@ dependencies {
     implementation project(':react-native-otp-verify')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
+    //added dependencies....
+    implementation 'com.facebook.fresco:animated-gif:2.5.0'
+
+
+
+    ////----end
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
     }

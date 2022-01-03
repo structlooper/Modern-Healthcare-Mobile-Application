@@ -27,7 +27,7 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
                         />
       {statusBar(colors.light)}
       <HeaderVerifyIdentity barPercent={.3} backButton={true} titleText={'Verify Identity'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} color={colors.blue} />
-      <View style={{ flex:.8,paddingHorizontal:'5%'}}>
+      <View style={{ flex:.9,paddingHorizontal:'5%'}}>
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(4) }}>
           <TouchableOpacity style={{
             width:100,height:100,
@@ -46,20 +46,19 @@ const VerifyDetailsUploadDoc = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <ScrollView contentContainerStyle={{alignItems:'center' }}>
+        <View style={{flex:1, alignItems:'center' }}>
           {
             uploadedPictures.length > 0?
-              uploadedPictures.map((data,i) => {
-                return <ShowUploadedImage
+               <ShowUploadedImage
                 uploadedPictures={uploadedPictures}
                 SetUploadedPicturesCount={SetUploadedPicturesCount}
-                index={i} image={data} />})
+                />
               :null
           }
 
-        </ScrollView>
+        </View>
       </View>
-      <View style={{ flex:.15,alignItems:'center',justifyContent:'center' }} >
+      <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }} >
         {uploadedPictures.length > 0 ? Button(
           {
             backgroundColor:colors.blue,
