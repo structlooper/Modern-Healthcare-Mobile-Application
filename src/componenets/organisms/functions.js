@@ -28,7 +28,6 @@ export const OpenMail = () => {
   openInbox().then(r => {
     console.log(r)
   })
-
 }
 
 export const ImagePickerFunction = (uploadedPictures,SetUploadedPictures,SetUploadedPicturesCount) => {
@@ -39,18 +38,24 @@ export const ImagePickerFunction = (uploadedPictures,SetUploadedPictures,SetUplo
       quality: 1.0,
       maxWidth: 500,
       maxHeight: 500,
+      mediaType: 'photo',
     }).then(image => {
-      for (let i = 0; i < image.length; i++) {
-        let state = uploadedPictures;
-        let imageDetails = {
-          base64:image[i].data,
-          path:image[i].path
-        }
-        state.push(imageDetails)
-        SetUploadedPictures(state)
-        SetUploadedPicturesCount(state.length)
-      }
-      resolve(true)
+     if (image.length > 5){
+       alert('Only 5 images can be uploaded in single time..')
+     }else{
+       for (let i = 0; i < image.length; i++) {
+         let state = uploadedPictures;
+         let imageDetails = {
+           base64:image[i].data,
+           path:image[i].path
+         }
+         state.push(imageDetails)
+         SetUploadedPictures(state)
+         SetUploadedPicturesCount(state.length)
+       }
+       resolve(true)
+     }
+
     }).catch(error => {
       console.log(error)
       resolve(error)

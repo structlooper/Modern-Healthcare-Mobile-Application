@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import statusBar from "../../../componenets/molecules/statusBar";
 import { colors } from "../../../theme/colors";
 import { fonts, size } from "../../../theme/fonts";

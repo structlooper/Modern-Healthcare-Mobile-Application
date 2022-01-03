@@ -21,7 +21,6 @@ const ShowUploadedImage = ({ image,index,uploadedPictures,SetUploadedPicturesCou
             name={'trash'}
             size={commonIconSize+5}
             color={colors.red}
-            style={{  }}
           />
         </TouchableOpacity>
       </ImageBackground>

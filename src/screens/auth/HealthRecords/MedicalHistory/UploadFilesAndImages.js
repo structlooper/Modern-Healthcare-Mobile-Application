@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {  Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../../../componenets/organisms/style";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
@@ -60,7 +60,7 @@ const UploadFilesAndImages = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex:.6 }}>
-        <ScrollView contentContainerStyle={{ paddingHorizontal:widthPercentageToDP(6)}}>
+        {/*<ScrollView contentContainerStyle={{ paddingHorizontal:widthPercentageToDP(6)}}>*/}
           {
             uploadedPictures.length > 0?
 
@@ -73,7 +73,7 @@ const UploadFilesAndImages = ({ navigation }) => {
               :null
           }
 
-        </ScrollView>
+        {/*</ScrollView>*/}
       </View>
       <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }}>
         <ButtomButton action={()=>navigation.goBack()} gradientColors={[colors.lightGreen,colors.ltnGreen]} showButton={(uploadedPicturesCount > 0)} text={'Save'} />

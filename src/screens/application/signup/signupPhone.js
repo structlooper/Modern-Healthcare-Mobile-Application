@@ -96,6 +96,7 @@ const SignupPhone = ({ navigation }) => {
                     value={localPhone}
                     autoFocus={true}
                     maxLength={10}
+                    placeholderTextColor={colors.grey}
                     keyboardType={'numeric'}
                     placeholder={'1234567890'}
                   />

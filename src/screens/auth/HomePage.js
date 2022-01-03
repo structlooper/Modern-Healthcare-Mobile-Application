@@ -14,6 +14,7 @@ import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/Modals/MyAppointmentModal";
 import { useDispatch } from "react-redux";
 import { useUserContext } from "../../redux/context";
+import { SetAuthProfileSkipped, SetAuthUserToken } from "../../redux/actions";
 
 
 const HomePage = ({ navigation }) => {
@@ -59,12 +60,12 @@ const HomePage = ({ navigation }) => {
             <ProfileComplePercent navigation={navigation} />
              <View style={{ flex:1,marginHorizontal:widthPercentageToDP(1)}}>
                <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}
-                                 // onPress={()=> {
-                                 //   dispatch(SetAuthUserToken(''))
-                                 //   dispatch(SetAuthProfileSkipped(false))
-                                 //   SignOut()
-                                 //   ProfileSkipped(false)
-                                 // }}
+                                 onPress={()=> {
+                                   dispatch(SetAuthUserToken(''))
+                                   dispatch(SetAuthProfileSkipped(false))
+                                   SignOut()
+                                   ProfileSkipped(false)
+                                 }}
                                  // onPress={()=> {
                                  //   navigation.navigate('AppointmentDetailsPage')
                                  // }}

@@ -31,7 +31,7 @@ const ShowUploadedImageRow = ({ uploadedPictures,SetUploadedPicturesCount }) => 
               name={'times'}
               size={commonIconSize}
               color={colors.red}
-              style={{  }}
+
             />
           </TouchableOpacity>
         </ImageBackground>
@@ -46,6 +46,7 @@ const ShowUploadedImageRow = ({ uploadedPictures,SetUploadedPicturesCount }) => 
       numColumns={2}
       renderItem={RenderImages}
       keyExtractor={item => item.path}
+      style={{ overflow:'scroll' }}
     />
   );
 };

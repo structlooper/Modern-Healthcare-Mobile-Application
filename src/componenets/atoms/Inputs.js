@@ -20,6 +20,7 @@ export const ThemeTextInput = (state,setState,placeHolder,iconShow = false,autoF
           flex:1,
           color:colors.dark
         }}
+        placeholderTextColor={colors.grey}
         onChangeText={setState}
         value={state}
         autoFocus={autoFocus}
@@ -54,13 +55,15 @@ export const ThemeIconTextInput = (state,setState,placeHolder,iconShow,autoFocus
       <TextInput
         style={{
           flex:1,
-          // color:colors.dark
+          color:colors.dark
         }}
         placeholderTextColor={colors.grey}
         onChangeText={setState}
         value={state}
         autoFocus={autoFocus}
         placeholder={placeHolder}
+
+
       />
       {
         iconShow?
@@ -91,7 +94,7 @@ export const ThemeIconNumericInput = (state,setState,placeHolder,iconShow,autoFo
       <TextInput
         style={{
           flex:1,
-          // color:colors.dark
+          color:colors.dark
         }}
         placeholderTextColor={colors.grey}
         onChangeText={setState}
