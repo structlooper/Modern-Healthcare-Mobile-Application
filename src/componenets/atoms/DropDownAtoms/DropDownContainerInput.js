@@ -18,7 +18,7 @@ const DropDownContainerInput = ({NewInputState}) => {
         backgroundColor:colors.light,
         elevation:5,
         borderRadius:10
-      }} >
+      }}  isExpanded={true} >
         <CollapseHeader>
           <View style={{
             padding:heightPercentageToDP(2),
@@ -28,16 +28,18 @@ const DropDownContainerInput = ({NewInputState}) => {
             <View style={{ flex:1 }}>
               <TextInput
                 style={{
-                  flex:1,
+                  // flex:2,
                   color:colors.dark,
                   borderRadius:10,
                   width:widthPercentageToDP(40),
-                  fontSize:size.label
+                  fontSize:size.label,
+                  padding:'1%'
                 }}
                 onChangeText={NewInputState.setState}
                 value={NewInputState.state}
                 autoFocus={true}
                 placeholder={'Enter title'}
+                placeholderTextColor={colors.grey}
               />
             </View>
             <View style={{ flex:.1,alignItems:'center' }}>

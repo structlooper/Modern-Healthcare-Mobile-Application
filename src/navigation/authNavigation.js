@@ -38,6 +38,7 @@ import CareTeamList from "../screens/auth/HealthRecords/CareTeam/CareTeamList";
 import TestsList from "../screens/auth/HealthRecords/Tests/TestsList";
 import OthersList from "../screens/auth/HealthRecords/Others/OthersList";
 import FaqHomeScreen from "../screens/auth/FaqScreens/FaqHomeScreen";
+import FaqQuestionHistory from "../screens/auth/FaqScreens/FaqQuestionHistory";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -134,6 +135,7 @@ const FaqStackScreen = () => {
       initialRouteName={'FaqHomeScreen'}
     >
       <Stack.Screen name="FaqHomeScreen"  component={FaqHomeScreen} />
+      <Stack.Screen name="FaqQuestionHistory"  component={FaqQuestionHistory} />
     </Stack.Navigator>
       )
 }

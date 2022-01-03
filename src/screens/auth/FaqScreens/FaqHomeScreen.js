@@ -9,7 +9,7 @@ import { ThemeTextInput } from "../../../componenets/atoms/Inputs";
 import { Button } from "../../../componenets/atoms/Buttons";
 import SuccessIcon from "../../../componenets/atoms/successIcon";
 
-const FaqHomeScreen = () => {
+const FaqHomeScreen = ({ navigation }) => {
   const [askQuestion,SetAskQuestion] = useState('');
   const [formStep,SetFormStep] = useState(1);
 
@@ -106,7 +106,7 @@ const FaqHomeScreen = () => {
       <ImageBackground source={require('../../../assets/gifs/faq_back.gif')} style={{ flex:1 }} imageStyle={{width:'100%',height:'100%',resizeMode:'stretch'}}>
         <View style={{ flex:1,padding:'5%' }}>
           <View style={{ height:heightPercentageToDP(15) }}>
-            <HeaderButton  />
+            <HeaderButton navigation={navigation} />
           </View>
           <View style={{ height:heightPercentageToDP(60) }}>
             {

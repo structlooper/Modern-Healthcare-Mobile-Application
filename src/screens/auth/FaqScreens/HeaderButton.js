@@ -6,7 +6,7 @@ import { commonIconSize } from "../../../componenets/organisms/settings";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import { style } from "../../../componenets/organisms/style";
 
-const HeaderButton = ({ active }) => {
+const HeaderButton = ({ active,navigation }) => {
   return (
     <View style={{ alignItems:'flex-end' }}>
       {
@@ -17,7 +17,8 @@ const HeaderButton = ({ active }) => {
             width:60,
             height:60,
             alignItems:'center',
-            justifyContent:'center'
+            justifyContent:'center',
+          elevation:10
           },
           'history',
           commonIconSize,
@@ -25,7 +26,7 @@ const HeaderButton = ({ active }) => {
           {
 
           },
-          ()=>console.log('history'),
+          ()=>navigation.navigate('FaqQuestionHistory'),
         )
       }
       <TouchableOpacity style={{
@@ -36,6 +37,7 @@ const HeaderButton = ({ active }) => {
         alignItems:'center',
         justifyContent:'center',
         padding:'1%',
+        elevation:10,
         marginTop:heightPercentageToDP(1)
       }} >
         <Text style={[style.commonTitle,{color:colors.dark,fontWeight:'bold'}]}>Faq?</Text>
