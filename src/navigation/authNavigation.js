@@ -37,6 +37,7 @@ import AddPharmacy from "../screens/auth/HealthRecords/Pharmacy/AddPharmacy";
 import CareTeamList from "../screens/auth/HealthRecords/CareTeam/CareTeamList";
 import TestsList from "../screens/auth/HealthRecords/Tests/TestsList";
 import OthersList from "../screens/auth/HealthRecords/Others/OthersList";
+import FaqHomeScreen from "../screens/auth/FaqScreens/FaqHomeScreen";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -90,8 +91,8 @@ const BottomStack = () => {
         }}
       />
       <Tab.Screen
-        name="Offers"
-        component={Testing}
+        name="FaqStackScreen"
+        component={FaqStackScreen}
         options={{
           tabBarLabel: 'faq',
 
@@ -123,6 +124,18 @@ const BottomStack = () => {
 
     </Tab.Navigator>
   )
+}
+const FaqStackScreen = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName={'FaqHomeScreen'}
+    >
+      <Stack.Screen name="FaqHomeScreen"  component={FaqHomeScreen} />
+    </Stack.Navigator>
+      )
 }
 const HealthRecordListStack = () => {
   return (

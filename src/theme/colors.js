@@ -4,6 +4,7 @@ export const colors = {
   bckPink :'#F3E1FD',
   pink :'#CD85F9',
   transRed :'rgba(0,0,0,0.1)',
+  transWhite :'rgba(241,232,232,0.5)',
   red :'#F87A7B',
   lightBlue :'#54F3FC',
   lightGreen :'#61ECB9',
