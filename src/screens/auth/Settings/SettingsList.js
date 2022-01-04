@@ -1,27 +1,16 @@
 import React from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { colors } from "../../../theme/colors";
-import statusBar from "../../../componenets/molecules/statusBar";
-import { style } from "../../../componenets/organisms/style";
 import SettingButton from "./SettingButton";
+import SettingHeader from "../../../componenets/molecules/Headers/SettingHeader";
 
 
-const SettingsList = () => {
+const SettingsList = ({ navigation }) => {
   const CommonItemRender = ({ item }) => <SettingButton title={item.title} icon={item.icon} action={item.action}   />
 
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
-      <View style={{
-        backgroundColor:colors.light,
-        flex:.15,
-        elevation:5,
-        borderRadius:20,
-        alignItems:'center',
-        justifyContent:'center'
-      }}>
-        {statusBar(colors.light)}
-        <Text style={style.headerHeading}>Settings</Text>
-      </View>
+      <SettingHeader headerTitle={'Settings'} />
       <View style={{ flex:.8,padding:'5%'}}>
 
         <FlatList
@@ -29,7 +18,7 @@ const SettingsList = () => {
             {
               title:'my account',
               icon:'home',
-              action:()=>console.log('this')
+              action:()=>navigation.navigate('UserAccount')
             },
             {
               title:'security',

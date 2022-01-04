@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
-import { style } from "../../../../componenets/organisms/style";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
+import { LocalStyle, style } from "../../../../componenets/organisms/style";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import ColoredButton from "../../../../componenets/atoms/ColoredButton";
 import { colors } from "../../../../theme/colors";
-import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
 
 const CareTeamList = ({ navigation }) => {
@@ -102,10 +101,5 @@ const CareTeamList = ({ navigation }) => {
   );
 };
 
-const LocalStyle = StyleSheet.create({
-  itemContainer:{ flexDirection:'row',alignItems:'center',marginTop:heightPercentageToDP(4) },
-  itemHeader:[style.commonTitle,{color:colors.grey,textTransform:'uppercase'}],
-  itemTitle:[style.commonText,{color:colors.dark}],
-});
 
 export default CareTeamList;

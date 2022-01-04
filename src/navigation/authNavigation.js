@@ -41,6 +41,7 @@ import FaqHomeScreen from "../screens/auth/FaqScreens/FaqHomeScreen";
 import FaqQuestionHistory from "../screens/auth/FaqScreens/FaqQuestionHistory";
 import FaqsList from "../screens/auth/FaqScreens/FaqsList";
 import SettingsList from "../screens/auth/Settings/SettingsList";
+import UserAccount from "../screens/auth/Settings/MyAccount/UserAccount";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -136,6 +137,7 @@ const SettingsStackScreen = () => {
       initialRouteName={'SettingsList'}
     >
       <Stack.Screen name="SettingsList"  component={SettingsList} />
+      <Stack.Screen name="UserAccount"  component={UserAccount} />
 
     </Stack.Navigator>
       )

@@ -66,6 +66,14 @@ export const style = StyleSheet.create({
   commonTitle:{ fontSize:size.label,color:colors.dark,fontFamily:fonts.family },
   commonText:{ fontSize:size.text,color:colors.grey,fontFamily:fonts.family },
   headerTitle:{ fontSize:size.subTitle,color:colors.dark,fontFamily:fonts.family },
-  headerHeading:{ fontSize:size.subHeading,color:colors.dark,fontFamily:fonts.family }
+  headerHeading:{ fontSize:size.subHeading,color:colors.dark,fontFamily:fonts.family },
+
+
+});
+
+export const LocalStyle = StyleSheet.create({
+  itemContainer:{ flexDirection:'row',alignItems:'center',marginTop:heightPercentageToDP(4) },
+  itemHeader:[style.commonTitle,{color:colors.grey,textTransform:'uppercase'}],
+  itemTitle:[style.commonText,{color:colors.dark}],
 
 });
