@@ -26,7 +26,7 @@ const FaqScreenHeader = ({ active,navigation,header }) => {
         }
       </View>
       <View style={{ flex:.7 }}>
-        <Text style={{ fontSize:size.subHeading,textTransform:'capitalize' ,color:colors.dark, fontFamily:fonts.family, fontWeight:'bold' }}>{header}</Text>
+        <Text style={{ fontSize:size.subHeading,textTransform:'capitalize' ,color:colors.dark, fontFamily:fonts.family, fontWeight:'bold',textAlign:'center' }}>{header}</Text>
       </View>
       <View style={{ flex:.15 }}>
         <HeaderButton active={active} navigation={navigation} />

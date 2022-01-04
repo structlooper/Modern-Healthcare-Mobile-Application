@@ -27,13 +27,19 @@ const FaqDropDownContainer = ({ CollapseStatus,question,answer,isAns,time }) => 
                 color={colors.grey}
               />
             </View>
-            <View style={{ flex:.7 }}>
+            <View style={{ flex:time!==undefined?.7:.9 }}>
               <Text style={style.commonTitle}>{question}</Text>
             </View>
-            <View style={{flex:.2,alignItems:'center' }}>
-              <Text style={style.commonText}>{time}</Text>
-            </View>
+
+            {
+              time !== undefined?
+                <View style={{flex:.2,alignItems:'center' }}>
+                  <Text style={style.commonText}>{time}</Text>
+                </View>:
+                null
+            }
           </View>
+
         </CollapseHeader>
 
         <CollapseBody style={{ padding:'5%' }}>
@@ -62,9 +68,14 @@ const FaqDropDownContainer = ({ CollapseStatus,question,answer,isAns,time }) => 
           <View style={{ flex:.7 }}>
             <Text style={style.commonTitle}>{question}</Text>
           </View>
-          <View style={{flex:.2,alignItems:'center' }}>
-            <Text style={style.commonText}>{time}</Text>
-          </View>
+          {
+            time !== undefined?
+              <View style={{flex:.2,alignItems:'center' }}>
+                <Text style={style.commonText}>{time}</Text>
+              </View>:
+              null
+          }
+
         </View>
       </View>
     )

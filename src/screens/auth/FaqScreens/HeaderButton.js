@@ -39,7 +39,7 @@ const HeaderButton = ({ active,navigation }) => {
         padding:'1%',
         elevation:10,
         marginTop:heightPercentageToDP(1)
-      }} >
+      }} onPress={()=>navigation.navigate('FaqsList')}>
         <Text style={[style.commonTitle,{color:colors.dark,fontWeight:'bold'}]}>Faq?</Text>
       </TouchableOpacity>
     </View>
