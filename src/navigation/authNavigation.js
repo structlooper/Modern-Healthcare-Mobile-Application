@@ -40,6 +40,7 @@ import OthersList from "../screens/auth/HealthRecords/Others/OthersList";
 import FaqHomeScreen from "../screens/auth/FaqScreens/FaqHomeScreen";
 import FaqQuestionHistory from "../screens/auth/FaqScreens/FaqQuestionHistory";
 import FaqsList from "../screens/auth/FaqScreens/FaqsList";
+import SettingsList from "../screens/auth/Settings/SettingsList";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -60,7 +61,6 @@ const BottomStack = () => {
           borderTopRightRadius:20,
           borderTopLeftRadius:20,
         },
-
         indicatorStyle: { backgroundColor: 'black'},
         showLabel: false,
       }}>
@@ -108,8 +108,8 @@ const BottomStack = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Testing}
+        name="settings"
+        component={SettingsStackScreen}
         options={{
           tabBarLabel: 'settings',
 
@@ -126,6 +126,19 @@ const BottomStack = () => {
 
     </Tab.Navigator>
   )
+}
+const SettingsStackScreen = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName={'SettingsList'}
+    >
+      <Stack.Screen name="SettingsList"  component={SettingsList} />
+
+    </Stack.Navigator>
+      )
 }
 const FaqStackScreen = () => {
   return (
@@ -206,8 +219,7 @@ const HomeScreenStack = () => {
   );
 };
 
-export const AuthNavigation = () => {
-    return <HomeScreenStack />
-}
+export const AuthNavigation = () => <HomeScreenStack />
+
 
 export default AuthNavigation;
