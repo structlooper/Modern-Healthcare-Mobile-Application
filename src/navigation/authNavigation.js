@@ -42,14 +42,19 @@ import FaqQuestionHistory from "../screens/auth/FaqScreens/FaqQuestionHistory";
 import FaqsList from "../screens/auth/FaqScreens/FaqsList";
 import SettingsList from "../screens/auth/Settings/SettingsList";
 import UserAccount from "../screens/auth/Settings/MyAccount/UserAccount";
+import { commonIconSize } from "../componenets/organisms/settings";
+import SecurityHome from "../screens/auth/Settings/Security/SecurityHome";
+import ChangePassword from "../screens/auth/Settings/Security/ChangePassword";
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
-  let iconsSize = 33;
+  let iconsSize = commonIconSize+8;
   return (
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
+        keyboardHidesTabBar: true,
         activeTintColor: colors.dark,
         inactiveTintColor: colors.dark,
         style: {
@@ -78,7 +83,6 @@ const BottomStack = () => {
             />
           ),
         }}
-
       />
       <Tab.Screen
         name="HeathRecordList"
@@ -138,6 +142,8 @@ const SettingsStackScreen = () => {
     >
       <Stack.Screen name="SettingsList"  component={SettingsList} />
       <Stack.Screen name="UserAccount"  component={UserAccount} />
+      <Stack.Screen name="SecurityHome"  component={SecurityHome} />
+      <Stack.Screen name="ChangePassword"  component={ChangePassword} />
 
     </Stack.Navigator>
       )
@@ -175,9 +181,6 @@ const HealthRecordListStack = () => {
       <Stack.Screen name="CareTeamList"  component={CareTeamList} />
       <Stack.Screen name="TestsList"  component={TestsList} />
       <Stack.Screen name="OthersList"  component={OthersList} />
-
-
-
     </Stack.Navigator>
   );
 };

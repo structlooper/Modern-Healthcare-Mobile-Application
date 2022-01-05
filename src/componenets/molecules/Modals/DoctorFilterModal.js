@@ -7,8 +7,7 @@ import { fonts, size } from "../../../theme/fonts";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import CountryLanguageModal from "./CountryLanguageModal";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import GenderButton from "../../atoms/GenderButton";
+  import GenderButton from "../../atoms/GenderButton";
 import { SetDoctorGender } from "../../../redux/actions";
 import { commonIconSize } from "../../organisms/settings";
 

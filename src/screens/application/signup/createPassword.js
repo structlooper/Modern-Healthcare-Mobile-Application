@@ -7,11 +7,10 @@ import { Button, GradientButton, IconButton } from "../../../componenets/atoms/B
 import { fonts, size } from "../../../theme/fonts";
 import { ExitModalConfirmation } from "../../../componenets/molecules/Modals/exitModalConfirmation";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { ThemePasswordInput, ThemeTextInput } from "../../../componenets/atoms/Inputs";
+import { ThemePasswordInput } from "../../../componenets/atoms/Inputs";
 import  { BarPasswordStrengthDisplay } from "react-native-password-strength-meter";
 import { PasswordChecks } from "../../../componenets/molecules/passwordChecks";
 import {
-  CheckEmail,
   CheckStringLength,
   CheckStringOneDigit,
   CheckStringOneSymbol,

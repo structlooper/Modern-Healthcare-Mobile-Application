@@ -23,7 +23,7 @@ const SettingsList = ({ navigation }) => {
             {
               title:'security',
               icon:'lock',
-              action:()=>console.log('this')
+              action:()=>navigation.navigate('SecurityHome')
             },
             {
               title:'privacy',

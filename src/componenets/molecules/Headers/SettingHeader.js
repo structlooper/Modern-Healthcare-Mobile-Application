@@ -6,7 +6,7 @@ import { style } from "../../organisms/style";
 import { IconButton } from "../../atoms/Buttons";
 import { commonIconSize } from "../../organisms/settings";
 
-const SettingHeader = ({ headerTitle,navigation }) => {
+const SettingHeader = ({ headerTitle,navigation,buttonType = false }) => {
   return (
     <View style={{
       backgroundColor:colors.light,
@@ -22,13 +22,13 @@ const SettingHeader = ({ headerTitle,navigation }) => {
           navigation !== undefined?
           IconButton(
             {
-              backgroundColor:colors.bckGreen,
+              backgroundColor:buttonType?colors.bckRed :colors.bckGreen,
               width:45,height:45,borderRadius:100,
               justifyContent:'center',alignItems:'center'
             },
-            'arrow-left',
+            buttonType?'times' :'arrow-left',
             commonIconSize+5,
-            colors.ltnGreen,
+            buttonType?colors.red :colors.ltnGreen,
             {  },
             ()=>navigation.goBack()
           ):null
