@@ -39,7 +39,7 @@ const SettingsList = ({ navigation }) => {
             {
               title:'notifications',
               icon:'bell',
-              action:()=>console.log('this')
+              action:()=>navigation.navigate('NotificationSettings')
             },
             {
               title:'payment',

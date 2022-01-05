@@ -4,7 +4,7 @@ import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import ButtomButton from "../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../componenets/molecules/BottomButton";
 import SearchAndFilter from "../../../componenets/molecules/SearchAndFilter";
 import { style } from "../../../componenets/organisms/style";
 import NoPreferences from "../../../componenets/atoms/NoPreferences";
@@ -75,7 +75,7 @@ const FamilyDoctorList = ({ navigation }) => {
       </View>
 
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.navigate('DateTimeSelection',{currentThemeColor:'green'})
         }} text={'Next'} />
       </View>

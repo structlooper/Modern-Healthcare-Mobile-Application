@@ -111,3 +111,7 @@ export const getLatLngFromAddress = (address) => {
   })
 }
 
+export const customState = (state,setState) => {
+  return {state:state, setState:setState};
+}
+

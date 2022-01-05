@@ -5,7 +5,7 @@ import statusBar from "../../../../../componenets/molecules/statusBar";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import CharedServicePageHeader from "../../../../../componenets/molecules/Headers/CharedServicePageHeader";
 import { style } from "../../../../../componenets/organisms/style";
-import ButtomButton from "../../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../../componenets/molecules/BottomButton";
 
 const CommonPage = ({ navigation,route }) => {
   const {name} = route.params;
@@ -56,7 +56,7 @@ const CommonPage = ({ navigation,route }) => {
         </View>
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'flex-end',marginBottom:heightPercentageToDP(2) }} >
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.navigate('VerificationOtpPage')
         }} text={'Enter payment'} />
       </View>

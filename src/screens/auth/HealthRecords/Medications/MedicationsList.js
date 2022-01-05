@@ -4,7 +4,7 @@ import { style } from "../../../../componenets/organisms/style";
 import { DeleteModalAuthConfirmation } from "../../../../componenets/molecules/Modals/exitModalConfirmation";
 import HealthRecordsHeader from "../../../../componenets/molecules/Headers/HealthRecordsHeader";
 import AddNewDataButton from "../../../../componenets/atoms/MedicalHistoryButtons/AddNewDataButton";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import MedicationContainer from "./MedicationContainer";
 
 const MedicationsList = ({ navigation }) => {
@@ -50,7 +50,7 @@ const MedicationsList = ({ navigation }) => {
       </View>
       <View style={{ flex:.15 }}>
 
-        <ButtomButton action={()=>navigation.goBack()}
+        <BottomButton action={()=>navigation.goBack()}
                       text={'Request Refill'} showButton={SelectedMedications.length > 0} gradientColors={style.GradientColors} />
       </View>
 

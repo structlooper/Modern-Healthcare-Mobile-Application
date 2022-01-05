@@ -3,7 +3,7 @@ import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
@@ -227,7 +227,7 @@ const RefillMedicines = ({ navigation }) => {
       </View>
 
       <View style={{ alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
       </View>

@@ -6,7 +6,7 @@ import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { size } from "../../../theme/fonts";
 import { Button, GradientButton } from "../../../componenets/atoms/Buttons";
-import ButtomButton from "../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../componenets/molecules/BottomButton";
 
 const ReasonForVisit = ({ navigation }) => {
   const [SelectedItems,SetSelectedItems] = useState([
@@ -170,7 +170,7 @@ const ReasonForVisit = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'flex-end',marginBottom:heightPercentageToDP(2) }} >
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.navigate('FamilyDoctorList')
         }} text={'Next'} />
       </View>

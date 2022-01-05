@@ -2,7 +2,7 @@ import React from "react";
 import { Button, GradientButton } from "../atoms/Buttons";
 import { style } from "../organisms/style";
 
-const ButtomButton = ({ text,showButton,action,gradientColors = style.GradientColors }) => {
+const BottomButton = ({ text,showButton,action,gradientColors = style.GradientColors }) => {
 
       if(showButton) {
         return GradientButton(
@@ -26,4 +26,4 @@ const ButtomButton = ({ text,showButton,action,gradientColors = style.GradientCo
 
 };
 
-export default ButtomButton;
+export default BottomButton;

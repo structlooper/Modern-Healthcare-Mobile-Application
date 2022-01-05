@@ -7,7 +7,7 @@ import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } 
 import { Button, GradientButton } from "../../../../componenets/atoms/Buttons";
 import { fonts, size } from "../../../../theme/fonts";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const SymptomsPage = ({ navigation }) => {
@@ -173,7 +173,7 @@ const SymptomsPage = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
 

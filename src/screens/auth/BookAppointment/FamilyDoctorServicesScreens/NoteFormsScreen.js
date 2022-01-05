@@ -9,7 +9,7 @@ import { fonts, size } from "../../../../theme/fonts";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import ShowUploadedImage from "../../../../componenets/molecules/ShowUploadedImage";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import { commonIconSize } from "../../../../componenets/organisms/settings";
 
 const NoteFormsScreen = ({ navigation }) => {
@@ -81,7 +81,7 @@ const NoteFormsScreen = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }} >
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
       </View>

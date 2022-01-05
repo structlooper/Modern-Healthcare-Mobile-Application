@@ -8,7 +8,7 @@ import SearchAndFilter from "../../../componenets/molecules/SearchAndFilter";
 import NoPreferences from "../../../componenets/atoms/NoPreferences";
 import { style } from "../../../componenets/organisms/style";
 import DoctorDetailsRender from "../../../componenets/atoms/DoctorDetailsRender";
-import ButtomButton from "../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../componenets/molecules/BottomButton";
 
 const SpecialistDoctorList = ({ navigation,route }) => {
   const {serviceName} = route.params;
@@ -79,7 +79,7 @@ const SpecialistDoctorList = ({ navigation,route }) => {
       </View>
 
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.navigate('DateTimeSelection',{currentThemeColor:'pink'})
         }} text={'Next'} gradientColors={[colors.pink,colors.pink]} />
       </View>

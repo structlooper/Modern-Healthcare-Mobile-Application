@@ -4,7 +4,7 @@ import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import ButtomButton from "../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../componenets/molecules/BottomButton";
 import { style } from "../../../componenets/organisms/style";
 import DoctorDetailsRender from "../../../componenets/atoms/DoctorDetailsRender";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
@@ -117,7 +117,7 @@ const DateTimeSelection = ({ navigation,route }) => {
         </View>
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.navigate('AppointmentConfirmPage')
         }} text={'Next'} gradientColors={[themeColor,themeColor]} />
       </View>

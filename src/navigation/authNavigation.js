@@ -46,6 +46,7 @@ import { commonIconSize } from "../componenets/organisms/settings";
 import SecurityHome from "../screens/auth/Settings/Security/SecurityHome";
 import ChangePassword from "../screens/auth/Settings/Security/ChangePassword";
 import PrivacyPage from "../screens/auth/Settings/Privacy/PrivacyPage";
+import NotificationSettings from "../screens/auth/Settings/NotificationSettings/NotificationSettings";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -146,6 +147,7 @@ const SettingsStackScreen = () => {
       <Stack.Screen name="SecurityHome"  component={SecurityHome} />
       <Stack.Screen name="ChangePassword"  component={ChangePassword} />
       <Stack.Screen name="PrivacyPage"  component={PrivacyPage} />
+      <Stack.Screen name="NotificationSettings"  component={NotificationSettings} />
 
     </Stack.Navigator>
       )

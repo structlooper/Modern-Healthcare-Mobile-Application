@@ -3,7 +3,7 @@ import { colors } from "../../../../theme/colors";
 import statusBar from "../../../../componenets/molecules/statusBar";
 import HeaderVerifyIdentity from "../../../../componenets/molecules/Headers/HeaderVerifyIdentity";
 import { Text, TextInput, View } from "react-native";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import { style } from "../../../../componenets/organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
@@ -38,7 +38,7 @@ const Consultation = ({ navigation }) => {
         />
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton showButton={showNextButton} action={()=>{
+        <BottomButton showButton={showNextButton} action={()=>{
           navigation.goBack()
         }} text={'Save'} />
       </View>

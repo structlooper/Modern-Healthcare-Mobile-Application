@@ -7,7 +7,7 @@ import { commonIconSize } from "../../../../componenets/organisms/settings";
 import { colors } from "../../../../theme/colors";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ImagePickerFunction, LaunchCameraFunction } from "../../../../componenets/organisms/functions";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import ShowUploadedImageRow from "../../../../componenets/molecules/ShowUploadedImageRow";
 
 const UploadFilesAndImages = ({ navigation }) => {
@@ -76,7 +76,7 @@ const UploadFilesAndImages = ({ navigation }) => {
         {/*</ScrollView>*/}
       </View>
       <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }}>
-        <ButtomButton action={()=>navigation.goBack()} gradientColors={[colors.lightGreen,colors.ltnGreen]} showButton={(uploadedPicturesCount > 0)} text={'Save'} />
+        <BottomButton action={()=>navigation.goBack()} gradientColors={[colors.lightGreen,colors.ltnGreen]} showButton={(uploadedPicturesCount > 0)} text={'Save'} />
       </View>
     </View>
   );

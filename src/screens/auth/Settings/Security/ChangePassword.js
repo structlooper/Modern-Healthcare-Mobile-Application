@@ -4,7 +4,7 @@ import { colors } from "../../../../theme/colors";
 import SettingHeader from "../../../../componenets/molecules/Headers/SettingHeader";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemePasswordInput } from "../../../../componenets/atoms/Inputs";
-import ButtomButton from "../../../../componenets/molecules/ButtomButton";
+import BottomButton from "../../../../componenets/molecules/BottomButton";
 import { style } from "../../../../componenets/organisms/style";
 import { BarPasswordStrengthDisplay } from "react-native-password-strength-meter";
 import { PasswordChecks } from "../../../../componenets/molecules/passwordChecks";
@@ -63,7 +63,7 @@ const ChangePassword = ({ navigation }) => {
 
       </View>
       <View style={{ flex:.15,alignItems:'center' }}>
-        <ButtomButton action={()=>navigation.goBack()} text={'Save'} showButton={(oldPassword !== '' && CheckStringLength(password) && CheckStringOneDigit(password) && CheckStringOneUppercase(password) && CheckStringOneSymbol(password) && password === confirmPassword)} gradientColors={style.GradientColors} />
+        <BottomButton action={()=>navigation.goBack()} text={'Save'} showButton={(oldPassword !== '' && CheckStringLength(password) && CheckStringOneDigit(password) && CheckStringOneUppercase(password) && CheckStringOneSymbol(password) && password === confirmPassword)} gradientColors={style.GradientColors} />
       </View>
     </View>
   );
