@@ -20,7 +20,7 @@ const Intro = ({ navigation }) => {
           </Text>
         </View>
         <View style={{ flex:.1 }}>
-          <Instruction />
+          <Instruction navigation={navigation} />
         </View>
         <View style={{ alignItems:'center',flex:.1 }}>
           {Button(

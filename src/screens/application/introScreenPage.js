@@ -145,7 +145,7 @@ const introScreenPage = ({ navigation }) => {
                 step===1?
                   <TouchableOpacity
                     style={{ flex:.5,justifyContent:'center' }}
-                                    onPress={()=>console.log('terms and condition')}
+                                    onPress={()=>navigation.navigate('TermsCondition')}
                   >
                     <Text style={{ color:colors.light,borderBottomColor:colors.lightWhite,borderBottomWidth:1 }}>Terms and Conditions apply</Text>
                   </TouchableOpacity>

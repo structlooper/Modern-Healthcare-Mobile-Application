@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../../componenets/organisms/style";
-import { Button, GradientButton, IconButton } from "../../../componenets/atoms/Buttons";
+import {IconButton } from "../../../componenets/atoms/Buttons";
 import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import { fonts, size } from "../../../theme/fonts";
@@ -9,8 +9,15 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import { ThemePasswordInput, ThemeTextInput } from "../../../componenets/atoms/Inputs";
 import { CheckEmail } from "../../../componenets/organisms/functions";
 import SignUpNavigation from "../../../componenets/molecules/signUpNavigation";
+import ColoredButton from "../../../componenets/atoms/ColoredButton";
+import { SetAuthProfileSkipped, SetAuthUserDetails, SetAuthUserToken } from "../../../redux/actions";
+import { useUserContext } from "../../../redux/context";
+import { useDispatch } from "react-redux";
 
 const LoginScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const {SignIn}= useUserContext();
+  const {ProfileSkipped} = useUserContext();
   const [email,setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -77,50 +84,14 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View style={{ flex:.2 }}>
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(5) }}>
-          {
-            CheckEmail(email)?
-              GradientButton(
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  borderWidth:.5,
-                  borderColor:'transparent',
-                },
-                [colors.ltnGreen, colors.lightGreen],
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                },
-                { color:colors.light,textTransform:'uppercase' },
-                'Sign in',
-                ()=>{
-                  navigation.navigate('SignUpEmailInfo')
-                }
-              )
-              :
-              Button(
-                {
-                  backgroundColor:colors.light,
-                  width:widthPercentageToDP(80),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  elevation:3,
-                  borderWidth:.5,
-                  borderColor:colors.lightGrey,
-                },
-                { color:colors.grey,textTransform:'uppercase' },
-                'Sign in',
-                ()=>{}
-              )
-          }
+
+          <ColoredButton gradientColors={style.GradientColors} showButton={ CheckEmail(email) && password !== '' && password.length > 6} text={'Sign in'} action={()=>{
+            dispatch(SetAuthUserToken('token_of_user'))
+            dispatch(SetAuthUserDetails(JSON.stringify({user_id:1,name:'user name'})))
+            SignIn('token_of_user')
+            dispatch(SetAuthProfileSkipped(true));
+            ProfileSkipped(true)
+          }} width={80} />
         </View>
         <SignUpNavigation navigation={navigation} />
 

@@ -45,6 +45,7 @@ import UserAccount from "../screens/auth/Settings/MyAccount/UserAccount";
 import { commonIconSize } from "../componenets/organisms/settings";
 import SecurityHome from "../screens/auth/Settings/Security/SecurityHome";
 import ChangePassword from "../screens/auth/Settings/Security/ChangePassword";
+import PrivacyPage from "../screens/auth/Settings/Privacy/PrivacyPage";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -144,6 +145,7 @@ const SettingsStackScreen = () => {
       <Stack.Screen name="UserAccount"  component={UserAccount} />
       <Stack.Screen name="SecurityHome"  component={SecurityHome} />
       <Stack.Screen name="ChangePassword"  component={ChangePassword} />
+      <Stack.Screen name="PrivacyPage"  component={PrivacyPage} />
 
     </Stack.Navigator>
       )

@@ -3,9 +3,15 @@ import { FlatList, View } from "react-native";
 import { colors } from "../../../theme/colors";
 import SettingButton from "./SettingButton";
 import SettingHeader from "../../../componenets/molecules/Headers/SettingHeader";
+import { SetAuthProfileSkipped, SetAuthUserToken } from "../../../redux/actions";
+import { useUserContext } from "../../../redux/context";
+import { useDispatch } from "react-redux";
 
 
 const SettingsList = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const {SignOut}= useUserContext();
+  const {ProfileSkipped}= useUserContext();
   const CommonItemRender = ({ item }) => <SettingButton title={item.title} icon={item.icon} action={item.action}   />
 
   return (
@@ -28,7 +34,7 @@ const SettingsList = ({ navigation }) => {
             {
               title:'privacy',
               icon:'shield',
-              action:()=>console.log('this')
+              action:()=>navigation.navigate('PrivacyPage')
             },
             {
               title:'notifications',
@@ -39,6 +45,16 @@ const SettingsList = ({ navigation }) => {
               title:'payment',
               icon:'currency-usd-circle',
               action:()=>console.log('this')
+            },
+            {
+              title:'logout',
+              icon:'logout',
+              action:()=>{
+                dispatch(SetAuthUserToken(''))
+                dispatch(SetAuthProfileSkipped(false))
+                SignOut()
+                ProfileSkipped(false)
+              }
             },
 
           ]}

@@ -10,6 +10,8 @@ import verificationOtpPage from "../screens/application/signup/verificationOtpPa
 import createPassword from "../screens/application/signup/createPassword";
 import loginScreen from "../screens/application/login/loginScreen";
 import ForgotPassword from "../screens/application/signup/forgotPassword";
+import PrivacyPage from "../screens/auth/Settings/Privacy/PrivacyPage";
+import TermsCondition from "../screens/auth/Settings/Privacy/TermsCondition";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +33,9 @@ function MyStack() {
       <Stack.Screen name="CreatePassword"  component={createPassword} />
       <Stack.Screen name="LoginScreen"  component={loginScreen} />
       <Stack.Screen name="ForgotPassword"  component={ForgotPassword} />
+      <Stack.Screen name="PrivacyPage"  component={PrivacyPage} />
+      <Stack.Screen name="TermsCondition"  component={TermsCondition} />
+
 
     </Stack.Navigator>
   );

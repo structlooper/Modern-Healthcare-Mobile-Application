@@ -7,11 +7,12 @@ import { Button, GradientButton, IconButton } from "../../../componenets/atoms/B
 import { fonts, size } from "../../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import SignInNavigation from "../../../componenets/molecules/signInNavigation";
-import { CheckPhone } from "../../../componenets/organisms/functions";
+import { CheckEmail, CheckPhone } from "../../../componenets/organisms/functions";
 import { countryListModal } from "../../../componenets/molecules/Modals/selectCountryModal";
-import { SetSignUpDetailsPhone } from "../../../redux/actions";
+import { SetSignUpDetailsEmail, SetSignUpDetailsPhone } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
 import { CountryList } from "../../../componenets/atoms/DummyData";
+import ColoredButton from "../../../componenets/atoms/ColoredButton";
 
 const ForgotPassword = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const ForgotPassword = ({ navigation }) => {
     <View style={style.mainContainer}>
 
     {statusBar(colors.light) }
-      <View style={{ flex:.8 }}>
+      <View style={{ flex:.85 }}>
         <View>
           {IconButton(
             {
@@ -94,6 +95,7 @@ const ForgotPassword = ({ navigation }) => {
                   maxLength={10}
                   keyboardType={'numeric'}
                   placeholder={'1234567890'}
+                  placeholderTextColor={colors.grey}
                 />
 
 
@@ -103,54 +105,14 @@ const ForgotPassword = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <View style={{ flex:.2,justifyContent:'center' }}>
-        <SignInNavigation navigation={navigation} />
+      <View style={{ flex:.1,justifyContent:'center' }}>
+        {/*<SignInNavigation navigation={navigation} />*/}
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(5) }}>
-          {
-            CheckPhone(localPhone)?
-              GradientButton(
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  borderWidth:.5,
-                  borderColor:'transparent',
-                },
-                [colors.ltnGreen, colors.lightGreen],
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                },
-                { color:colors.light,textTransform:'capitalize' },
-                'Send Verification Code',
-                ()=>{
-                  dispatch(SetSignUpDetailsPhone(selectedCountryCode.title+'-'+localPhone))
-                  navigation.navigate('VerificationOtpPage')
-                }
-              )
-              :
-              Button(
-                {
-                  backgroundColor:colors.light,
-                  width:widthPercentageToDP(80),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  elevation:3,
-                  borderWidth:.5,
-                  borderColor:colors.lightGrey,
-                },
-                { color:colors.grey,textTransform:'capitalize' },
-                'Send Verification Code',
-                ()=>{}
-              )
-          }
+          <ColoredButton gradientColors={style.GradientColors} showButton={ CheckPhone(localPhone)} text={'Send Verification Code'} action={()=>{
+            dispatch(SetSignUpDetailsPhone(selectedCountryCode.title+'-'+localPhone))
+            navigation.navigate('VerificationOtpPage')
+          }} width={80} />
+
         </View>
       </View>
       {countryListModal(countryCode,selectedCountryCode,setSelectedCountryCode,countryModal,setCountryModal)}

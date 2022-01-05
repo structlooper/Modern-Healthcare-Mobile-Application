@@ -3,16 +3,16 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { style } from "../../componenets/organisms/style";
 import statusBar from "../../componenets/molecules/statusBar";
 import { colors } from "../../theme/colors";
-import { Button, GradientButton, IconButton } from "../../componenets/atoms/Buttons";
 import { size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { ThemeIconNumericInput, ThemeIconTextInput, ThemeTextInput } from "../../componenets/atoms/Inputs";
 import Gender from "../../componenets/molecules/gender";
-import { useDispatch, useSelector } from "react-redux";
-import { SetAuthProfileSkipped } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { SetAuthProfileSkipped, SetSignUpDetailsEmail } from "../../redux/actions";
 import { useUserContext } from "../../redux/context";
 import moment from "moment";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import ColoredButton from "../../componenets/atoms/ColoredButton";
 const ProfilePage = ({ navigation,route }) => {
   let profileHeader = undefined;
   if (route.params !== undefined){
@@ -161,50 +161,10 @@ const ProfilePage = ({ navigation,route }) => {
         </ScrollView>
       </View>
       <View style={{ justifyContent:'center',alignItems:'center',flex:.1 }}>
-        {
-          name !== '' && gender !== '' && dob !== '' && healthCardProvince !== '' && healthCard !== '' && healthCardVersion !== ''?
-            GradientButton(
-              {
-                width:widthPercentageToDP('80%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                borderWidth:.5,
-                borderColor:'transparent',
-              },
-              [colors.ltnGreen, colors.lightGreen],
-              {
-                width:widthPercentageToDP('80%'),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-              },
-              { color:colors.light,textTransform:'uppercase' },
-              'Continue',
-              ()=>{
-                navigation.navigate('ShowProfile')
-              }
-            )
-            :
-            Button(
-              {
-                backgroundColor:colors.light,
-                width:widthPercentageToDP(80),
-                height:heightPercentageToDP(5),
-                borderRadius:50,
-                alignItems:'center',
-                justifyContent:'center',
-                elevation:3,
-                borderWidth:.5,
-                borderColor:colors.lightGrey,
-              },
-              { color:colors.grey,textTransform:'uppercase' },
-              'Continue',
-              ()=>{}
-            )
-        }
+
+        <ColoredButton gradientColors={style.GradientColors} showButton={ name !== '' && gender !== '' && dob !== '' && healthCardProvince !== '' && healthCard !== '' && healthCardVersion !== ''} text={'Continue'} action={()=>{
+          navigation.navigate('ShowProfile')
+        }} width={80} />
       </View>
       {Gender(genderModal,SetGenderModal,gender,SetGender)}
     </View>

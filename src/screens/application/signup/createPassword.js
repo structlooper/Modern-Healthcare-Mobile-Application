@@ -11,6 +11,7 @@ import { ThemePasswordInput } from "../../../componenets/atoms/Inputs";
 import  { BarPasswordStrengthDisplay } from "react-native-password-strength-meter";
 import { PasswordChecks } from "../../../componenets/molecules/passwordChecks";
 import {
+  CheckEmail,
   CheckStringLength,
   CheckStringOneDigit,
   CheckStringOneSymbol,
@@ -19,6 +20,7 @@ import {
 import { SetAuthUserDetails, SetAuthUserToken, SetSignUpDetailsEmail } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useUserContext } from "../../../redux/context";
+import ColoredButton from "../../../componenets/atoms/ColoredButton";
 
 const CreatePassword = ({ navigation }) => {
   const {SignIn}= useUserContext();
@@ -88,54 +90,14 @@ const CreatePassword = ({ navigation }) => {
             </View>
           </View>
           </View>
-          <View style={{ flex:.2,justifyContent:'center',alignItems:'center' }}>
-            {
-              CheckStringLength(password) && CheckStringOneDigit(password) && CheckStringOneUppercase(password) && CheckStringOneSymbol(password) && password === confirmPassword?
-                GradientButton(
-                  {
-                    width:widthPercentageToDP('80%'),
-                    height:heightPercentageToDP(5),
-                    borderRadius:50,
-                    alignItems:'center',
-                    justifyContent:'center',
-                    borderWidth:.5,
-                    borderColor:'transparent',
-                  },
-                  [colors.ltnGreen, colors.lightGreen],
-                  {
-                    width:widthPercentageToDP('80%'),
-                    height:heightPercentageToDP(5),
-                    borderRadius:50,
-                    alignItems:'center',
-                    justifyContent:'center',
-                  },
-                  { color:colors.light,textTransform:'uppercase' },
-                  'Continue',
-                  ()=>{
-                    dispatch(SetAuthUserToken('token_of_user'))
-                    dispatch(SetAuthUserDetails(JSON.stringify({user_id:1,name:'user name'})))
-                    SignIn('token_of_user')
+          <View style={{ flex:.1,justifyContent:'center',alignItems:'center' }}>
 
-                  }
-                )
-                :
-                Button(
-                  {
-                    backgroundColor:colors.light,
-                    width:widthPercentageToDP(80),
-                    height:heightPercentageToDP(5),
-                    borderRadius:50,
-                    alignItems:'center',
-                    justifyContent:'center',
-                    elevation:3,
-                    borderWidth:.5,
-                    borderColor:colors.lightGrey,
-                  },
-                  { color:colors.grey,textTransform:'uppercase' },
-                  'Continue',
-                  ()=>{}
-                )
-            }
+            <ColoredButton gradientColors={style.GradientColors} showButton={ CheckStringLength(password) && CheckStringOneDigit(password) && CheckStringOneUppercase(password) && CheckStringOneSymbol(password) && password === confirmPassword} text={'Continue'} action={()=>{
+              dispatch(SetAuthUserToken('token_of_user'))
+              dispatch(SetAuthUserDetails(JSON.stringify({user_id:1,name:'user name'})))
+              SignIn('token_of_user')
+
+            }} width={80} />
           </View>
         </View>
       </Modal>

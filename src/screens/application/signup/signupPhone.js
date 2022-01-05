@@ -7,13 +7,14 @@ import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsi
 import { fonts, size } from "../../../theme/fonts";
 import { Button, GradientButton, IconButton } from "../../../componenets/atoms/Buttons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import { CheckPhone } from "../../../componenets/organisms/functions";
-import { SetSignUpDetailsPhone } from "../../../redux/actions";
+import { CheckEmail, CheckPhone } from "../../../componenets/organisms/functions";
+import { SetSignUpDetailsEmail, SetSignUpDetailsPhone } from "../../../redux/actions";
 import { countryListModal } from "../../../componenets/molecules/Modals/selectCountryModal";
 import { ExitModalConfirmation } from "../../../componenets/molecules/Modals/exitModalConfirmation";
 import { useDispatch } from "react-redux";
 import SignInNavigation from "../../../componenets/molecules/signInNavigation";
 import { CountryList } from "../../../componenets/atoms/DummyData";
+import ColoredButton from "../../../componenets/atoms/ColoredButton";
 
 
 
@@ -34,7 +35,7 @@ const SignupPhone = ({ navigation }) => {
   return (
     <View style={style.mainContainer}>
       {statusBar(colors.light) }
-      <View style={{ flex:.8 }}>
+      <View style={{ flex:.85 }}>
         <View style={{ alignItems:'flex-end' }}>
           {IconButton(
             {
@@ -108,54 +109,14 @@ const SignupPhone = ({ navigation }) => {
             </View>
           </View>
       </View>
-      <View style={{ flex:.2,justifyContent:'center' }}>
+      <View style={{ flex:.15,justifyContent:'center' }}>
         <SignInNavigation navigation={navigation} />
         <View style={{ alignItems:'center',marginVertical:heightPercentageToDP(5) }}>
-          {
-            CheckPhone(localPhone)?
-              GradientButton(
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  borderWidth:.5,
-                  borderColor:'transparent',
-                },
-                [colors.ltnGreen, colors.lightGreen],
-                {
-                  width:widthPercentageToDP('80%'),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                },
-                { color:colors.light,textTransform:'capitalize' },
-                'Send Verification Code',
-                ()=>{
-                  dispatch(SetSignUpDetailsPhone(selectedCountryCode.title+'-'+localPhone))
-                  navigation.navigate('VerificationOtpPage')
-                }
-              )
-              :
-              Button(
-                {
-                  backgroundColor:colors.light,
-                  width:widthPercentageToDP(80),
-                  height:heightPercentageToDP(5),
-                  borderRadius:50,
-                  alignItems:'center',
-                  justifyContent:'center',
-                  elevation:3,
-                  borderWidth:.5,
-                  borderColor:colors.lightGrey,
-                },
-                { color:colors.grey,textTransform:'capitalize' },
-                'Send Verification Code',
-                ()=>{}
-              )
-          }
+
+          <ColoredButton gradientColors={style.GradientColors} showButton={ CheckPhone(localPhone)} text={'Send Verification Code'} action={()=>{
+            dispatch(SetSignUpDetailsPhone(selectedCountryCode.title+'-'+localPhone))
+            navigation.navigate('VerificationOtpPage')
+          }} width={80} />
         </View>
       </View>
       {countryListModal(countryCode,selectedCountryCode,setSelectedCountryCode,countryModal,setCountryModal)}

@@ -170,6 +170,7 @@ const AppointmentDetailsView = () => {
                   maxLength={10}
                   keyboardType={'numeric'}
                   placeholder={'Enter phone number'}
+                  placeholderTextColor={colors.grey}
                 />
               </View>
 
