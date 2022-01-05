@@ -10,7 +10,7 @@ const ProfileComplePercent = ({ navigation }) => {
   return (
     <TouchableOpacity
       style={{ flex:1,height:heightPercentageToDP(20),backgroundColor:colors.ltnBlue,borderRadius:20,justifyContent:'center',alignItems:'center',marginHorizontal:widthPercentageToDP(1) }}
-                      onPress={()=>navigation.navigate('settings',{screen:'UserAccount'})}>
+                      onPress={()=>navigation.navigate('UserAccountGeneral')}>
       <Text style={{ color:colors.light,fontSize:size.text,fontFamily:fonts.family,fontWeight:'bold' }}>Setup Profile</Text>
       <View style={{ marginTop:heightPercentageToDP(1) }}>
         <CircularProgress

@@ -74,7 +74,7 @@ const BottomStack = () => {
       }}>
       <Tab.Screen
         name="HomeScreen"
-        component={HomePage}
+        component={MainScreenStack}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon:({color , focused}) => (
@@ -133,6 +133,21 @@ const BottomStack = () => {
 
     </Tab.Navigator>
   )
+}
+const MainScreenStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName={'HomeTab'}
+    >
+      <Stack.Screen name="HomeTab"  component={HomePage} />
+      <Stack.Screen name="UserAccountGeneral"  component={UserAccount} />
+
+
+    </Stack.Navigator>
+      )
 }
 const SettingsStackScreen = () => {
   return (

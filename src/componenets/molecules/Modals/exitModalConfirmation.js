@@ -106,6 +106,37 @@ export const DeleteModalAuthConfirmation = ({ ModalState }) => {
     </Modal>
   );
 };
+export const CommonConfirmationModalAuth = ({ modalState,title,text,YesFunction,NoFunction =()=>modalState.setState(!modalState.state) }) => {
+  return (
+    <Modal visible={modalState.state} transparent={true} animationType="fade" >
+      <View style={ModalLocalStyle.containerOne}>
+        <View style={{ flex:.35 }} />
+        <View style={ModalLocalStyle.containerTwo}>
+          <View style={ModalLocalStyle.containerThree}>
+            <Text style={ModalLocalStyle.headerText}>{title}</Text>
+            <View style={ModalLocalStyle.descContainer}>
+              <Text style={ModalLocalStyle.desc}>{text}</Text>
+            </View>
+            <View style={ModalLocalStyle.bottomButtonContainer}>
+              <TouchableOpacity
+                style={ModalLocalStyle.actionButtonStyle}
+                onPress={NoFunction}
+              >
+                <Text style={ModalLocalStyle.noText}>No</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={YesFunction}
+                style={ModalLocalStyle.actionButtonStyle}
+              >
+                <Text style={ModalLocalStyle.yesText}>Yes</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+};
 
 const ModalLocalStyle = StyleSheet.create({
   containerOne:{ backgroundColor:'rgba(0,0,0,0.5)',flex:1,borderRadius:20 },

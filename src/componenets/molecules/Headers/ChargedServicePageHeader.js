@@ -5,7 +5,7 @@ import { Text, View } from "react-native";
 import { IconButton } from "../../atoms/Buttons";
 import { fonts, size } from "../../../theme/fonts";
 
-const CharedServicePageHeader = ({titleText,backButton,navigation,bottomTextShow = false,bottomText = null}) => {
+const ChargedServicePageHeader = ({titleText,backButton,navigation,bottomTextShow = false,bottomText = null}) => {
   return (
     <View style={{ height:heightPercentageToDP(25)
       ,borderWidth:5,borderRadius:20,borderTopColor:'transparent',borderColor:colors.lightGrey,
@@ -51,4 +51,4 @@ const CharedServicePageHeader = ({titleText,backButton,navigation,bottomTextShow
   );
 };
 
-export default CharedServicePageHeader;
+export default ChargedServicePageHeader;

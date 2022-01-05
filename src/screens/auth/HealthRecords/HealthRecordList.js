@@ -4,6 +4,7 @@ import { colors } from "../../../theme/colors";
 import statusBar from "../../../componenets/molecules/statusBar";
 import { style } from "../../../componenets/organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
+import SettingHeader from "../../../componenets/molecules/Headers/SettingHeader";
 
 const HealthRecordList = ({ navigation }) => {
   const SingleItemContainer = ({ icon,title,action }) => {
@@ -32,17 +33,7 @@ const HealthRecordList = ({ navigation }) => {
   const RenderItemContainer =({ item }) => <SingleItemContainer title={item.title}  icon={item.icon} action={item.action}/>
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
-      <View style={{
-        backgroundColor:colors.light,
-        flex:.15,
-        elevation:5,
-        borderRadius:20,
-        alignItems:'center',
-        justifyContent:'center'
-      }}>
-        {statusBar(colors.light)}
-        <Text style={style.headerHeading}>Health Records</Text>
-      </View>
+      <SettingHeader headerTitle={'Health Records'} />
       <View style={{ flex:.8,padding:'5%'}}>
 
           <FlatList

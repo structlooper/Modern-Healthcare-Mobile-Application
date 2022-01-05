@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { colors } from "../../../../../theme/colors";
 import statusBar from "../../../../../componenets/molecules/statusBar";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import CharedServicePageHeader from "../../../../../componenets/molecules/Headers/CharedServicePageHeader";
+import ChargedServicePageHeader from "../../../../../componenets/molecules/Headers/ChargedServicePageHeader";
 import { style } from "../../../../../componenets/organisms/style";
 import BottomButton from "../../../../../componenets/molecules/BottomButton";
 
@@ -39,7 +39,7 @@ const CommonPage = ({ navigation,route }) => {
   return (
     <View style={{ flex:1,backgroundColor:colors.light }}>
       {statusBar(colors.light)}
-      <CharedServicePageHeader
+      <ChargedServicePageHeader
         backButton={true}
         titleText={header}
         navigation={navigation}

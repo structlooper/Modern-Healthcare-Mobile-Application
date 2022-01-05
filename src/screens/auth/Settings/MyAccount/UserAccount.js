@@ -129,16 +129,17 @@ const UserAccount = ({ navigation }) => {
               <Text style={LocalStyle.itemTitle}>239</Text>
             </View>
           </View>
-
+          <View style={{ marginTop:heightPercentageToDP(3),alignItems:'center',justifyContent:'center' }}>
+            <TouchableOpacity>
+              <Text style={[style.commonTitle,{color:colors.red, textTransform:'capitalize'}]}>Delete account</Text>
+            </TouchableOpacity>
+          </View>
 
         </ScrollView>
 
       </View>
-      <View style={{ flex:.15,alignItems:'center' }}>
-        <TouchableOpacity>
-          <Text style={[style.commonTitle,{color:colors.red, textTransform:'capitalize'}]}>Delete account</Text>
-        </TouchableOpacity>
-      </View>
+      <View style={{ flex:.1,alignItems:'center',justifyContent:'center' }} />
+
     </View>
   );
 };

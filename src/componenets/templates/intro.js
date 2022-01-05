@@ -8,6 +8,8 @@ import { fonts, size } from "../../theme/fonts";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import Instruction from "../molecules/instruction";
 import { Button } from "../atoms/Buttons";
+import ColoredButton from "../atoms/ColoredButton";
+import { style } from "../organisms/style";
 
 const Intro = ({ navigation }) => {
   return (
@@ -22,7 +24,7 @@ const Intro = ({ navigation }) => {
         <View style={{ flex:.1 }}>
           <Instruction navigation={navigation} />
         </View>
-        <View style={{ alignItems:'center',flex:.1 }}>
+        <View style={{ alignItems:'center',flex:.2 }}>
           {Button(
             {
               backgroundColor:colors.light,
@@ -30,7 +32,8 @@ const Intro = ({ navigation }) => {
               height:heightPercentageToDP(5),
               borderRadius:50,
               alignItems:'center',
-              justifyContent:'center'
+              justifyContent:'center',
+              marginBottom:heightPercentageToDP(2)
             },
             { color:colors.blue,textTransform:'uppercase' },
             'Get started',
@@ -38,6 +41,7 @@ const Intro = ({ navigation }) => {
               navigation.navigate('IntroScreenPage');
             }
           )}
+          <ColoredButton action={()=>navigation.navigate('LoginScreen')} text={'SIGN IN'} showButton={true} gradientColors={style.GradientColors} />
         </View>
         </LinearGradient>
     </View>
