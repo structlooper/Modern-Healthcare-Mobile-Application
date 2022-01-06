@@ -47,6 +47,7 @@ import SecurityHome from "../screens/auth/Settings/Security/SecurityHome";
 import ChangePassword from "../screens/auth/Settings/Security/ChangePassword";
 import PrivacyPage from "../screens/auth/Settings/Privacy/PrivacyPage";
 import NotificationSettings from "../screens/auth/Settings/NotificationSettings/NotificationSettings";
+import NotificationList from "../screens/auth/Settings/NotificationSettings/NotificationList";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -144,6 +145,7 @@ const MainScreenStack = () => {
     >
       <Stack.Screen name="HomeTab"  component={HomePage} />
       <Stack.Screen name="UserAccountGeneral"  component={UserAccount} />
+      <Stack.Screen name="NotificationList"  component={NotificationList} />
 
 
     </Stack.Navigator>

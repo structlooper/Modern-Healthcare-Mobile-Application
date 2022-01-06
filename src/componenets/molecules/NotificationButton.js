@@ -6,7 +6,7 @@ import { colors } from "../../theme/colors";
 
 const NotificationButton = ({ navigation }) => {
   return (
-    <TouchableOpacity style={{  }} onPress={() => console.log('bell')}>
+    <TouchableOpacity style={{  }} onPress={() => navigation.navigate('NotificationList')}>
       <View style={{ flexDirection:'row',marginRight:widthPercentageToDP(2) }}>
         <View style={{  }}>
           <MaterialCommunityIcons

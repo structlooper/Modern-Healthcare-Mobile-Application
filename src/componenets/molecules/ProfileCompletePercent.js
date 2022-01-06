@@ -6,7 +6,7 @@ import { fonts, size } from "../../theme/fonts";
 import CircularProgress from "react-native-circular-progress-indicator/src/circularProgress/index";
 import { commonIconSize } from "../organisms/settings";
 
-const ProfileComplePercent = ({ navigation }) => {
+const ProfileCompletePercent = ({ navigation }) => {
   return (
     <TouchableOpacity
       style={{ flex:1,height:heightPercentageToDP(20),backgroundColor:colors.ltnBlue,borderRadius:20,justifyContent:'center',alignItems:'center',marginHorizontal:widthPercentageToDP(1) }}
@@ -26,4 +26,4 @@ const ProfileComplePercent = ({ navigation }) => {
   );
 };
 
-export default ProfileComplePercent;
+export default ProfileCompletePercent;

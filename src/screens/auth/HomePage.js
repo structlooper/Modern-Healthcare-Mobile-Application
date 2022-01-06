@@ -8,7 +8,7 @@ import NotificationButton from "../../componenets/molecules/NotificationButton";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { fonts, size } from "../../theme/fonts";
 import BookAppointmentBtn from "../../componenets/molecules/BookAppointmentBtn";
-import ProfileComplePercent from "../../componenets/molecules/ProfileComplePercent";
+import ProfileCompletePercent from "../../componenets/molecules/ProfileCompletePercent";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/Modals/MyAppointmentModal";
@@ -52,7 +52,7 @@ const HomePage = ({ navigation }) => {
 
          <View style={{ marginTop:heightPercentageToDP(5),marginHorizontal:widthPercentageToDP('5') }}>
            <View style={{ flexDirection:'row' }}>
-            <ProfileComplePercent navigation={navigation} />
+            <ProfileCompletePercent navigation={navigation} />
              <View style={{ flex:1,marginHorizontal:widthPercentageToDP(1)}}>
                <TouchableOpacity style={{ height:heightPercentageToDP(20),backgroundColor:'transparent'}}
                                  onPress={()=> {
