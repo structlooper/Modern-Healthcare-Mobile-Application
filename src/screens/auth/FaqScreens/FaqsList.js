@@ -5,11 +5,13 @@ import FaqScreenHeader from "../../../componenets/molecules/Headers/FaqScreenHea
 import SearchInput from "../../../componenets/atoms/SearchInput";
 import { colors } from "../../../theme/colors";
 import RenderFaqContainer from "./RenderFaqContainer";
+import { customState } from "../../../componenets/organisms/functions";
 
 const FaqsList = ({ navigation }) => {
   const [searchQuestion,SetSearchQuestion] = useState('');
 
-  const [collapse,setCollapse] = useState(false);
+  const [collapseCount,setCollapseCount] = useState();
+  const [collapse,setCollapse] = useState([]);
   const CollapseState = {state:collapse,setState:setCollapse}
   const [appointList,setAppointmentList] = useState([
     {
@@ -68,9 +70,9 @@ const FaqsList = ({ navigation }) => {
       <View style={{ flex:1,marginTop:'4%',padding:'1%' }}>
         <SearchInput color={colors.grey} placeHolder={'Ask a question'} Search={searchQuestion} SetSearch={SetSearchQuestion} />
         <ScrollView>
-          <RenderFaqContainer title={'Appointments'} CollapseState={CollapseState} list={appointList} />
-          <RenderFaqContainer title={'Medications'} CollapseState={CollapseState} list={medicationsList} />
-          <RenderFaqContainer title={'Settings'} CollapseState={CollapseState} list={settingsList} />
+          <RenderFaqContainer title={'Appointments'} CollapseState={CollapseState} list={appointList} countUpdate={customState(collapseCount,setCollapseCount)} />
+          <RenderFaqContainer title={'Medications'} CollapseState={CollapseState} list={medicationsList} countUpdate={customState(collapseCount,setCollapseCount)} />
+          <RenderFaqContainer title={'Settings'} CollapseState={CollapseState} list={settingsList} countUpdate={customState(collapseCount,setCollapseCount)} />
 
         </ScrollView>
         </View>

@@ -4,9 +4,11 @@ import { style } from "../../../componenets/organisms/style";
 import FaqScreenHeader from "../../../componenets/molecules/Headers/FaqScreenHeader";
 
 import FaqDropDownContainer from "./FaqDropDownContainer";
+import { customState } from "../../../componenets/organisms/functions";
 
 const FaqQuestionHistory = ({ navigation }) => {
-  const [collapse,setCollapse] = useState(false);
+  const [collapse,setCollapse] = useState([]);
+  const [collapseCount,setCollapseCount] = useState();
   const CollapseState = {state:collapse,setState:setCollapse}
 
   const CommonItemRender = ({ item }) => <FaqDropDownContainer
@@ -14,6 +16,7 @@ const FaqQuestionHistory = ({ navigation }) => {
     answer={item.answer}
     isAns={item.isAns}
     time={item.time}
+    countUpdate={customState(collapseCount,setCollapseCount)}
     CollapseStatus={CollapseState} />;
 
   return (

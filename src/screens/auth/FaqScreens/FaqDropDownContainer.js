@@ -7,13 +7,22 @@ import { colors } from "../../../theme/colors";
 import { style } from "../../../componenets/organisms/style";
 import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
-const FaqDropDownContainer = ({ CollapseStatus,question,answer,isAns,time }) => {
-
+const FaqDropDownContainer = ({ CollapseStatus,question,answer,isAns,time,countUpdate }) => {
   if (isAns){
     return (
       <Collapse
-        isCollapsed={CollapseStatus.state}
-        onToggle={isColl => CollapseStatus.setState(isColl)}
+        isCollapsed={CollapseStatus.state.includes(question)}
+        onToggle={isColl => {
+          let index= CollapseStatus.state.indexOf(question);
+          if (index === -1){
+            CollapseStatus.state.push(question)
+          }else{
+            CollapseStatus.state.splice(index,1)
+          }
+          countUpdate.setState(CollapseStatus.state.length)
+
+          // CollapseStatus.setState(isColl);
+        }}
         style={{
           marginTop:heightPercentageToDP(2)
         }}
@@ -22,7 +31,7 @@ const FaqDropDownContainer = ({ CollapseStatus,question,answer,isAns,time }) => 
           <View style={{ flexDirection:"row",alignItems:'center' }}>
             <View style={{ flex:.1 }}>
               <FontAwesome5
-                name={CollapseStatus.state?'arrow-circle-up':'arrow-circle-down'}
+                name={CollapseStatus.state.includes(question)?'arrow-circle-up':'arrow-circle-down'}
                 size={commonIconSize-5}
                 color={colors.grey}
               />
