@@ -23,19 +23,27 @@ const Consultation = ({ navigation }) => {
       <HeaderVerifyIdentity barPercent={.5} backButton={true} titleText={'Consultation'} navigation={navigation} modalState={exitModal} SetModalSate={SetExitModal} />
       <View style={{ flex:.8,padding:'5%',alignItems:'center' }}>
         <Text style={style.commonTitle}>Ask you question in the below box?</Text>
-        <TextInput
-          style={{
-            marginTop:heightPercentageToDP(2),
-            backgroundColor:colors.bckGreen,
-            width:widthPercentageToDP(80),
-            borderRadius:20,padding:'1%'
-          }}
-          underlineColorAndroid="transparent"
-          placeholder=" ?  Enter Text"
-          placeholderTextColor="grey"
-          numberOfLines={10}
-          multiline={true}
-        />
+        <View style={{
+          marginTop:heightPercentageToDP(2),
+          backgroundColor:colors.bckGreen,
+          width:widthPercentageToDP(80),
+          padding:'1%',
+          alignItems:'center',
+          borderRadius:20,
+        }}>
+          <TextInput
+            style={{
+              width:widthPercentageToDP(70),
+              color:colors.dark
+            }}
+            underlineColorAndroid="transparent"
+            placeholder=" ?  Enter Text"
+            placeholderTextColor={colors.grey}
+            numberOfLines={10}
+            multiline={true}
+          />
+        </View>
+
       </View>
       <View style={{ flex:.2,alignItems:'center',justifyContent:'center' }}>
         <BottomButton showButton={showNextButton} action={()=>{
@@ -43,7 +51,7 @@ const Consultation = ({ navigation }) => {
         }} text={'Save'} />
       </View>
     </View>
-  );s
+  );
 };
 
 export default Consultation;

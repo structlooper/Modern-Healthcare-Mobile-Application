@@ -14,8 +14,6 @@ import AppointmentButton from "../../componenets/atoms/AppointmentButton";
 import MyAppointmentModal from "../../componenets/molecules/Modals/MyAppointmentModal";
 
 const HomePage = ({ navigation }) => {
-
-
   const [appointmentModal,SetAppointmentModal] = useState(false);
   const [CalenderItems, SetCalenderItems] = useState({
       '2021-12-25': [],
